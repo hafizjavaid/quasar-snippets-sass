@@ -1,10 +1,16 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 import materialIcons from 'quasar/icon-set/svg-material-icons'
 import materialIconsRound from 'quasar/icon-set/svg-material-icons-round'
+
 export default defineNuxtConfig({
   compatibilityDate: '2024-04-03',
   devtools: { enabled: true },
-  modules: ["nuxt-quasar-ui", "@nuxt/content"],
+  modules: ["nuxt-quasar-ui", "@nuxt/content", "@nuxt/image"],
+  content: {
+    highlight: {
+      theme: "github-dark",
+    },
+  },
   quasar: {
 
     plugins: [
@@ -22,7 +28,7 @@ export default defineNuxtConfig({
     },
     extras: {
       font: 'roboto-font',
-      fontIcons: ['material-icons'],
+      fontIcons: ['material-icons', 'mdi-v7'],
       animations: 'all',
     },
     appConfigKey: 'nuxtQuasarCustom',
