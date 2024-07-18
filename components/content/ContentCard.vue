@@ -4,8 +4,9 @@
       <div class="flex items-center">
         <q-btn flat round dense color="blue-2" text-color="blue" icon="mdi-link-variant">
         </q-btn>
-        <q-toolbar-title class="text-weight-bold"> Page Headings 01 </q-toolbar-title>
-        <q-badge>Free </q-badge>
+        <q-toolbar-title class="text-weight-bold"> {{ title }} </q-toolbar-title>
+        <q-badge v-if="isFree">Free </q-badge>
+        <q-badge v-if="isNew" color="green"> New </q-badge>
       </div>
       <q-space></q-space>
       <div class="flex">
@@ -32,9 +33,25 @@
           unelevated
           dense
           :icon="expanded ? 'mdi-chevron-up' : 'mdi-code-tags'"
-          @click="t"
+          @click="expanded = !expanded"
           class="q-mr-xs"
         />
+        <q-btn
+          dense
+          color="primary"
+          outline
+          no-caps
+          label="Get the code"
+          icon-right="mdi-arrow-right"
+          padding="3px 12px"
+          style="border-radius: 4px"
+        />
+        <!-- <q-btn color="primary" class="full-width" outline unelevated no-caps>
+            <template #default>
+              <q-icon name="mdi-credit-card-outline"></q-icon>
+              <div class="text-grey-9 q-ml-sm">Buy Crypto</div>
+            </template>
+          </q-btn> -->
       </div>
     </q-toolbar>
     <q-card class="full-width" flat bordered>
@@ -56,13 +73,19 @@
 </template>
 
 <script setup lang="ts">
+interface CardProps {
+  title: string;
+  slug: string;
+  isFree: boolean;
+  isNew: boolean;
+}
+withDefaults(defineProps<CardProps>(), {
+  title: '',
+  slug: '',
+  isFree: false,
+  isNew: false,
+});
 const expanded = ref(false);
-
-const t = () => {
-  console.log('YY');
-
-  expanded.value = !expanded.value;
-};
 </script>
 
 <style lang="sass" scoped></style>
