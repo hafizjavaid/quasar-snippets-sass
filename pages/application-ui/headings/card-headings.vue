@@ -1,5 +1,5 @@
 <template>
-  <!-- <ContentList :query="query" v-slot="{ list }">
+  <ContentList :query="query" v-slot="{ list }">
     <ContentQuery
       v-for="item in list"
       :key="item._path"
@@ -11,21 +11,26 @@
         <ContentRendererMarkdown :value="data" />
       </ContentRenderer>
     </ContentQuery>
-  </ContentList> -->
+  </ContentList>
   <!-- <pre>
   {{ headings }}
   </pre> -->
-  <template v-for="heading in headings" :key="heading._path">
+  <!-- <template v-for="heading in headings" :key="heading._path">
     <ContentRenderer>
       <ContentRendererMarkdown :value="heading" />
     </ContentRenderer>
-  </template>
+  </template> -->
 </template>
 
 <script lang="ts" setup>
 const path = useRoute().path;
-
-const headings = await queryContent(path)
-  .where({ _path: { $ne: `${path}` } })
-  .find();
+// @ts-ignore
+import type { QueryBuilderParams } from '@nuxt/content/dist/runtime/types';
+const query: QueryBuilderParams = {
+  path,
+  where: [{ _path: { $ne: `${path}` } }],
+};
+// const headings = await queryContent(path)
+//   .where({ _path: { $ne: `${path}` } })
+//   .find();
 </script>
