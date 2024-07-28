@@ -6,6 +6,17 @@ export default defineNuxtConfig({
   compatibilityDate: '2024-04-03',
   devtools: { enabled: true },
   modules: ["nuxt-quasar-ui", "@nuxt/content", "@nuxt/image"],
+  runtimeConfig: {
+    public: {
+     
+    },
+    githubClientId: process.env.GITHUB_CLIENT_ID,
+    githubClientSecret: process.env.GITHUB_CLIENT_SECRET,
+    cloudinaryApiKey: '',
+    cloudinaryApiSecret: '',
+    cloudinaryCloudName: process.env.CLOUDINARY_CLOUD_NAME,
+
+  },
   content: {
     highlight: {
       theme: "github-dark",
@@ -39,30 +50,30 @@ export default defineNuxtConfig({
       },
     },
     components: {
-      defaults: {
-        QBtn: {
-          color: 'primary',
-        },
-        QLinearProgress: {
-          color: 'green',
-          size: '15px',
-          stripe: true,
-        },
-        QCircularProgress: {
-          color: 'blue',
-          indeterminate: true,
-        },
-        QSelect: {
-          outlined: true,
-          dense: true,
-        },
-        QInput: {
-          outlined: true,
-        },
-        QToggle: {
-          color: 'red',
-        },
-      },
+      // defaults: {
+      //   QBtn: {
+      //     color: 'primary',
+      //   },
+      //   QLinearProgress: {
+      //     color: 'green',
+      //     size: '15px',
+      //     stripe: true,
+      //   },
+      //   QCircularProgress: {
+      //     color: 'blue',
+      //     indeterminate: true,
+      //   },
+      //   QSelect: {
+      //     outlined: true,
+      //     dense: true,
+      //   },
+      //   QInput: {
+      //     outlined: true,
+      //   },
+      //   QToggle: {
+      //     color: 'red',
+      //   },
+      // },
     },
   }
 })
