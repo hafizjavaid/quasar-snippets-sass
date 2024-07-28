@@ -31,6 +31,7 @@ export default defineNuxtConfig({
       'Loading',
       'LoadingBar',
       'Notify',
+      'Cookies'
     ],
     sassVariables: true,
     iconSet: {
