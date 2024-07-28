@@ -55,10 +55,22 @@
       </template>
     </div>
   </div>
+  
+    <div @click="logout()">Sign out</div>
+  
 </template>
 
 <script lang="ts" setup>
 const { data: navigation } = await useAsyncData('navigation', () =>
   fetchContentNavigation()
 );
+const user = useUser();
+const logout = async () =>  {
+  console.log('TTT');
+  // await $fetch('/api/auth/logout', {
+  //   method: 'POST',
+  // });
+  // user.value = null;
+  // await navigateTo('/login');
+}
 </script>
