@@ -8,11 +8,11 @@ export default defineEventHandler(async (event) => {
 
     const body = await readBody(event);
 
-    // console.log(body);
+    console.log(body);
 
-    // const products = await db.product.findMany();
+    const products = await db.product.findMany();
 
-    // console.log(products);
+    console.log(products);
     
     
     
@@ -21,6 +21,7 @@ export default defineEventHandler(async (event) => {
     const product = await db.product.findUnique({
         where: {
             id: body.id,
+            
         },
     })
 

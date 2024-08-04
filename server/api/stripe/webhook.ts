@@ -4,6 +4,8 @@ const STRIPE_WEBHOOK_SECRET =
 
 export default defineEventHandler(async (event) => {
     const signature = getHeader(event, 'Stripe-Signature') as string;
+    console.log(STRIPE_WEBHOOK_SECRET);
+    
     console.log(signature, 'signature');
     
     const body = await readRawBody(event);
