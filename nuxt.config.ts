@@ -8,13 +8,17 @@ export default defineNuxtConfig({
   modules: ["nuxt-quasar-ui", "@nuxt/content", "@nuxt/image"],
   runtimeConfig: {
     public: {
-     
+      publicStripeKey: '',
     },
     githubClientId: process.env.GITHUB_CLIENT_ID,
     githubClientSecret: process.env.GITHUB_CLIENT_SECRET,
     cloudinaryApiKey: '',
     cloudinaryApiSecret: '',
     cloudinaryCloudName: process.env.CLOUDINARY_CLOUD_NAME,
+
+    stripeSecret: '',
+    stripeWebhookSecret: '',
+    appUrl: '',
 
   },
   content: {

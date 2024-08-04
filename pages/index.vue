@@ -1,6 +1,51 @@
 <template>
   <NuxtLayout>
     <div class="q-pa-xl">
+      <div class="row q-col-gutter-lg">
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+          <q-card bordered flat>
+            <q-card-section class="q-px-lg q-py-md">
+              <div class="flex items-center q-gutter-x-md">
+                <div class="text-subtitle2 text-grey-8">Single Product</div>
+                <q-btn padding="8px 10px" color="primary" unelevated>
+                  Buy
+                </q-btn>
+              </div>
+            </q-card-section>
+            
+          </q-card>
+        </div>
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+          <q-card bordered flat>
+            <q-card-section class="q-px-lg q-py-md">
+              <div class="flex items-center q-gutter-x-md">
+                <div class="text-subtitle2 text-grey-8">Bundle (Combo of products)</div>
+                <q-btn padding="8px 10px" color="primary" unelevated>
+                  Buy
+                </q-btn>
+              </div>
+            </q-card-section>
+            
+          </q-card>
+        </div>
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+          <q-card bordered flat>
+            <q-card-section class="q-px-lg q-py-md">
+              <div class="flex items-center q-gutter-x-md">
+                <div class="text-subtitle2 text-grey-8">Template: single product </div>
+                <q-btn padding="8px 10px" color="primary" unelevated>
+                  Buy
+                </q-btn>
+              </div>
+            </q-card-section>
+            
+          </q-card>
+        </div>
+        
+      </div>
+      <SubscriptionButton></SubscriptionButton>
+    </div>
+    <div class="q-pa-xl">
       <div v-for="mainCategory in navigation" :key="mainCategory.key" class="q-mb-xl">
         <div class="flex items-center q-gutter-x-sm text-grey-9">
           <q-icon :name="mainCategory.icon" size="24px"></q-icon>

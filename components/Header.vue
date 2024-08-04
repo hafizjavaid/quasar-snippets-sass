@@ -124,7 +124,7 @@
                       </div>
                     </q-item-section>
                   </q-item>
-                  <q-item clickable v-ripple>
+                  <q-item @click="logout" clickable v-ripple>
                     <q-item-section>
                       <div class="flex items-center q-gutter-x-sm">
                         <q-icon size="16px" name="mdi-logout"></q-icon>
@@ -139,6 +139,7 @@
         </q-btn>
       </div>
     </div>
+    {{ user }}
   </q-header>
 
   <q-drawer v-model="leftDrawerOpen" side="left" bordered> Test </q-drawer>
