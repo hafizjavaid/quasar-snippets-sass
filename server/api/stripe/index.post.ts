@@ -6,10 +6,21 @@ export default defineEventHandler(async (event) => {
     const returlUrl = absoluteUrl(undefined);
     const user = event.context.user;
 
+    const body = await readBody(event);
+
+    // console.log(body);
+
+    // const products = await db.product.findMany();
+
+    // console.log(products);
+    
+    
+    
+
     // Check if current Product exist or not
     const product = await db.product.findUnique({
         where: {
-            id: event.context.params?.productId,
+            id: body.id,
         },
     })
 
@@ -22,7 +33,7 @@ export default defineEventHandler(async (event) => {
     }
 
 
-    if (event.context.user && event.context.params?.productId) {
+    if (event.context.user && body.id) {
 
 
         // Check if product is already purchased or not
@@ -30,7 +41,7 @@ export default defineEventHandler(async (event) => {
             where: {
                 userId_productId: {
                     userId: event.context.user?.id,
-                    productId: event.context.params?.productId,
+                    productId: body.id,
                 },
             },
         })
@@ -50,7 +61,7 @@ export default defineEventHandler(async (event) => {
                     unit_amount: Math.round(product.price! * 100),
                     product_data: {
                         name: product.title,
-                        description: product.description!,
+                        description: product.description ? product.description : undefined,
                     },
                 },
             },

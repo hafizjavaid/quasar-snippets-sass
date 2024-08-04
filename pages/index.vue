@@ -100,7 +100,22 @@ const products = ref([
 ]);
 
 const manageSubscription = async (p: any) => {
-    console.log(p);
+  
+  try {
+    
+    const res = await $fetch('/api/stripe', {
+      body: p,
+      method: 'POST'
+    })
+    console.log(res);
+    if(res){
+      window.location.assign(res);
+    }
+  } catch (error) {
+    console.log(error);
+    
+  }
+  
     
 };
 </script>
