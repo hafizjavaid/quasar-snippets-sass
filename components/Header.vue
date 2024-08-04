@@ -139,7 +139,6 @@
         </q-btn>
       </div>
     </div>
-    {{ user }}
   </q-header>
 
   <q-drawer v-model="leftDrawerOpen" side="left" bordered> Test </q-drawer>
