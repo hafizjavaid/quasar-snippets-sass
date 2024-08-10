@@ -5,19 +5,23 @@ async function main() {
         data: [
             {
                 title: 'All Access',
-                description: 'Gain access to all of the snippets in the Application UI, Marketing, and Ecommerce categories — all of the components you need to build any UI'
+                description: 'Gain access to all of the snippets in the Application UI, Marketing, and Ecommerce categories — all of the components you need to build any UI',
+                price: 100.0,
             },
             {
                 title: 'Application UI Access',
-                description: ''
+                description: '',
+                price: 100.0,
             },
             {
                 title: 'Marketing Access',
-                description: ''
+                description: '',
+                price: 100.0,
             },
             {
                 title: 'Ecommerce Access',
-                description: ''
+                description: '',
+                price: 100.0,
             },
         ]
     })

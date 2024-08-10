@@ -11,7 +11,6 @@ export default defineEventHandler(async (event) => {
     const product = await db.product.findUnique({
         where: {
             id: body.id,
-            
         },
     })
 

@@ -1,8 +1,10 @@
 <template>
   <NuxtLayout>
     <div class="q-pa-xl">
+      <!-- <pre>
 
-      
+        {{ navigation }}
+      </pre> -->
       <div class="row q-col-gutter-lg">
         <div v-for="product in products" :key="product.id" class="col-12 col-sm-6 col-md-4 col-lg-3">
           <q-card bordered flat>
@@ -14,15 +16,20 @@
                 </q-btn>
               </div>
             </q-card-section>
-
           </q-card>
         </div>
-        
-
       </div>
       <SubscriptionButton></SubscriptionButton>
+      <!-- <pre>
 
-      {{ userStatus }}
+        {{ userStatus }}
+
+      </pre>
+      <pre>
+
+        {{ userPurchases }}
+      </pre> -->
+      <pre> {{ userPurchase  }} </pre>
     </div>
     <div class="q-pa-xl">
       <div v-for="mainCategory in navigation" :key="mainCategory.key" class="q-mb-xl">
@@ -46,20 +53,22 @@
                 <div v-for="(lastCategory, lastCategoryIndex) in subCategory.children.filter(
                   (c) => 'children' in c
                 )" :key="lastCategoryIndex" class="col-sm-6 col-md-4 col-lg-3 col-12">
-                  <q-card class="q-pa-sm" bordered flat style="border-radius: 8px">
-                    <img src="https://cdn.quasar.dev/img/mountains.jpg" />
-                    <q-card-section class="q-px-none q-pb-none">
-                      <div class="text-body1">
-                        {{ lastCategory.title }}
-                      </div>
-                      <div v-if="lastCategory.children" class="text-subtitle2 text-grey-7 text-weight-normal">
-                        {{
-                          lastCategory.children.filter((c) => !('children' in c)).length
-                        }}
-                        snippets
-                      </div>
-                    </q-card-section>
-                  </q-card>
+                  <NuxtLink class="text-grey-7" style="text-decoration: none;"  :to="lastCategory._path">
+                    <q-card class="q-pa-sm cursor-pointer" bordered flat style="border-radius: 8px">
+                      <img src="https://cdn.quasar.dev/img/mountains.jpg" />
+                      <q-card-section class="q-px-none q-pb-none">
+                        <div class="text-body1">
+                          {{ lastCategory.title }}
+                        </div>
+                        <div v-if="lastCategory.children" class="text-subtitle2 text-grey-7  text-weight-normal">
+                          {{
+                            lastCategory.children.filter((c) => !('children' in c)).length
+                          }}
+                          snippets
+                        </div>
+                      </q-card-section>
+                    </q-card>
+                  </NuxtLink>
                 </div>
               </div>
             </template>
@@ -77,29 +86,33 @@
 const { data: navigation } = await useAsyncData('navigation', () =>
   fetchContentNavigation()
 );
+const userPurchase = useState('purchase')
+
 
 const products = ref([
   {
     id: '66af878c483e68dc8d69b195',
     title: 'All Access',
-    description: 'Gain access to all of the snippets in the Application UI, Marketing, and Ecommerce categories — all of the components you need to build any UI'
+    description: 'Gain access to all of the snippets in the Application UI, Marketing, and Ecommerce categories — all of the components you need to build any UI',
+    price: 100.0,
   },
   {
     id: '66af878c483e68dc8d69b196',
-
     title: 'Application UI Access',
-    description: ''
+    description: '',
+    price: 100.0,
   },
   {
     id: '66af878c483e68dc8d69b197',
-
     title: 'Marketing Access',
-    description: ''
+    description: '',
+    price: 100.0,
   },
   {
     id: '66af878c483e68dc8d69b198',
     title: 'Ecommerce Access',
-    description: ''
+    description: '',
+    price: 100.0,
   },
 ]);
 
@@ -110,17 +123,17 @@ const manageSubscription = async (p: any) => {
       method: 'POST'
     })
     console.log(res);
-    if(res){
+    if (res) {
       window.location.assign(res);
     }
   } catch (error) {
     console.log(error);
   }
 };
-
-const { data: userStatus, error } = await useFetch('/api/stripe/user');
-console.log(error.value?.statusCode);
-console.log(error.value?.statusMessage);
-
-
+// const { data: userStatus, error } = await useFetch('/api/stripe/user');
+// const { data: userPurchases, error: purchasError } = await useFetch('/api/user/purchases');
+// console.log(error.value?.statusCode);
+// console.log(error.value?.statusMessage);
+// console.log(error.value?.statusCode);
+// console.log(error.value?.statusMessage);
 </script>

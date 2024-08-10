@@ -1,12 +1,13 @@
 <template>
   <div class="q-pa-md q-gutter-y-md">
+    {{ purchase  }}
     <q-toolbar class="" style="border-radius: 12px">
       <div class="flex items-center">
         <q-btn flat round dense color="blue-2" text-color="blue" icon="mdi-link-variant">
         </q-btn>
         <q-toolbar-title class="text-weight-bold"> {{ title }} </q-toolbar-title>
-        <q-badge v-if="isFree">Free </q-badge>
-        <q-badge v-if="isNew" color="green"> New </q-badge>
+        <!-- <q-badge v-if="isFree">Free </q-badge>
+        <q-badge v-if="isNew" color="green"> New </q-badge> -->
       </div>
       <q-space></q-space>
       <div class="flex q-gutter-x-sm ">
@@ -77,8 +78,8 @@
 interface CardProps {
   title: string;
   slug: string;
-  isFree: boolean;
-  isNew: boolean;
+  isFree?: boolean;
+  isNew?: boolean;
 }
 withDefaults(defineProps<CardProps>(), {
   title: '',
@@ -88,6 +89,8 @@ withDefaults(defineProps<CardProps>(), {
 });
 const expanded = ref(false);
 const view = ref("code");
+const purchase = usePurchase();
+
 </script>
 
 <style lang="sass" scoped></style>
