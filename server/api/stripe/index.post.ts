@@ -7,16 +7,6 @@ export default defineEventHandler(async (event) => {
     const user = event.context.user;
 
     const body = await readBody(event);
-
-    console.log(body);
-
-    const products = await db.product.findMany();
-
-    console.log(products);
-    
-    
-    
-
     // Check if current Product exist or not
     const product = await db.product.findUnique({
         where: {

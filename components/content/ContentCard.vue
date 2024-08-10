@@ -1,6 +1,6 @@
 <template>
   <div class="q-pa-md q-gutter-y-md">
-    <q-toolbar class="bg-grey-3 text-grey-10" style="border-radius: 12px">
+    <q-toolbar class="" style="border-radius: 12px">
       <div class="flex items-center">
         <q-btn flat round dense color="blue-2" text-color="blue" icon="mdi-link-variant">
         </q-btn>
@@ -9,8 +9,8 @@
         <q-badge v-if="isNew" color="green"> New </q-badge>
       </div>
       <q-space></q-space>
-      <div class="flex">
-        <q-btn
+      <div class="flex q-gutter-x-sm ">
+        <!-- <q-btn
           color="grey-2"
           text-color="grey-10"
           flat
@@ -18,56 +18,57 @@
           dense
           icon="mdi-theme-light-dark"
           class="q-mr-xs"
-        />
-        <q-btn
-          color="grey-2"
-          text-color="grey-10"
-          flat
-          round
-          dense
-          icon="mdi-content-copy"
-          class="q-mr-xs"
-        />
-        <q-btn
-          color="grey-9"
-          unelevated
-          dense
-          :icon="expanded ? 'mdi-chevron-up' : 'mdi-code-tags'"
-          @click="expanded = !expanded"
-          class="q-mr-xs"
-        />
+        /> -->
+        <q-tabs
+        v-model="view"
+        narrow-indicator
+        dense 
+        inline-label
+        class="bg-grey-2 text-dark"
+        style="border-radius: 8px; font-size: 10px;"
+        indicator-color="transparent"
+        active-color="primary"
+        no-caps
+        
+      
+      >
+        <q-tab :ripple="false" name="code" icon="mdi-content-copy" label="Code" color="yellow"  />
+        <q-tab :ripple="false" name="preview" icon="mdi-eye-outline" label="Preview" />
+       
+      </q-tabs>
+        
         <q-btn
           dense
           color="primary"
-          outline
           no-caps
           label="Get the code"
           icon-right="mdi-arrow-right"
-          padding="3px 12px"
+          padding="1px 12px"
           style="border-radius: 4px"
+          unelevated
         />
-        <!-- <q-btn color="primary" class="full-width" outline unelevated no-caps>
-            <template #default>
-              <q-icon name="mdi-credit-card-outline"></q-icon>
-              <div class="text-grey-9 q-ml-sm">Buy Crypto</div>
-            </template>
-          </q-btn> -->
+       
       </div>
     </q-toolbar>
     <q-card class="full-width" flat bordered>
-      <q-slide-transition>
-        <div v-show="expanded">
+     
+      <q-tab-panels v-model="view" animated class="shadow-2 rounded-borders">
+        <q-tab-panel name="code">
           <q-card-section>
             <slot name="codebase" />
           </q-card-section>
-          <q-separator />
-        </div>
-      </q-slide-transition>
-      <div class="q-pa-xl">
+        </q-tab-panel>
+
+        <q-tab-panel name="preview">
+          <div class="q-pa-xl">
         <div class="flex justify-center">
           <slot name="preview" />
         </div>
       </div>
+        </q-tab-panel>
+
+        
+      </q-tab-panels>
     </q-card>
   </div>
 </template>
@@ -86,6 +87,7 @@ withDefaults(defineProps<CardProps>(), {
   isNew: false,
 });
 const expanded = ref(false);
+const view = ref("code");
 </script>
 
 <style lang="sass" scoped></style>

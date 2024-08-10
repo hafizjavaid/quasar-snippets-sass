@@ -1,6 +1,8 @@
 <template>
   <NuxtLayout>
     <div class="q-pa-xl">
+
+      
       <div class="row q-col-gutter-lg">
         <div v-for="product in products" :key="product.id" class="col-12 col-sm-6 col-md-4 col-lg-3">
           <q-card bordered flat>
@@ -19,6 +21,8 @@
 
       </div>
       <SubscriptionButton></SubscriptionButton>
+
+      {{ userStatus }}
     </div>
     <div class="q-pa-xl">
       <div v-for="mainCategory in navigation" :key="mainCategory.key" class="q-mb-xl">
@@ -100,9 +104,7 @@ const products = ref([
 ]);
 
 const manageSubscription = async (p: any) => {
-  
   try {
-    
     const res = await $fetch('/api/stripe', {
       body: p,
       method: 'POST'
@@ -113,9 +115,12 @@ const manageSubscription = async (p: any) => {
     }
   } catch (error) {
     console.log(error);
-    
   }
-  
-    
 };
+
+const { data: userStatus, error } = await useFetch('/api/stripe/user');
+console.log(error.value?.statusCode);
+console.log(error.value?.statusMessage);
+
+
 </script>
