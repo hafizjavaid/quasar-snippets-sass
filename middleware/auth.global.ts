@@ -5,7 +5,10 @@ export default defineNuxtRouteMiddleware(async () => {
 	if (data) {
 		user.value = data;
 	}
-	const userPurchases = await $fetch('/api/user/purchases');
-	userPurchase.value = userPurchases;
+	if(!userPurchase.value){
+		const userPurchases = await $fetch('/api/user/purchases');
+		// @ts-ignore
+		userPurchase.value = userPurchases;
+	}
 
 });

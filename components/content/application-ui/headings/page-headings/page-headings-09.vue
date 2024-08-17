@@ -1,0 +1,48 @@
+<template>
+  <div style="max-width: 1400px; width: 100%;" class="q-mx-auto">
+    <div class="flex items-center">
+      <div>
+        <q-breadcrumbs class="text-grey" active-color="grey-9">
+          <template v-slot:separator>
+            <q-icon size="1.5em" name="chevron_right" color="grey-9" />
+          </template>
+          <q-breadcrumbs-el label="Home" />
+          <q-breadcrumbs-el label="Products" />
+          <q-breadcrumbs-el label="Edit" />
+        </q-breadcrumbs>
+        <div class="text-h6">Frontend Developer</div>
+        <div>
+          <q-chip color="grey-3" icon="mdi-briefcase-outline"> Full-time </q-chip>
+          <q-chip color="grey-3" icon="mdi-navigation-outline"> Remote </q-chip>
+          <q-chip color="grey-3" icon="mdi-currency-usd">
+            $120,000 - $150,000
+          </q-chip>
+          <q-chip color="grey-3" icon="mdi-calendar-range">
+            Posted 2 days ago
+          </q-chip>
+        </div>
+      </div>
+
+      <q-space></q-space>
+
+      <div class="flex items-center q-gutter-x-sm">
+        <q-btn color="grey-4" style="border-radius: 8px" unelevated padding="6px 10px" no-caps outline class="">
+          <template #default>
+            <q-icon size="18px" name="mdi-pencil-outline" color="dark" class=""></q-icon>
+            <div class="text-dark q-ml-sm">Edit</div>
+          </template>
+        </q-btn>
+
+        <q-btn color="dark" style="border-radius: 8px" padding="6px 10px" no-caps label="View" unelevated
+          icon="mdi-eye-outline">
+        </q-btn>
+        <q-btn color="primary" style="border-radius: 8px" padding="6px 16px" no-caps label="Publish" icon="mdi-check">
+        </q-btn>
+      </div>
+    </div>
+  </div>
+</template>
+
+<script setup lang="ts"></script>
+
+<style scoped></style>

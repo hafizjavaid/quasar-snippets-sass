@@ -3,11 +3,11 @@
     <!-- {{ path }} -->
     <!-- {{ purchase }} -->
 
-    <q-toolbar class="q-px-none" style="border-radius: 12px">
+    <q-toolbar class="q-px-sm bg-grey-11 q-mb-md" style="border-radius: 12px">
       <div class="flex items-center">
         <q-btn flat round dense color="blue-2" text-color="blue" icon="mdi-link-variant">
         </q-btn>
-        <q-toolbar-title class="text-weight-bold"> {{ title }} </q-toolbar-title>
+        <q-toolbar-title class="text-subtitle1 text-weight-medium"> {{ title }} </q-toolbar-title>
         <!-- <q-badge v-if="isFree">Free </q-badge>
         <q-badge v-if="isNew" color="green"> New </q-badge> -->
       </div>
@@ -22,7 +22,7 @@
           icon="mdi-theme-light-dark"
           class="q-mr-xs"
         /> -->
-        <div style="border-radius: 8px; font-size: 10px;" class="bg-blue-grey-1 q-pa-xs">
+        <div style="border-radius: 8px; font-size: 10px;" class="bg-grey-4 q-pa-xs">
           <q-tabs v-model="view" narrow-indicator inline-label active-bg-color="white" active-color="primary"
             style="border-radius: 8px;" indicator-color="transparent" no-caps>
             <q-tab style="min-height: unset;" :ripple="false" name="code">
@@ -54,8 +54,8 @@
         <q-tab-panel name="code" class="q-pa-none">
           <slot name="codebase" />
         </q-tab-panel>
-        <q-tab-panel name="preview">
-          <div class="q-pa-xl">
+        <q-tab-panel class="q-pa-none"  name="preview">
+          <div class="q-pa-lg">
             <div class="flex justify-center">
               <slot name="preview" />
             </div>

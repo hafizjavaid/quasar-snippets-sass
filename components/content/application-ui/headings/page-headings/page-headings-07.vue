@@ -1,0 +1,33 @@
+<template>
+    <div style="max-width: 1400px; width: 100%;" class="q-mx-auto">
+        <div class="flex items-center">
+            <div class="flex items-center">
+                <div class="text-h6 text-weight-medium">New users</div>
+                <q-separator class="q-mx-md" vertical inset />
+                <q-btn-toggle v-model="model" flat stretch toggle-color="primary" :options="options" no-caps />
+            </div>
+            <q-space></q-space>
+
+            <q-btn color="primary" unelevated padding="6px 16px" no-caps>
+                <template #default>
+                    <div class="flex items-center q-gutter-x-sm">
+                        <q-icon size="18px" name="mdi-send-outline" />
+                        <div>Send</div>
+                    </div>
+                </template>
+            </q-btn>
+        </div>
+    </div>
+</template>
+
+<script setup lang="ts">
+import { ref } from 'vue';
+const options = [
+  { label: 'Last 7 days', value: 'one' },
+  { label: 'Last 30 days', value: 'two' },
+  { label: 'All-time', value: 'three' },
+];
+const model = ref('one');
+</script>
+
+<style scoped></style>

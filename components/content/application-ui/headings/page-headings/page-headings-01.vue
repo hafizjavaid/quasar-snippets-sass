@@ -1,7 +1,7 @@
 <template>
   <div style="max-width: 1400px; width: 100%;" class="q-mx-auto">
     <div class="flex items-center">
-      <div class="text-h4 q-ma-none">Blogs</div>
+      <div class="text-h6 q-ma-none">Blogs</div>
 
       <q-space></q-space>
 

@@ -5,6 +5,11 @@ import materialIconsRound from 'quasar/icon-set/svg-material-icons-round'
 export default defineNuxtConfig({
   compatibilityDate: '2024-04-03',
   devtools: { enabled: true },
+  nitro: {
+    prerender: {
+      routes: ['/sitemap.xml']
+    }
+  },
   modules: ["nuxt-quasar-ui", "@nuxt/content", "@nuxt/image"],
   runtimeConfig: {
     public: {
