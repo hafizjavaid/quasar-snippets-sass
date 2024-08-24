@@ -90,6 +90,10 @@
 const { data: navigation } = await useAsyncData('navigation', () =>
   fetchContentNavigation()
 );
+
+
+// const { data:  navigation } = await useLazyFetch('/api/components');
+
 </script>
 
 <style lang="scss" scoped></style>

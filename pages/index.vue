@@ -38,6 +38,10 @@
 
       </div>
 
+      <!-- Pricing -->
+
+      <Pricing></Pricing>
+
 
 
 
