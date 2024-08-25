@@ -1,5 +1,5 @@
 <template>
-  <q-header reveal elevated class="bg-white text-grey-8 q-px-xl">
+  <q-header reveal bordered class="bg-white text-grey-8 q-px-xl">
     <div class="flex justify-between">
       <div class="flex no-wrap items-center cursor-pointer" @click="navigateTo('/')">
         <q-btn

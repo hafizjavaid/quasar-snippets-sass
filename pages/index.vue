@@ -1,6 +1,6 @@
 <template>
   <NuxtLayout>
-    <div class="q-pa-xl">
+    <!-- <div class="q-pa-xl"> -->
 
       <!-- Hero Section -->
       <!-- Hero Section -->
@@ -80,7 +80,7 @@
         {{ userPurchases }}
       </pre> -->
       <!-- <pre> {{ userPurchase }} </pre> -->
-    </div>
+    <!-- </div> -->
     <div class="q-pa-xl">
       <!-- 
       

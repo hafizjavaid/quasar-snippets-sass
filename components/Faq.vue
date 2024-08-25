@@ -1,20 +1,24 @@
 <template>
-    <section class="faq q-py-xl">
-        <div v-for="faqSection in faqData" :key="faqSection.id"  class="q-mb-xl" >
+    <section class="">
+        <div style="max-width: 1300px; padding-block-end: 140px; width: 100%;" class="q-mx-auto">
+            <div class="q-px-xl">
+                <div v-for="faqSection in faqData" :key="faqSection.id" class="q-mb-xl">
+                    <div class="text-weight-bold q-mb-sm"> {{ faqSection.title }} </div>
+                    <q-list style="border-radius: 20px;" bordered>
+                        <!-- FAQ 1 -->
+                        <q-expansion-item v-for="(faq, i) in faqSection.faqs" :key="i" :label="faq.question"
+                            expand-separator>
+                            <q-card>
+                                <q-card-section>
+                                    {{ faq.answer }}
+                                </q-card-section>
+                            </q-card>
+                        </q-expansion-item>
 
-            <div class="text-weight-bold q-mb-sm" > {{  faqSection.title  }} </div>
-            <q-list style="border-radius: 20px;" bordered>
-                <!-- FAQ 1 -->
-                <q-expansion-item v-for="(faq, i) in faqSection.faqs" :key="i"  :label="faq.question" expand-separator>
-                    <q-card>
-                        <q-card-section>
-                            {{  faq.answer  }}
-                        </q-card-section>
-                    </q-card>
-                </q-expansion-item>
-    
-            </q-list>
+                    </q-list>
 
+                </div>
+            </div>
         </div>
 
     </section>
@@ -42,11 +46,11 @@ const faqData = [
                 question: 'What is Quasar?',
                 answer: 'Quasar is an Open Source UI Framework for Vue. It is enterprise-ready cross-platform VueJs framework. It provides developers with a set of reusable components that can be used to build out their applications. QuasarUI is built on top of Quasar and provides developers with a set of pre-built components that can be used to speed up the development process.'
             },
-           
+
             {
                 question: 'What is the difference between QuasarUI and Quasar?',
                 answer: 'Quasar is an Open Source UI Framework for Vue. It is enterprise-ready cross-platform VueJs framework. It provides developers with a set of reusable components that can be used to build out their applications. QuasarUI is built on top of Quasar and provides developers with a set of pre-built components that can be used to speed up the development process.'
-               
+
             },
             {
                 question: 'What does the lock symbol mean?',

@@ -1,9 +1,9 @@
 <template>
   <QLayout view="hHh lpR fFf">
     <Header />
-    <QPageContainer>
+    <!-- <QPageContainer> -->
       <slot />
-    </QPageContainer>
+    <!-- </QPageContainer> -->
   </QLayout>
 </template>
 

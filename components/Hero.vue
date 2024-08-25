@@ -1,7 +1,7 @@
 <template>
     <div>
-        <div style="max-width: 1200px; padding-block: 70px;"  class="q-mx-auto dots">
-            <div class="q-px-md" >
+        <div style="max-width: 1300px; padding-block: 140px; width: 100%;" class="q-mx-auto dots">
+            <div class="q-px-xl">
                 <div class="row">
                     <div class="col-12 col-sm-6">
                         <div class="text-primary text-weight-medium ">
@@ -25,7 +25,7 @@
                     </div>
                     <div class="col-12 col-sm-5 offset-md-1">
                         <div class="flex items-start  no-wrap q-gutter-x-md q-mb-xl">
-                            <div class="flex justify-center items-center bg-primary q-mt-xs"
+                            <div class="flex justify-center items-center bg-pink-6 q-mt-xs"
                                 style="border-radius: 8px; min-width: 40px; height: 40px;">
                                 <Icon class="text-white " name="uil:github" style="width: 24px; height: 24px;" />
                             </div>
@@ -37,7 +37,7 @@
                             </div>
                         </div>
                         <div class="flex items-start  no-wrap q-gutter-x-md q-mb-xl">
-                            <div class="flex justify-center items-center bg-primary q-mt-xs"
+                            <div class="flex justify-center items-center bg-green-6 q-mt-xs"
                                 style="border-radius: 8px; min-width: 40px; height: 40px;">
                                 <Icon class="text-white " name="pepicons-pop:rewind-time"
                                     style="width: 24px; height: 24px;" />
@@ -50,13 +50,13 @@
                             </div>
                         </div>
                         <div class="flex items-start  no-wrap q-gutter-x-md">
-                            <div class="flex justify-center items-center bg-primary q-mt-xs"
+                            <div class="flex justify-center items-center bg-blue-6 q-mt-xs"
                                 style="border-radius: 8px; min-width: 40px; height: 40px;">
                                 <Icon class="text-white " name="devicon-plain:quasar"
                                     style="width: 24px; height: 24px;" />
                             </div>
                             <div class="">
-                                <span class="text-body2 text-weight-bold">Built with Vuetify</span>
+                                <span class="text-body2 text-weight-bold">Built with Quasar</span>
                                 <br /> All components are built 100% using Quasar, the most complete Vue.js component
                                 framework.
                             </div>
@@ -77,7 +77,7 @@
 
 <style scoped>
 .dots {
-    background-image: radial-gradient(hsla(0, 0%, 78%, .3) 1px, transparent 0);
+    background-image: radial-gradient(hsla(0, 0%, 78%, .4) 1px, transparent 0);
     background-size: 12px 12px;
 }
 </style>
