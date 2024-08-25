@@ -28,7 +28,7 @@
                             <q-card-section class="q-px-none">
                                 <div class="text-body1">
 
-                                    Get lifetime access to all of the application UI, marketing, and ecommerce
+                                    Get <strong>lifetime access</strong> to all of the application UI, marketing, and ecommerce
                                     components,
                                     as well as all of our site templates for a single one-time purchase.
                                 </div>

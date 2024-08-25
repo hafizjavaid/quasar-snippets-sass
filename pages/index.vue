@@ -42,6 +42,10 @@
 
       <Pricing></Pricing>
 
+      <!-- FAQ -->
+
+      <Faq></Faq>
+
 
 
 
