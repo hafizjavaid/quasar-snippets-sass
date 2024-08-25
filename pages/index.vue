@@ -14,7 +14,7 @@
 
 
       <!-- Temporary Section -->
-      <div class="q-pa-lg">
+      <!-- <div class="q-pa-lg">
         <div class="row q-col-gutter-md">
           <div v-for="product in products" :key="product.title" class="col-12 col-md-6 col-lg-4">
             <q-card flat bordered class="q-mx-auto">
@@ -36,8 +36,10 @@
           </div>
         </div>
 
-      </div>
+      </div> -->
 
+      <!-- Hero -->
+       <Hero></Hero>
       <!-- Pricing -->
 
       <Pricing></Pricing>

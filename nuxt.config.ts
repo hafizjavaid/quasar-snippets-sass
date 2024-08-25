@@ -10,7 +10,8 @@ export default defineNuxtConfig({
       routes: ['/sitemap.xml']
     }
   },
-  modules: ["nuxt-quasar-ui", "@nuxt/content", "@nuxt/image"],
+  modules: ["nuxt-quasar-ui", "@nuxt/content", "@nuxt/image", "@nuxt/icon"],
+  
   runtimeConfig: {
     public: {
       publicStripeKey: '',
