@@ -11,6 +11,7 @@ export default defineNuxtConfig({
     }
   },
   modules: ["nuxt-quasar-ui", "@nuxt/content", "@nuxt/image", "@nuxt/icon"],
+  css: ['/assets/main.scss'],
   
   runtimeConfig: {
     public: {
@@ -27,11 +28,11 @@ export default defineNuxtConfig({
     appUrl: '',
 
   },
-  content: {
-    highlight: {
-      theme: "github-dark",
-    },
-  },
+  // content: {
+  //   highlight: {
+  //     theme: "github-dark",
+  //   },
+  // },
   quasar: {
 
     plugins: [
@@ -43,7 +44,7 @@ export default defineNuxtConfig({
       'Notify',
       'Cookies'
     ],
-    sassVariables: true,
+    sassVariables: '/assets/quasar-variables.scss',
     iconSet: {
       ...materialIcons,
       colorPicker: materialIconsRound.colorPicker,

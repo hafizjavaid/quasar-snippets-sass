@@ -40,6 +40,9 @@
 
       <!-- Hero -->
        <Hero></Hero>
+
+       <!-- Components -->
+        <Preview></Preview>
       <!-- Pricing -->
 
       <Pricing></Pricing>
