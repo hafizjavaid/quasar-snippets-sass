@@ -10,7 +10,7 @@ export default defineNuxtConfig({
       routes: ['/sitemap.xml']
     }
   },
-  modules: ["nuxt-quasar-ui", "@nuxt/content", "@nuxt/image", "@nuxt/icon"],
+  modules: ["nuxt-quasar-ui", "@nuxt/content", "@nuxt/image", "@nuxt/icon", '@nuxt/fonts'],
   css: ['/assets/main.scss'],
   
   runtimeConfig: {
@@ -50,7 +50,7 @@ export default defineNuxtConfig({
       colorPicker: materialIconsRound.colorPicker,
     },
     extras: {
-      font: 'roboto-font',
+      font: null,
       fontIcons: ['material-icons', 'mdi-v7'],
       animations: 'all',
     },

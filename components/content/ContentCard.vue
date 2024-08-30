@@ -76,7 +76,7 @@ interface CardProps {
 withDefaults(defineProps<CardProps>(), {
   title: '',
   slug: '',
-  isFree: false,
+  isFree: false, // check lock status and if it's true then also check index 
   isNew: false,
 });
 const expanded = ref(false);

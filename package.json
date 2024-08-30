@@ -12,6 +12,7 @@
   "dependencies": {
     "@lucia-auth/adapter-prisma": "^4.0.1",
     "@nuxt/content": "^2.13.1",
+    "@nuxt/fonts": "^0.7.2",
     "@nuxt/image": "^1.7.0",
     "@prisma/client": "^5.17.0",
     "@prisma/nuxt": "^0.0.31",

@@ -217,157 +217,179 @@ const marketing = {
 };
 const applicationUI = {
     "name": "Application UI",
-    "anchor": "product-application-ui",
+    "anchor": "component-application-ui",
     "description": "Form layouts, tables, modal dialogs — everything you need to build beautiful responsive web applications.",
     "isNew": false,
     "isLicensed": false,
     "price": {
         "currency": "USD",
-        "advertised": 149,
+        "advertised": 49,
         "amount": 149
     },
     "checkout_id": "66af878c483e68dc8d69b196",
     "pricing_description": "Form layouts, tables, dialogs — all of the components you need to build beautiful responsive web applications.",
     "categories": [
         {
-            "anchor": "product-application-ui-application-shells",
-            "name": "Application Shells",
+            "anchor": "component-application-ui-core-layouts",
+            "name": "Core Layouts",
             "subcategories": [
                 {
                     "name": "Stacked Layouts",
-                    "url": "/components/application-ui/application-shells/stacked",
-                    "imageUrl": "/img/category-thumbnails/application-ui/stacked.png",
+                    "url": "/components/application-ui/core-layouts/stacked-layouts",
+                    "imageUrl": "/img/category-thumbnails/application-ui/stacked-layouts.png",
                     "components": "9 components",
                     "isNew": false,
-                    "isLocked": false
+                    "isLocked": false,
+                    "isPublished": true,
                 },
                 {
-                    "name": "Sidebar Layouts",
-                    "url": "/components/application-ui/application-shells/sidebar",
-                    "imageUrl": "/img/category-thumbnails/application-ui/sidebar.png",
+                    "name": "Drawer Layouts",
+                    "url": "/components/application-ui/core-layouts/drawer-layouts", 
+                    "imageUrl": "/img/category-thumbnails/application-ui/drawer-layouts.png",
                     "components": "8 components",
                     "isNew": false,
-                    "isLocked": true
+                    "isLocked": false,
+                    "isPublished": false,
                 },
                 {
                     "name": "Multi-Column Layouts",
-                    "url": "/components/application-ui/application-shells/multi-column",
-                    "imageUrl": "/img/category-thumbnails/application-ui/multi-column.png",
+                    "url": "/components/application-ui/core-layouts/multi-column-layouts",
+                    "imageUrl": "/img/category-thumbnails/application-ui/multi-column-layouts.png",
                     "components": "6 components",
                     "isNew": false,
-                    "isLocked": true
+                    "isLocked": true,
+                    "isPublished": false,
+                },
+                {
+                    "name": "Bottom Navigation Layouts",
+                    "url": "/components/application-ui/core-layouts/bottom-navigation-layouts",
+                    "imageUrl": "/img/category-thumbnails/application-ui/bottom-navigation-layouts.png",
+                    "components": "5 components",
+                    "isNew": false,
+                    "isLocked": true,
+                    "isPublished": false,
                 }
             ]
         },
         {
-            "anchor": "product-application-ui-headings",
+            "anchor": "component-application-ui-headings",
             "name": "Headings",
             "subcategories": [
                 {
                     "name": "Page Headings",
                     "url": "/components/application-ui/headings/page-headings",
                     "imageUrl": "/img/category-thumbnails/application-ui/page-headings.png",
-                    "components": "13 components",
+                    "components": "10 components",
                     "isNew": false,
-                    "isLocked": false
+                    "isLocked": false,
+                    "isPublished": true,
                 },
                 {
                     "name": "Card Headings",
                     "url": "/components/application-ui/headings/card-headings",
                     "imageUrl": "/img/category-thumbnails/application-ui/card-headings.png",
-                    "components": "6 components",
+                    "components": "8 components",
                     "isNew": false,
-                    "isLocked": true
+                    "isLocked": true,
+                    "isPublished": true,
+
                 },
                 {
                     "name": "Section Headings",
                     "url": "/components/application-ui/headings/section-headings",
                     "imageUrl": "/img/category-thumbnails/application-ui/section-headings.png",
-                    "components": "10 components",
+                    "components": "11 components",
                     "isNew": false,
-                    "isLocked": true
+                    "isLocked": true,
+                    "isPublished": true,
                 }
             ]
         },
         {
-            "anchor": "product-application-ui-data-display",
+            "anchor": "component-application-ui-data-display",
             "name": "Data Display",
             "subcategories": [
                 {
-                    "name": "Description Lists",
-                    "url": "/components/application-ui/data-display/description-lists",
-                    "imageUrl": "/img/category-thumbnails/application-ui/description-lists.png",
+                    "name": "Data Tables",
+                    "url": "/components/application-ui/data-display/data-tables",
+                    "imageUrl": "/img/category-thumbnails/application-ui/data-tables.png",
                     "components": "7 components",
                     "isNew": false,
-                    "isLocked": false
+                    "isLocked": false,
+                    "isPublished": false,
                 },
                 {
-                    "name": "Stats",
-                    "url": "/components/application-ui/data-display/stats",
-                    "imageUrl": "/img/category-thumbnails/application-ui/stats.png",
-                    "components": "5 components",
+                    "name": "Stat Cards",
+                    "url": "/components/application-ui/data-display/stat-cards",
+                    "imageUrl": "/img/category-thumbnails/application-ui/stat-cards.png",
+                    "components": "4 components",
                     "isNew": false,
-                    "isLocked": true
+                    "isLocked": true,
+                    "isPublished": false,
                 },
                 {
-                    "name": "Calendars",
-                    "url": "/components/application-ui/data-display/calendars",
-                    "imageUrl": "/img/category-thumbnails/application-ui/calendars.png",
-                    "components": "8 components",
+                    "name": "Informational Cards",
+                    "url": "/components/application-ui/data-display/informational-cards",
+                    "imageUrl": "/img/category-thumbnails/application-ui/informational-cards.png",
+                    "components": "16 components",
                     "isNew": false,
-                    "isLocked": true
+                    "isLocked": true,
+                    "isPublished": false,
                 }
             ]
         },
         {
-            "anchor": "product-application-ui-lists",
+            "anchor": "component-application-ui-lists",
             "name": "Lists",
             "subcategories": [
                 {
                     "name": "Stacked Lists",
                     "url": "/components/application-ui/lists/stacked-lists",
                     "imageUrl": "/img/category-thumbnails/application-ui/stacked-lists.png",
-                    "components": "17 components",
+                    "components": "13 components",
                     "isNew": false,
-                    "isLocked": false
-                },
-                {
-                    "name": "Tables",
-                    "url": "/components/application-ui/lists/tables",
-                    "imageUrl": "/img/category-thumbnails/application-ui/tables.png",
-                    "components": "20 components",
-                    "isNew": false,
-                    "isLocked": true
+                    "isLocked": false,
+                    "isPublished": false,
                 },
                 {
                     "name": "Grid Lists",
                     "url": "/components/application-ui/lists/grid-lists",
                     "imageUrl": "/img/category-thumbnails/application-ui/grid-lists.png",
-                    "components": "7 components",
+                    "components": "5 components",
                     "isNew": false,
-                    "isLocked": true
+                    "isLocked": true,
+                    "isPublished": false,
                 },
                 {
-                    "name": "Feeds",
-                    "url": "/components/application-ui/lists/feeds",
-                    "imageUrl": "/img/category-thumbnails/application-ui/feeds.png",
+                    "name": "Timelines",
+                    "url": "/components/application-ui/lists/timelines",
+                    "imageUrl": "/img/category-thumbnails/application-ui/timelines.png",
                     "components": "3 components",
                     "isNew": false,
-                    "isLocked": true
+                    "isLocked": true,
+                    "isPublished": false,
                 }
             ]
         },
         {
-            "anchor": "product-application-ui-forms",
+            "anchor": "component-application-ui-forms",
             "name": "Forms",
             "subcategories": [
                 {
-                    "name": "Form Layouts",
-                    "url": "/components/application-ui/forms/form-layouts",
-                    "imageUrl": "/img/category-thumbnails/application-ui/form-layouts.png",
-                    "components": "5 components",
+                    "name": "Inputs",
+                    "url": "/components/application-ui/forms/inputs",
+                    "imageUrl": "/img/category-thumbnails/application-ui/inputs.png",
+                    "components": "20 components",
                     "isNew": false,
                     "isLocked": false
+                },
+                {
+                    "name": "Radio Groups",
+                    "url": "/components/application-ui/forms/radio-groups",
+                    "imageUrl": "/img/category-thumbnails/application-ui/radio-groups.png",
+                    "components": "9 components",
+                    "isNew": false,
+                    "isLocked": true
                 },
                 {
                     "name": "Input Groups",
@@ -401,14 +423,7 @@ const applicationUI = {
                     "isNew": false,
                     "isLocked": true
                 },
-                {
-                    "name": "Radio Groups",
-                    "url": "/components/application-ui/forms/radio-groups",
-                    "imageUrl": "/img/category-thumbnails/application-ui/radio-groups.png",
-                    "components": "12 components",
-                    "isNew": false,
-                    "isLocked": true
-                },
+                
                 {
                     "name": "Checkboxes",
                     "url": "/components/application-ui/forms/checkboxes",
@@ -1116,28 +1131,28 @@ const applicationUIPurchased = {
     "pricing_description": "Form layouts, tables, dialogs — all of the components you need to build beautiful responsive web applications.",
     "categories": [
         {
-            "anchor": "product-application-ui-application-shells",
+            "anchor": "product-application-ui-core-layouts",
             "name": "Application Shells",
             "subcategories": [
                 {
                     "name": "Stacked Layouts",
-                    "url": "/components/application-ui/application-shells/stacked",
-                    "imageUrl": "/img/category-thumbnails/application-ui/stacked.png",
+                    "url": "/components/application-ui/core-layouts/stacked-layouts",
+                    "imageUrl": "/img/category-thumbnails/application-ui/stacked-layouts.png",
                     "components": "9 components",
                     "isNew": false,
                     "isLocked": false
                 },
                 {
                     "name": "Sidebar Layouts",
-                    "url": "/components/application-ui/application-shells/sidebar",
-                    "imageUrl": "/img/category-thumbnails/application-ui/sidebar.png",
+                    "url": "/components/application-ui/core-layouts/sidebar-layouts",
+                    "imageUrl": "/img/category-thumbnails/application-ui/sidebar-layouts.png",
                     "components": "8 components",
                     "isNew": false,
                     "isLocked": false
                 },
                 {
                     "name": "Multi-Column Layouts",
-                    "url": "/components/application-ui/application-shells/multi-column",
+                    "url": "/components/application-ui/core-layouts/multi-column",
                     "imageUrl": "/img/category-thumbnails/application-ui/multi-column.png",
                     "components": "6 components",
                     "isNew": false,
