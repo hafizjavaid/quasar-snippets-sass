@@ -2,8 +2,8 @@
     <div>
         <q-card bordered flat>
             <q-card-section class="q-px-none">
-                <div style="max-width: 1300px; padding-block: 140px; width: 100%;" class="q-mx-auto dots">
-                    <div class="q-px-xl">
+                <div style="max-width: 1300px; padding-block: 60px; width: 100%;" class="q-mx-auto dots">
+                    <div  class="q-px-xl">
                         <div class="row">
                             <div class="col-12 col-sm-6 col-md-4 col-lg-3">
                                 <div class="text-body1 text-weight-medium q-mb-lg">Application UI</div>
@@ -98,8 +98,6 @@
                                 </NuxtLink>
 
                             </div>
-
-
                         </div>
                     </div>
                 </div>

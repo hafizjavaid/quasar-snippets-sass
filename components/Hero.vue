@@ -1,6 +1,6 @@
 <template>
-    <div>
-        <div style="max-width: 1300px; padding-block: 140px; width: 100%;" class="q-mx-auto dots">
+    <div class="dots" >
+        <div style="max-width: 1300px; padding-block: 140px; width: 100%;" class="q-mx-auto">
             <div class="q-px-xl">
                 <div class="row">
                     <div class="col-12 col-sm-6">
@@ -16,7 +16,7 @@
                             at making your development process easier and faster.
                         </p>
                         <div class="flex q-gutter-x-md">
-                            <q-btn unelevated no-caps color="dark">
+                            <q-btn unelevated no-caps color="primary">
                                 Browse Components
                                 <Icon class="text-white q-ml-sm" name="flowbite:arrow-right-outline"
                                     style="width: 24px; height: 24px;" />

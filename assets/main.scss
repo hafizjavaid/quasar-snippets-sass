@@ -2,7 +2,28 @@
 :root {
   --q-terciary: #808080;
   --q-body: #cccccc;
+  
 }
+
+.text-gray-200 {
+  color: $gray-200;
+}
+.bg-gray-200 {
+  background: $gray-200;
+}
+.text-gray-100 {
+  color: $gray-100;
+}
+.bg-gray-100 {
+  background: $gray-100;
+}
+.text-gray-50 {
+  color: $gray-50;
+}
+.bg-gray-50 {
+  background: $gray-50;
+}
+
 
 body {
 

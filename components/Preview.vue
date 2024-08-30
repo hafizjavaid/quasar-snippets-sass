@@ -1,6 +1,6 @@
 <template>
     <section>
-        <div style="max-width: 1300px; padding-block-start: 140px; width: 100%;" class="q-mx-auto">
+        <div style="max-width: 1300px; padding-block-start: 100px; width: 100%;" class="q-mx-auto">
             <div class="q-px-xl">
                 <div class="text-primary text-weight-medium text-body1">Components</div>
                 <div class="text-h5 text-weight-bold q-mt-md">Beautifully crafted UI components</div>
