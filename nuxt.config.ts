@@ -36,13 +36,13 @@ export default defineNuxtConfig({
   quasar: {
 
     plugins: [
-      'AppFullscreen',
+      // 'AppFullscreen',
       'BottomSheet',
       'Dialog',
       'Loading',
       'LoadingBar',
       'Notify',
-      'Cookies'
+      // 'Cookies'
     ],
     sassVariables: '/assets/quasar-variables.scss',
     iconSet: {
