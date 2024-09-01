@@ -1,4 +1,4 @@
-import type { SingleComponent, Subcategory } from "./types";
+import type { SingleComponent, Subcategory } from "~/types";
 
 export function getRandomElementsFromSubcategories(obj: SingleComponent, n: number): Subcategory[] {
     // Flatten all subcategories into a single array

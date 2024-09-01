@@ -1,33 +1,32 @@
 <template>
-    <section class="">
-        <div style="max-width: 1300px;  width: 100%;" class="q-mx-auto">
-            <div class="q-px-xl">
-                <div v-for="faqSection in faqData" :key="faqSection.id" class="q-mb-xl">
-                    <div class="text-body1 text-weight-bold q-mb-sm"> {{ faqSection.title }} </div>
-                    <q-list style="border-radius: 12px" bordered>
-                        <!-- FAQ 1 -->
-                        <q-expansion-item style="border-radius: 12px" v-for="(faq, i) in faqSection.faqs" :key="i"
-                            :label="faq.question" expand-separator>
-                            <template v-slot:header="{ expanded }">
-                                <q-item-section>
-                                    <div class="text-subtitle1 " :class="{ 'text-weight-medium': expanded }">
-                                        {{ faq.question }}
-                                    </div>
-                                </q-item-section>
-                            </template>
-                            <q-card>
-                                <q-card-section>
-                                    {{ faq.answer }}
-                                </q-card-section>
-                            </q-card>
-                        </q-expansion-item>
-
-                    </q-list>
-
-                </div>
+    <section id="faq" class="">
+        <Container>
+            <div class="text-primary text-weight-medium text-body1">FAQS</div>
+            <div class="text-h5 text-weight-bold q-mt-md">Frequently Asked questions
             </div>
-        </div>
-
+            <div>Everything you need to know QuasarUI components</div>
+            <div v-for="faqSection in faqData" :key="faqSection.id" class="q-my-xl">
+                <div class="text-body1 text-weight-bold q-mb-sm"> {{ faqSection.title }} </div>
+                <q-list style="border-radius: 12px" bordered>
+                    <!-- FAQ 1 -->
+                    <q-expansion-item style="border-radius: 12px" v-for="(faq, i) in faqSection.faqs" :key="i"
+                        :label="faq.question" expand-separator>
+                        <template v-slot:header="{ expanded }">
+                            <q-item-section>
+                                <div class="text-subtitle1 " :class="{ 'text-weight-medium': expanded }">
+                                    {{ faq.question }}
+                                </div>
+                            </q-item-section>
+                        </template>
+                        <q-card>
+                            <q-card-section>
+                                {{ faq.answer }}
+                            </q-card-section>
+                        </q-card>
+                    </q-expansion-item>
+                </q-list>
+            </div>
+        </Container>
     </section>
 </template>
 

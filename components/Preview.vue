@@ -1,5 +1,6 @@
 <template>
     <section>
+        <!-- <pre>{{ applicationUIComponents }}</pre> -->
         <div style="max-width: 1300px; padding-block-start: 100px; width: 100%;" class="q-mx-auto">
             <div class="q-px-xl">
                 <div class="text-primary text-weight-medium text-body1">Components</div>
@@ -19,8 +20,7 @@
                         </div>
                     </q-card>
                     <q-tab-panels v-model="currentPanel" animated class="q-pa-none">
-                        <q-tab-panel class="q-pa-none" 
-                            name="application-ui">
+                        <q-tab-panel class="q-pa-none" name="application-ui">
                             <div class="">
                                 <div v-if="applicationUIComponents.length" class="row q-col-gutter-md">
                                     <div v-for="component in applicationUIComponents" :key="component.url" :ratio="1"
@@ -34,41 +34,62 @@
 
                                 </div>
                             </div>
+                            <div class="gradient-overlay"></div>
+                            <div class="q-py-xl text-center">
+                                <NuxtLink :to="`/components#${applicationUI?.anchor}`">
+                                    <q-btn unelevated no-caps color="dark">
+                                        Show more...
+                                    </q-btn>
+                                </NuxtLink>
+                            </div>
                         </q-tab-panel>
                         <q-tab-panel name="marketing">
                             <div v-if="marketingUIComponents.length" class="row q-col-gutter-md">
-                                    <div v-for="component in marketingUIComponents" :key="component.url" :ratio="1"
-                                        class="col-sm-6 col-md-4 col-lg-3 col-12">
-                                        <ComponentCard :card="component"></ComponentCard>
-                                    </div>
+                                <div v-for="component in marketingUIComponents" :key="component.url" :ratio="1"
+                                    class="col-sm-6 col-md-4 col-lg-3 col-12">
+                                    <ComponentCard :card="component"></ComponentCard>
                                 </div>
-                                <div v-else class="text-center">
+                            </div>
+                            <div v-else class="text-center">
 
-                                    No Components Found
+                                No Components Found
 
-                                </div>
+                            </div>
+                            <div class="gradient-overlay"></div>
+                            <div class="q-py-xl text-center">
+
+                                <NuxtLink :to="`/components#${marketing?.anchor}`">
+                                    <q-btn unelevated no-caps color="dark">
+                                        Show more...
+                                    </q-btn>
+                                </NuxtLink>
+                            </div>
                         </q-tab-panel>
                         <q-tab-panel name="ecommerce">
                             <div v-if="ecommerceUIComponents.length" class="row q-col-gutter-md">
-                                    <div v-for="component in ecommerceUIComponents" :key="component.url" :ratio="1"
-                                        class="col-sm-6 col-md-4 col-lg-3 col-12">
-                                        <ComponentCard :card="component"></ComponentCard>
-                                    </div>
+                                <div v-for="component in ecommerceUIComponents" :key="component.url" :ratio="1"
+                                    class="col-sm-6 col-md-4 col-lg-3 col-12">
+                                    <ComponentCard :card="component"></ComponentCard>
                                 </div>
-                                <div v-else class="text-center">
+                            </div>
+                            <div v-else class="text-center">
 
-                                    No Components Found
+                                No Components Found
 
-                                </div>
+                            </div>
+                            <div class="gradient-overlay"></div>
+                            <div class="q-py-xl text-center">
+
+                                <NuxtLink :to="`/components#${ecommerce?.anchor}`">
+                                    <q-btn unelevated no-caps color="dark">
+                                        Show more...
+                                    </q-btn>
+                                </NuxtLink>
+                            </div>
                         </q-tab-panel>
 
                     </q-tab-panels>
-                    <div class="gradient-overlay"></div>
-                    <div class="q-py-xl text-center">
-                        <q-btn unelevated no-caps color="dark">
-                            Show more...
-                        </q-btn>
-                    </div>
+
 
                 </div>
             </div>
@@ -77,30 +98,30 @@
 </template>
 
 <script setup lang="ts">
-import type { SingleComponent, Subcategory } from '~/types';
 import { getRandomElementsFromSubcategories } from '../utils';
 const allComponents = useComponents();
 const applicationUI = computed(() => allComponents.value ? allComponents.value.find(c => c.anchor.includes('application')) : null);
 const marketing = computed(() => allComponents.value ? allComponents.value.find(c => c.anchor.includes('marketing')) : null);
 const ecommerce = computed(() => allComponents.value ? allComponents.value.find(c => c.anchor.includes('ecommerce')) : null);
 const currentPanel = ref('application-ui');
-
-const applicationUIComponents = ref<Subcategory[]>([]);
-const marketingUIComponents = ref<Subcategory[]>([]);
-const ecommerceUIComponents = ref<Subcategory[]>([]);
-
-watch(allComponents, () => {
+const applicationUIComponents = computed(() => {
     if (applicationUI.value) {
-        applicationUIComponents.value = getRandomElementsFromSubcategories(applicationUI.value, 6);
+        return getRandomElementsFromSubcategories(applicationUI.value, 6)
     }
+    return []
+});
+const marketingUIComponents = computed(() => {
     if (marketing.value) {
-        marketingUIComponents.value = getRandomElementsFromSubcategories(marketing.value, 6);
+        return getRandomElementsFromSubcategories(marketing.value, 6)
     }
+    return []
+});
+const ecommerceUIComponents = computed(() => {
     if (ecommerce.value) {
-        ecommerceUIComponents.value = getRandomElementsFromSubcategories(ecommerce.value, 6);
+        return getRandomElementsFromSubcategories(ecommerce.value, 6)
     }
-})
-
+    return []
+});
 
 </script>
 

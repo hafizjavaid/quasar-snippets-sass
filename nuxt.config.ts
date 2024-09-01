@@ -10,7 +10,15 @@ export default defineNuxtConfig({
       routes: ['/sitemap.xml']
     }
   },
-  modules: ["nuxt-quasar-ui", "@nuxt/content", "@nuxt/image", "@nuxt/icon", '@nuxt/fonts'],
+  modules: [
+    "nuxt-quasar-ui",
+    "@nuxt/content",
+    "@nuxt/image",
+    "@nuxt/icon",
+    '@nuxt/fonts',
+    '@pinia/nuxt'
+  ],
+  
   css: ['/assets/main.scss'],
   
   runtimeConfig: {

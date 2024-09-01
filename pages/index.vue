@@ -1,5 +1,5 @@
 <template>
-  <NuxtLayout>
+  <!-- <NuxtLayout> -->
     <!-- <div class="q-pa-xl"> -->
 
       <!-- Hero Section -->
@@ -141,7 +141,7 @@
 
 -->
     </div>
-  </NuxtLayout>
+  <!-- </NuxtLayout> -->
 </template>
 
 <script lang="ts" setup>
@@ -151,29 +151,7 @@
 // const { data: navigation } = await useAsyncData('navigation', () =>
 //   fetchContentNavigation()
 // );
-const userPurchase = useState('purchase')
-
-
-const products = ref([
-  
-  {
-    title: 'Application UI Access',
-    description: 'Form layouts, tables, modal dialogs — everything you need to build beautiful responsive web applications.',
-    link: '/components#product-application-ui'
-  },
-  {
-
-    title: 'Marketing Access',
-    description: 'Heroes, feature sections, newsletter sign up forms — everything you need to build beautiful marketing websites.',
-    link: '/components#product-marketing'
-  },
-  {
-
-    title: 'Ecommerce Access',
-    description: 'Checkout forms, shopping carts, product views — everything you need to build your next ecommerce front-end.',
-    link: '/components#product-ecommerce'
-  },
-]);
+// const userPurchase = useState('purchase')
 
 
 </script>

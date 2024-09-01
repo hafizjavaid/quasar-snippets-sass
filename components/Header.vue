@@ -7,16 +7,19 @@
         <q-img fit="contain" style="height: 60px; width: 120px" src="/logo.svg" />
       </div>
       <div class="flex no-wrap q-gutter-x-xs items-center">
-        <q-btn to="/components" flat padding="4px 10px" dense text-color="grey-9" color="grey-3" no-caps unelevated label="Components"></q-btn>
-        <!-- <q-btn flat padding="4px 10px" dense text-color="grey-9" color="grey-3" no-caps unelevated label="Docs"></q-btn> -->
-        <q-btn flat padding="4px 10px" dense text-color="grey-9" color="grey-3" no-caps unelevated label="Changelog"></q-btn>
-        <q-btn flat padding="4px 10px" dense text-color="grey-9" color="grey-3" no-caps unelevated label="Templates"></q-btn>
-        <q-icon
-          name="mdi-magnify"
-          size="24px"
-          @click="toggleTheme"
-          class="cursor-pointer"
-        />
+        <NuxtLink to="/components">
+          <q-btn flat padding="4px 10px" dense text-color="grey-9" color="grey-3" no-caps unelevated
+            label="Components"></q-btn>
+        </NuxtLink>
+        <NuxtLink to="/components">
+          <q-btn flat padding="4px 10px" dense text-color="grey-9" color="grey-3" no-caps unelevated
+            label="Changelog"></q-btn>
+        </NuxtLink>
+        <NuxtLink to="/components">
+          <q-btn flat padding="4px 10px" dense text-color="grey-9" color="grey-3" no-caps unelevated
+            label="Templates"></q-btn>
+        </NuxtLink>
+        <!-- <q-icon name="mdi-magnify" size="24px" @click="toggleTheme" class="cursor-pointer" /> -->
         <q-separator color="gray-900" class="q-mx-md" vertical inset />
 
 
@@ -27,10 +30,11 @@
           class="cursor-pointer"
         /> -->
         <!-- v-if="!user" -->
-        <q-btn text-color="grey-9" flat padding="4px 10px" dense color="gray-900" no-caps unelevated label="Sign in"></q-btn>
+        <q-btn text-color="grey-9" flat padding="4px 10px" dense color="gray-900" no-caps unelevated
+          label="Sign in"></q-btn>
         <q-btn padding="4px 10px" unelevated no-caps label="Get all-access" dense color="dark"
-                                        style="border-radius: 8px;"></q-btn>
-        
+          style="border-radius: 8px;"></q-btn>
+
         <!-- <q-btn color="primary" no-caps unelevated label="Login" icon-right="mdi-logout">
           <q-menu flat unelevated>
             <q-card style="width: 260px" bordered flat>

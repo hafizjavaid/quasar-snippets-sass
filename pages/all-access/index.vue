@@ -67,7 +67,7 @@
                                     <div class="text-body1">
                                         <span class="text-weight-bold">Lifetime access</span>
                                         <br /> Your purchase gives you lifetime access to all current and future
-                                        Quasar UI
+                                        QuasarUI
                                         components. Use them in personal or commercial projects without any
                                         additional fees.
                                     </div>
