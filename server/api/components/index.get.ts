@@ -1,6 +1,12 @@
+import type { SingleComponent } from "~/types";
+import {
+    marketing, marketingPurchased, ecommerce, ecommercePurchased
+    , applicationUI, applicationUIPurchased
+} from "../../utils/components";
 
 
-export default defineEventHandler(async (event) => {
+
+export default defineCachedEventHandler(async (event) => {
 
     // All Free Components
     if (!event.context.user) {
@@ -8,10 +14,10 @@ export default defineEventHandler(async (event) => {
             { ...marketing },
             { ...ecommerce },
             { ...applicationUI }
-        ];
+        ] as SingleComponent[];
     }
 
-     // User Purchased Items
+    // User Purchased Items
     const userPurchases = await db.purchase.findMany({
         where: {
             userId: event.context.user?.id
@@ -31,7 +37,7 @@ export default defineEventHandler(async (event) => {
             { ...marketingPurchased },
             { ...ecommercePurchased },
             { ...applicationUIPurchased }
-        ];
+        ] as SingleComponent[];
     };
 
 
@@ -46,7 +52,12 @@ export default defineEventHandler(async (event) => {
         !isApplicationUIAccess ? { ...applicationUI } : { ...applicationUIPurchased },
     ];
 
-    return userComponents;
+    return userComponents as SingleComponent[];
 
 
-});
+},
+    {
+        maxAge: 60 * 60
+    }
+
+);

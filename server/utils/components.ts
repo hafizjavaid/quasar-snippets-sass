@@ -1,5 +1,5 @@
 
-const marketing = {
+export const marketing = {
     "name": "Marketing",
     "anchor": "product-marketing",
     "description": "Heroes, feature sections, newsletter sign up forms — everything you need to build beautiful marketing websites.",
@@ -215,7 +215,7 @@ const marketing = {
         }
     ]
 };
-const applicationUI = {
+export const applicationUI = {
     "name": "Application UI",
     "anchor": "component-application-ui",
     "description": "Form layouts, tables, modal dialogs — everything you need to build beautiful responsive web applications.",
@@ -244,7 +244,7 @@ const applicationUI = {
                 },
                 {
                     "name": "Drawer Layouts",
-                    "url": "/components/application-ui/core-layouts/drawer-layouts", 
+                    "url": "/components/application-ui/core-layouts/drawer-layouts",
                     "imageUrl": "/img/category-thumbnails/application-ui/drawer-layouts.png",
                     "components": "8 components",
                     "isNew": false,
@@ -381,7 +381,8 @@ const applicationUI = {
                     "imageUrl": "/img/category-thumbnails/application-ui/inputs.png",
                     "components": "20 components",
                     "isNew": false,
-                    "isLocked": false
+                    "isLocked": false,
+                    "isPublished": false,
                 },
                 {
                     "name": "Radio Groups",
@@ -389,86 +390,50 @@ const applicationUI = {
                     "imageUrl": "/img/category-thumbnails/application-ui/radio-groups.png",
                     "components": "9 components",
                     "isNew": false,
-                    "isLocked": true
-                },
-                {
-                    "name": "Input Groups",
-                    "url": "/components/application-ui/forms/input-groups",
-                    "imageUrl": "/img/category-thumbnails/application-ui/input-groups.png",
-                    "components": "21 components",
-                    "isNew": false,
-                    "isLocked": false
-                },
-                {
-                    "name": "Select Menus",
-                    "url": "/components/application-ui/forms/select-menus",
-                    "imageUrl": "/img/category-thumbnails/application-ui/select-menus.png",
-                    "components": "7 components",
-                    "isNew": false,
-                    "isLocked": false
-                },
-                {
-                    "name": "Sign-in and Registration",
-                    "url": "/components/application-ui/forms/sign-in-forms",
-                    "imageUrl": "/img/category-thumbnails/application-ui/sign-in-forms.png",
-                    "components": "5 components",
-                    "isNew": false,
-                    "isLocked": false
+                    "isLocked": true,
+                    "isPublished": false,
                 },
                 {
                     "name": "Textareas",
                     "url": "/components/application-ui/forms/textareas",
                     "imageUrl": "/img/category-thumbnails/application-ui/textareas.png",
-                    "components": "5 components",
+                    "components": "3 components",
                     "isNew": false,
-                    "isLocked": true
-                },
-                
-                {
-                    "name": "Checkboxes",
-                    "url": "/components/application-ui/forms/checkboxes",
-                    "imageUrl": "/img/category-thumbnails/application-ui/checkboxes.png",
-                    "components": "4 components",
-                    "isNew": false,
-                    "isLocked": true
+                    "isLocked": true,
+                    "isPublished": false,
                 },
                 {
-                    "name": "Toggles",
-                    "url": "/components/application-ui/forms/toggles",
-                    "imageUrl": "/img/category-thumbnails/application-ui/toggles.png",
-                    "components": "5 components",
-                    "isNew": false,
-                    "isLocked": true
-                },
-                {
-                    "name": "Action Panels",
-                    "url": "/components/application-ui/forms/action-panels",
-                    "imageUrl": "/img/category-thumbnails/application-ui/action-panels.png",
+                    "name": "Login Formns",
+                    "url": "/components/application-ui/forms/login-forms",
+                    "imageUrl": "/img/category-thumbnails/application-ui/login-forms.png",
                     "components": "8 components",
                     "isNew": false,
-                    "isLocked": true
+                    "isLocked": false,
+                    "isPublished": false,
                 },
-                {
-                    "name": "Comboboxes",
-                    "url": "/components/application-ui/forms/comboboxes",
-                    "imageUrl": "/img/category-thumbnails/application-ui/comboboxes.png",
-                    "components": "5 components",
-                    "isNew": false,
-                    "isLocked": true
-                }
             ]
         },
         {
-            "anchor": "product-application-ui-feedback",
+            "anchor": "component-application-ui-feedback",
             "name": "Feedback",
             "subcategories": [
                 {
                     "name": "Alerts",
                     "url": "/components/application-ui/feedback/alerts",
                     "imageUrl": "/img/category-thumbnails/application-ui/alerts.png",
-                    "components": "6 components",
+                    "components": "8 components",
                     "isNew": false,
-                    "isLocked": true
+                    "isLocked": true,
+                    "isPublished": false,
+                },
+                {
+                    "name": "Banners",
+                    "url": "/components/application-ui/feedback/banners",
+                    "imageUrl": "/img/category-thumbnails/application-ui/banners.png",
+                    "components": "4 components",
+                    "isNew": false,
+                    "isLocked": true,
+                    "isPublished": false,
                 },
                 {
                     "name": "Empty States",
@@ -476,36 +441,58 @@ const applicationUI = {
                     "imageUrl": "/img/category-thumbnails/application-ui/empty-states.png",
                     "components": "6 components",
                     "isNew": false,
-                    "isLocked": true
+                    "isLocked": true,
+                    "isPublished": false,
                 }
             ]
         },
         {
-            "anchor": "product-application-ui-navigation",
+            "anchor": "component-application-ui-navigation",
             "name": "Navigation",
             "subcategories": [
                 {
-                    "name": "Navbars",
-                    "url": "/components/application-ui/navigation/navbars",
-                    "imageUrl": "/img/category-thumbnails/application-ui/navbars.png",
-                    "components": "11 components",
+                    "name": "App bars",
+                    "url": "/components/application-ui/navigation/app-bars",
+                    "imageUrl": "/img/category-thumbnails/application-ui/app-bars.png",
+                    "components": "12 components",
                     "isNew": false,
+                    "isPublished": false,
                     "isLocked": false
+                },
+                {
+                    "name": "Command Palettes",
+                    "url": "/components/application-ui/navigation/command-palettes",
+                    "imageUrl": "/img/category-thumbnails/application-ui/command-palettes.png",
+                    "components": "9 components",
+                    "isNew": false,
+                    "isPublished": false,
+                    "isLocked": true
                 },
                 {
                     "name": "Pagination",
                     "url": "/components/application-ui/navigation/pagination",
                     "imageUrl": "/img/category-thumbnails/application-ui/pagination.png",
-                    "components": "3 components",
+                    "components": "5 components",
                     "isNew": false,
+                    "isPublished": false,
+                    "isLocked": false
+                },
+                {
+                    "name": "Steppers",
+                    "url": "/components/application-ui/navigation/steppers",
+                    "imageUrl": "/img/category-thumbnails/application-ui/steppers.png",
+                    "components": "2 components",
+                    "isNew": false,
+                    "isPublished": false,
                     "isLocked": false
                 },
                 {
                     "name": "Tabs",
                     "url": "/components/application-ui/navigation/tabs",
                     "imageUrl": "/img/category-thumbnails/application-ui/tabs.png",
-                    "components": "9 components",
+                    "components": "7 components",
                     "isNew": false,
+                    "isPublished": false,
                     "isLocked": true
                 },
                 {
@@ -514,74 +501,47 @@ const applicationUI = {
                     "imageUrl": "/img/category-thumbnails/application-ui/vertical-navigation.png",
                     "components": "6 components",
                     "isNew": false,
+                    "isPublished": false,
                     "isLocked": true
                 },
-                {
-                    "name": "Sidebar Navigation",
-                    "url": "/components/application-ui/navigation/sidebar-navigation",
-                    "imageUrl": "/img/category-thumbnails/application-ui/sidebar-navigation.png",
-                    "components": "5 components",
-                    "isNew": false,
-                    "isLocked": true
-                },
-                {
-                    "name": "Breadcrumbs",
-                    "url": "/components/application-ui/navigation/breadcrumbs",
-                    "imageUrl": "/img/category-thumbnails/application-ui/breadcrumbs.png",
-                    "components": "4 components",
-                    "isNew": false,
-                    "isLocked": true
-                },
-                {
-                    "name": "Progress Bars",
-                    "url": "/components/application-ui/navigation/progress-bars",
-                    "imageUrl": "/img/category-thumbnails/application-ui/progress-bars.png",
-                    "components": "8 components",
-                    "isNew": false,
-                    "isLocked": true
-                },
-                {
-                    "name": "Command Palettes",
-                    "url": "/components/application-ui/navigation/command-palettes",
-                    "imageUrl": "/img/category-thumbnails/application-ui/command-palettes.png",
-                    "components": "9 components",
-                    "isNew": false,
-                    "isLocked": true
-                }
+
             ]
         },
         {
-            "anchor": "product-application-ui-overlays",
+            "anchor": "component-application-ui-overlays",
             "name": "Overlays",
             "subcategories": [
                 {
-                    "name": "Modal Dialogs",
-                    "url": "/components/application-ui/overlays/modal-dialogs",
-                    "imageUrl": "/img/category-thumbnails/application-ui/modal-dialogs.png",
+                    "name": "Dialogs",
+                    "url": "/components/application-ui/overlays/dialogs",
+                    "imageUrl": "/img/category-thumbnails/application-ui/dialogs.png",
                     "components": "6 components",
                     "isNew": false,
-                    "isLocked": false
+                    "isLocked": false,
+                    "isPublished": false,
                 },
                 {
-                    "name": "Drawers",
-                    "url": "/components/application-ui/overlays/drawers",
-                    "imageUrl": "/img/category-thumbnails/application-ui/drawers.png",
-                    "components": "12 components",
+                    "name": "Side sheets",
+                    "url": "/components/application-ui/overlays/side-sheets",
+                    "imageUrl": "/img/category-thumbnails/application-ui/side-sheets.png",
+                    "components": "5 components",
                     "isNew": false,
-                    "isLocked": false
+                    "isLocked": false,
+                    "isPublished": false,
                 },
                 {
-                    "name": "Notifications",
-                    "url": "/components/application-ui/overlays/notifications",
-                    "imageUrl": "/img/category-thumbnails/application-ui/notifications.png",
+                    "name": "Notify",
+                    "url": "/components/application-ui/overlays/Notify",
+                    "imageUrl": "/img/category-thumbnails/application-ui/Notify.png",
                     "components": "6 components",
                     "isNew": false,
-                    "isLocked": true
+                    "isLocked": true,
+                    "isPublished": false,
                 }
             ]
         },
         {
-            "anchor": "product-application-ui-elements",
+            "anchor": "component-application-ui-elements",
             "name": "Elements",
             "subcategories": [
                 {
@@ -590,7 +550,8 @@ const applicationUI = {
                     "imageUrl": "/img/category-thumbnails/application-ui/avatars.png",
                     "components": "11 components",
                     "isNew": false,
-                    "isLocked": false
+                    "isLocked": false,
+                    "isPublished": false,
                 },
                 {
                     "name": "Badges",
@@ -598,7 +559,8 @@ const applicationUI = {
                     "imageUrl": "/img/category-thumbnails/application-ui/badges.png",
                     "components": "18 components",
                     "isNew": false,
-                    "isLocked": false
+                    "isLocked": false,
+                    "isPublished": false,
                 },
                 {
                     "name": "Dropdowns",
@@ -606,7 +568,8 @@ const applicationUI = {
                     "imageUrl": "/img/category-thumbnails/application-ui/dropdowns.png",
                     "components": "5 components",
                     "isNew": false,
-                    "isLocked": false
+                    "isLocked": false,
+                    "isPublished": false,
                 },
                 {
                     "name": "Buttons",
@@ -614,7 +577,8 @@ const applicationUI = {
                     "imageUrl": "/img/category-thumbnails/application-ui/buttons.png",
                     "components": "10 components",
                     "isNew": false,
-                    "isLocked": true
+                    "isLocked": true,
+                    "isPublished": false,
                 },
                 {
                     "name": "Button Groups",
@@ -622,12 +586,22 @@ const applicationUI = {
                     "imageUrl": "/img/category-thumbnails/application-ui/button-groups.png",
                     "components": "5 components",
                     "isNew": false,
-                    "isLocked": true
-                }
+                    "isLocked": true,
+                    "isPublished": false,
+                },
+                {
+                    "name": "Chips",
+                    "url": "/components/application-ui/elements/chips",
+                    "imageUrl": "/img/category-thumbnails/application-ui/chips.png",
+                    "components": "11 components",
+                    "isNew": false,
+                    "isLocked": false,
+                    "isPublished": false,
+                },
             ]
         },
         {
-            "anchor": "product-application-ui-layout",
+            "anchor": "component-application-ui-layout",
             "name": "Layout",
             "subcategories": [
                 {
@@ -636,7 +610,8 @@ const applicationUI = {
                     "imageUrl": "/img/category-thumbnails/application-ui/containers.png",
                     "components": "5 components",
                     "isNew": false,
-                    "isLocked": true
+                    "isLocked": true,
+                    "isPublished": false,
                 },
                 {
                     "name": "Cards",
@@ -644,36 +619,31 @@ const applicationUI = {
                     "imageUrl": "/img/category-thumbnails/application-ui/cards.png",
                     "components": "10 components",
                     "isNew": false,
-                    "isLocked": true
+                    "isLocked": true,
+                    "isPublished": false,
                 },
                 {
-                    "name": "List containers",
-                    "url": "/components/application-ui/layout/list-containers",
-                    "imageUrl": "/img/category-thumbnails/application-ui/list-containers.png",
-                    "components": "7 components",
-                    "isNew": false,
-                    "isLocked": true
-                },
-                {
-                    "name": "Media Objects",
-                    "url": "/components/application-ui/layout/media-objects",
-                    "imageUrl": "/img/category-thumbnails/application-ui/media-objects.png",
+                    "name": "Separators",
+                    "url": "/components/application-ui/layout/separators",
+                    "imageUrl": "/img/category-thumbnails/application-ui/separators.png",
                     "components": "8 components",
                     "isNew": false,
-                    "isLocked": true
+                    "isLocked": true,
+                    "isPublished": false,
                 },
                 {
-                    "name": "Dividers",
-                    "url": "/components/application-ui/layout/dividers",
-                    "imageUrl": "/img/category-thumbnails/application-ui/dividers.png",
+                    "name": "Sheets",
+                    "url": "/components/application-ui/layout/sheets",
+                    "imageUrl": "/img/category-thumbnails/application-ui/sheets.png",
                     "components": "8 components",
                     "isNew": false,
-                    "isLocked": true
+                    "isLocked": true,
+                    "isPublished": false,
                 }
             ]
         },
         {
-            "anchor": "product-application-ui-page-examples",
+            "anchor": "component-application-ui-page-examples",
             "name": "Page Examples",
             "subcategories": [
                 {
@@ -682,15 +652,8 @@ const applicationUI = {
                     "imageUrl": "/img/category-thumbnails/application-ui/home-screens.png",
                     "components": "2 examples",
                     "isNew": false,
-                    "isLocked": true
-                },
-                {
-                    "name": "Detail Screens",
-                    "url": "/components/application-ui/page-examples/detail-screens",
-                    "imageUrl": "/img/category-thumbnails/application-ui/detail-screens.png",
-                    "components": "2 examples",
-                    "isNew": false,
-                    "isLocked": true
+                    "isLocked": true,
+                    "isPublished": false,
                 },
                 {
                     "name": "Settings Screens",
@@ -698,13 +661,14 @@ const applicationUI = {
                     "imageUrl": "/img/category-thumbnails/application-ui/settings-screens.png",
                     "components": "2 examples",
                     "isNew": false,
-                    "isLocked": true
+                    "isLocked": true,
+                    "isPublished": false,
                 }
             ]
         }
     ]
 };
-const ecommerce = {
+export const ecommerce = {
     "name": "Ecommerce",
     "anchor": "product-ecommerce",
     "description": "Checkout forms, shopping carts, product views — everything you need to build your next ecommerce front-end.",
@@ -900,7 +864,7 @@ const ecommerce = {
         }
     ]
 };
-const marketingPurchased = {
+export const marketingPurchased = {
     "name": "Marketing",
     "anchor": "product-marketing",
     "description": "Heroes, feature sections, newsletter sign up forms — everything you need to build beautiful marketing websites.",
@@ -1116,23 +1080,23 @@ const marketingPurchased = {
         }
     ]
 };
-const applicationUIPurchased = {
+export const applicationUIPurchased = {
     "name": "Application UI",
-    "anchor": "product-application-ui",
+    "anchor": "component-application-ui",
     "description": "Form layouts, tables, modal dialogs — everything you need to build beautiful responsive web applications.",
     "isNew": false,
-    "isLicensed": true,
+    "isLicensed": false,
     "price": {
         "currency": "USD",
-        "advertised": 149,
+        "advertised": 49,
         "amount": 149
     },
     "checkout_id": "66af878c483e68dc8d69b196",
     "pricing_description": "Form layouts, tables, dialogs — all of the components you need to build beautiful responsive web applications.",
     "categories": [
         {
-            "anchor": "product-application-ui-core-layouts",
-            "name": "Application Shells",
+            "anchor": "component-application-ui-core-layouts",
+            "name": "Core Layouts",
             "subcategories": [
                 {
                     "name": "Stacked Layouts",
@@ -1140,221 +1104,201 @@ const applicationUIPurchased = {
                     "imageUrl": "/img/category-thumbnails/application-ui/stacked-layouts.png",
                     "components": "9 components",
                     "isNew": false,
-                    "isLocked": false
+                    "isLocked": false,
+                    "isPublished": true,
                 },
                 {
-                    "name": "Sidebar Layouts",
-                    "url": "/components/application-ui/core-layouts/sidebar-layouts",
-                    "imageUrl": "/img/category-thumbnails/application-ui/sidebar-layouts.png",
+                    "name": "Drawer Layouts",
+                    "url": "/components/application-ui/core-layouts/drawer-layouts",
+                    "imageUrl": "/img/category-thumbnails/application-ui/drawer-layouts.png",
                     "components": "8 components",
                     "isNew": false,
-                    "isLocked": false
+                    "isLocked": false,
+                    "isPublished": false,
                 },
                 {
                     "name": "Multi-Column Layouts",
-                    "url": "/components/application-ui/core-layouts/multi-column",
-                    "imageUrl": "/img/category-thumbnails/application-ui/multi-column.png",
+                    "url": "/components/application-ui/core-layouts/multi-column-layouts",
+                    "imageUrl": "/img/category-thumbnails/application-ui/multi-column-layouts.png",
                     "components": "6 components",
                     "isNew": false,
-                    "isLocked": false
+                    "isLocked": false,
+                    "isPublished": false,
+                },
+                {
+                    "name": "Bottom Navigation Layouts",
+                    "url": "/components/application-ui/core-layouts/bottom-navigation-layouts",
+                    "imageUrl": "/img/category-thumbnails/application-ui/bottom-navigation-layouts.png",
+                    "components": "5 components",
+                    "isNew": false,
+                    "isLocked": false,
+                    "isPublished": false,
                 }
             ]
         },
         {
-            "anchor": "product-application-ui-headings",
+            "anchor": "component-application-ui-headings",
             "name": "Headings",
             "subcategories": [
                 {
                     "name": "Page Headings",
                     "url": "/components/application-ui/headings/page-headings",
                     "imageUrl": "/img/category-thumbnails/application-ui/page-headings.png",
-                    "components": "13 components",
+                    "components": "10 components",
                     "isNew": false,
-                    "isLocked": false
+                    "isLocked": false,
+                    "isPublished": true,
                 },
                 {
                     "name": "Card Headings",
                     "url": "/components/application-ui/headings/card-headings",
                     "imageUrl": "/img/category-thumbnails/application-ui/card-headings.png",
-                    "components": "6 components",
+                    "components": "8 components",
                     "isNew": false,
-                    "isLocked": false
+                    "isLocked": false,
+                    "isPublished": true,
+
                 },
                 {
                     "name": "Section Headings",
                     "url": "/components/application-ui/headings/section-headings",
                     "imageUrl": "/img/category-thumbnails/application-ui/section-headings.png",
-                    "components": "10 components",
+                    "components": "11 components",
                     "isNew": false,
-                    "isLocked": false
+                    "isLocked": false,
+                    "isPublished": true,
                 }
             ]
         },
         {
-            "anchor": "product-application-ui-data-display",
+            "anchor": "component-application-ui-data-display",
             "name": "Data Display",
             "subcategories": [
                 {
-                    "name": "Description Lists",
-                    "url": "/components/application-ui/data-display/description-lists",
-                    "imageUrl": "/img/category-thumbnails/application-ui/description-lists.png",
+                    "name": "Data Tables",
+                    "url": "/components/application-ui/data-display/data-tables",
+                    "imageUrl": "/img/category-thumbnails/application-ui/data-tables.png",
                     "components": "7 components",
                     "isNew": false,
-                    "isLocked": false
+                    "isLocked": false,
+                    "isPublished": false,
                 },
                 {
-                    "name": "Stats",
-                    "url": "/components/application-ui/data-display/stats",
-                    "imageUrl": "/img/category-thumbnails/application-ui/stats.png",
-                    "components": "5 components",
+                    "name": "Stat Cards",
+                    "url": "/components/application-ui/data-display/stat-cards",
+                    "imageUrl": "/img/category-thumbnails/application-ui/stat-cards.png",
+                    "components": "4 components",
                     "isNew": false,
-                    "isLocked": false
+                    "isLocked": false,
+                    "isPublished": false,
                 },
                 {
-                    "name": "Calendars",
-                    "url": "/components/application-ui/data-display/calendars",
-                    "imageUrl": "/img/category-thumbnails/application-ui/calendars.png",
-                    "components": "8 components",
+                    "name": "Informational Cards",
+                    "url": "/components/application-ui/data-display/informational-cards",
+                    "imageUrl": "/img/category-thumbnails/application-ui/informational-cards.png",
+                    "components": "16 components",
                     "isNew": false,
-                    "isLocked": false
+                    "isLocked": false,
+                    "isPublished": false,
                 }
             ]
         },
         {
-            "anchor": "product-application-ui-lists",
+            "anchor": "component-application-ui-lists",
             "name": "Lists",
             "subcategories": [
                 {
                     "name": "Stacked Lists",
                     "url": "/components/application-ui/lists/stacked-lists",
                     "imageUrl": "/img/category-thumbnails/application-ui/stacked-lists.png",
-                    "components": "17 components",
+                    "components": "13 components",
                     "isNew": false,
-                    "isLocked": false
-                },
-                {
-                    "name": "Tables",
-                    "url": "/components/application-ui/lists/tables",
-                    "imageUrl": "/img/category-thumbnails/application-ui/tables.png",
-                    "components": "20 components",
-                    "isNew": false,
-                    "isLocked": false
+                    "isLocked": false,
+                    "isPublished": false,
                 },
                 {
                     "name": "Grid Lists",
                     "url": "/components/application-ui/lists/grid-lists",
                     "imageUrl": "/img/category-thumbnails/application-ui/grid-lists.png",
-                    "components": "7 components",
+                    "components": "5 components",
                     "isNew": false,
-                    "isLocked": false
+                    "isLocked": false,
+                    "isPublished": false,
                 },
                 {
-                    "name": "Feeds",
-                    "url": "/components/application-ui/lists/feeds",
-                    "imageUrl": "/img/category-thumbnails/application-ui/feeds.png",
+                    "name": "Timelines",
+                    "url": "/components/application-ui/lists/timelines",
+                    "imageUrl": "/img/category-thumbnails/application-ui/timelines.png",
                     "components": "3 components",
                     "isNew": false,
-                    "isLocked": false
+                    "isLocked": false,
+                    "isPublished": false,
                 }
             ]
         },
         {
-            "anchor": "product-application-ui-forms",
+            "anchor": "component-application-ui-forms",
             "name": "Forms",
             "subcategories": [
                 {
-                    "name": "Form Layouts",
-                    "url": "/components/application-ui/forms/form-layouts",
-                    "imageUrl": "/img/category-thumbnails/application-ui/form-layouts.png",
-                    "components": "5 components",
+                    "name": "Inputs",
+                    "url": "/components/application-ui/forms/inputs",
+                    "imageUrl": "/img/category-thumbnails/application-ui/inputs.png",
+                    "components": "20 components",
                     "isNew": false,
-                    "isLocked": false
-                },
-                {
-                    "name": "Input Groups",
-                    "url": "/components/application-ui/forms/input-groups",
-                    "imageUrl": "/img/category-thumbnails/application-ui/input-groups.png",
-                    "components": "21 components",
-                    "isNew": false,
-                    "isLocked": false
-                },
-                {
-                    "name": "Select Menus",
-                    "url": "/components/application-ui/forms/select-menus",
-                    "imageUrl": "/img/category-thumbnails/application-ui/select-menus.png",
-                    "components": "7 components",
-                    "isNew": false,
-                    "isLocked": false
-                },
-                {
-                    "name": "Sign-in and Registration",
-                    "url": "/components/application-ui/forms/sign-in-forms",
-                    "imageUrl": "/img/category-thumbnails/application-ui/sign-in-forms.png",
-                    "components": "5 components",
-                    "isNew": false,
-                    "isLocked": false
-                },
-                {
-                    "name": "Textareas",
-                    "url": "/components/application-ui/forms/textareas",
-                    "imageUrl": "/img/category-thumbnails/application-ui/textareas.png",
-                    "components": "5 components",
-                    "isNew": false,
-                    "isLocked": false
+                    "isLocked": false,
+                    "isPublished": false,
                 },
                 {
                     "name": "Radio Groups",
                     "url": "/components/application-ui/forms/radio-groups",
                     "imageUrl": "/img/category-thumbnails/application-ui/radio-groups.png",
-                    "components": "12 components",
+                    "components": "9 components",
                     "isNew": false,
-                    "isLocked": false
+                    "isLocked": false,
+                    "isPublished": false,
                 },
                 {
-                    "name": "Checkboxes",
-                    "url": "/components/application-ui/forms/checkboxes",
-                    "imageUrl": "/img/category-thumbnails/application-ui/checkboxes.png",
-                    "components": "4 components",
+                    "name": "Textareas",
+                    "url": "/components/application-ui/forms/textareas",
+                    "imageUrl": "/img/category-thumbnails/application-ui/textareas.png",
+                    "components": "3 components",
                     "isNew": false,
-                    "isLocked": false
+                    "isLocked": false,
+                    "isPublished": false,
                 },
                 {
-                    "name": "Toggles",
-                    "url": "/components/application-ui/forms/toggles",
-                    "imageUrl": "/img/category-thumbnails/application-ui/toggles.png",
-                    "components": "5 components",
-                    "isNew": false,
-                    "isLocked": false
-                },
-                {
-                    "name": "Action Panels",
-                    "url": "/components/application-ui/forms/action-panels",
-                    "imageUrl": "/img/category-thumbnails/application-ui/action-panels.png",
+                    "name": "Login Formns",
+                    "url": "/components/application-ui/forms/login-forms",
+                    "imageUrl": "/img/category-thumbnails/application-ui/login-forms.png",
                     "components": "8 components",
                     "isNew": false,
-                    "isLocked": false
+                    "isLocked": false,
+                    "isPublished": false,
                 },
-                {
-                    "name": "Comboboxes",
-                    "url": "/components/application-ui/forms/comboboxes",
-                    "imageUrl": "/img/category-thumbnails/application-ui/comboboxes.png",
-                    "components": "5 components",
-                    "isNew": false,
-                    "isLocked": false
-                }
             ]
         },
         {
-            "anchor": "product-application-ui-feedback",
+            "anchor": "component-application-ui-feedback",
             "name": "Feedback",
             "subcategories": [
                 {
                     "name": "Alerts",
                     "url": "/components/application-ui/feedback/alerts",
                     "imageUrl": "/img/category-thumbnails/application-ui/alerts.png",
-                    "components": "6 components",
+                    "components": "8 components",
                     "isNew": false,
-                    "isLocked": false
+                    "isLocked": false,
+                    "isPublished": false,
+                },
+                {
+                    "name": "Banners",
+                    "url": "/components/application-ui/feedback/banners",
+                    "imageUrl": "/img/category-thumbnails/application-ui/banners.png",
+                    "components": "4 components",
+                    "isNew": false,
+                    "isLocked": false,
+                    "isPublished": false,
                 },
                 {
                     "name": "Empty States",
@@ -1362,68 +1306,22 @@ const applicationUIPurchased = {
                     "imageUrl": "/img/category-thumbnails/application-ui/empty-states.png",
                     "components": "6 components",
                     "isNew": false,
-                    "isLocked": false
+                    "isLocked": false,
+                    "isPublished": false,
                 }
             ]
         },
         {
-            "anchor": "product-application-ui-navigation",
+            "anchor": "component-application-ui-navigation",
             "name": "Navigation",
             "subcategories": [
                 {
-                    "name": "Navbars",
-                    "url": "/components/application-ui/navigation/navbars",
-                    "imageUrl": "/img/category-thumbnails/application-ui/navbars.png",
-                    "components": "11 components",
+                    "name": "App bars",
+                    "url": "/components/application-ui/navigation/app-bars",
+                    "imageUrl": "/img/category-thumbnails/application-ui/app-bars.png",
+                    "components": "12 components",
                     "isNew": false,
-                    "isLocked": false
-                },
-                {
-                    "name": "Pagination",
-                    "url": "/components/application-ui/navigation/pagination",
-                    "imageUrl": "/img/category-thumbnails/application-ui/pagination.png",
-                    "components": "3 components",
-                    "isNew": false,
-                    "isLocked": false
-                },
-                {
-                    "name": "Tabs",
-                    "url": "/components/application-ui/navigation/tabs",
-                    "imageUrl": "/img/category-thumbnails/application-ui/tabs.png",
-                    "components": "9 components",
-                    "isNew": false,
-                    "isLocked": false
-                },
-                {
-                    "name": "Vertical Navigation",
-                    "url": "/components/application-ui/navigation/vertical-navigation",
-                    "imageUrl": "/img/category-thumbnails/application-ui/vertical-navigation.png",
-                    "components": "6 components",
-                    "isNew": false,
-                    "isLocked": false
-                },
-                {
-                    "name": "Sidebar Navigation",
-                    "url": "/components/application-ui/navigation/sidebar-navigation",
-                    "imageUrl": "/img/category-thumbnails/application-ui/sidebar-navigation.png",
-                    "components": "5 components",
-                    "isNew": false,
-                    "isLocked": false
-                },
-                {
-                    "name": "Breadcrumbs",
-                    "url": "/components/application-ui/navigation/breadcrumbs",
-                    "imageUrl": "/img/category-thumbnails/application-ui/breadcrumbs.png",
-                    "components": "4 components",
-                    "isNew": false,
-                    "isLocked": false
-                },
-                {
-                    "name": "Progress Bars",
-                    "url": "/components/application-ui/navigation/progress-bars",
-                    "imageUrl": "/img/category-thumbnails/application-ui/progress-bars.png",
-                    "components": "8 components",
-                    "isNew": false,
+                    "isPublished": false,
                     "isLocked": false
                 },
                 {
@@ -1432,42 +1330,83 @@ const applicationUIPurchased = {
                     "imageUrl": "/img/category-thumbnails/application-ui/command-palettes.png",
                     "components": "9 components",
                     "isNew": false,
+                    "isPublished": false,
+                    "isLocked": true
+                },
+                {
+                    "name": "Pagination",
+                    "url": "/components/application-ui/navigation/pagination",
+                    "imageUrl": "/img/category-thumbnails/application-ui/pagination.png",
+                    "components": "5 components",
+                    "isNew": false,
+                    "isPublished": false,
                     "isLocked": false
-                }
+                },
+                {
+                    "name": "Steppers",
+                    "url": "/components/application-ui/navigation/steppers",
+                    "imageUrl": "/img/category-thumbnails/application-ui/steppers.png",
+                    "components": "2 components",
+                    "isNew": false,
+                    "isPublished": false,
+                    "isLocked": false
+                },
+                {
+                    "name": "Tabs",
+                    "url": "/components/application-ui/navigation/tabs",
+                    "imageUrl": "/img/category-thumbnails/application-ui/tabs.png",
+                    "components": "7 components",
+                    "isNew": false,
+                    "isPublished": false,
+                    "isLocked": true
+                },
+                {
+                    "name": "Vertical Navigation",
+                    "url": "/components/application-ui/navigation/vertical-navigation",
+                    "imageUrl": "/img/category-thumbnails/application-ui/vertical-navigation.png",
+                    "components": "6 components",
+                    "isNew": false,
+                    "isPublished": false,
+                    "isLocked": true
+                },
+
             ]
         },
         {
-            "anchor": "product-application-ui-overlays",
+            "anchor": "component-application-ui-overlays",
             "name": "Overlays",
             "subcategories": [
                 {
-                    "name": "Modal Dialogs",
-                    "url": "/components/application-ui/overlays/modal-dialogs",
-                    "imageUrl": "/img/category-thumbnails/application-ui/modal-dialogs.png",
+                    "name": "Dialogs",
+                    "url": "/components/application-ui/overlays/dialogs",
+                    "imageUrl": "/img/category-thumbnails/application-ui/dialogs.png",
                     "components": "6 components",
                     "isNew": false,
-                    "isLocked": false
+                    "isLocked": false,
+                    "isPublished": false,
                 },
                 {
-                    "name": "Drawers",
-                    "url": "/components/application-ui/overlays/drawers",
-                    "imageUrl": "/img/category-thumbnails/application-ui/drawers.png",
-                    "components": "12 components",
+                    "name": "Side sheets",
+                    "url": "/components/application-ui/overlays/side-sheets",
+                    "imageUrl": "/img/category-thumbnails/application-ui/side-sheets.png",
+                    "components": "5 components",
                     "isNew": false,
-                    "isLocked": false
+                    "isLocked": false,
+                    "isPublished": false,
                 },
                 {
-                    "name": "Notifications",
-                    "url": "/components/application-ui/overlays/notifications",
-                    "imageUrl": "/img/category-thumbnails/application-ui/notifications.png",
+                    "name": "Notify",
+                    "url": "/components/application-ui/overlays/Notify",
+                    "imageUrl": "/img/category-thumbnails/application-ui/Notify.png",
                     "components": "6 components",
                     "isNew": false,
-                    "isLocked": false
+                    "isLocked": false,
+                    "isPublished": false,
                 }
             ]
         },
         {
-            "anchor": "product-application-ui-elements",
+            "anchor": "component-application-ui-elements",
             "name": "Elements",
             "subcategories": [
                 {
@@ -1476,7 +1415,8 @@ const applicationUIPurchased = {
                     "imageUrl": "/img/category-thumbnails/application-ui/avatars.png",
                     "components": "11 components",
                     "isNew": false,
-                    "isLocked": false
+                    "isLocked": false,
+                    "isPublished": false,
                 },
                 {
                     "name": "Badges",
@@ -1484,7 +1424,8 @@ const applicationUIPurchased = {
                     "imageUrl": "/img/category-thumbnails/application-ui/badges.png",
                     "components": "18 components",
                     "isNew": false,
-                    "isLocked": false
+                    "isLocked": false,
+                    "isPublished": false,
                 },
                 {
                     "name": "Dropdowns",
@@ -1492,7 +1433,8 @@ const applicationUIPurchased = {
                     "imageUrl": "/img/category-thumbnails/application-ui/dropdowns.png",
                     "components": "5 components",
                     "isNew": false,
-                    "isLocked": false
+                    "isLocked": false,
+                    "isPublished": false,
                 },
                 {
                     "name": "Buttons",
@@ -1500,7 +1442,8 @@ const applicationUIPurchased = {
                     "imageUrl": "/img/category-thumbnails/application-ui/buttons.png",
                     "components": "10 components",
                     "isNew": false,
-                    "isLocked": false
+                    "isLocked": false,
+                    "isPublished": false,
                 },
                 {
                     "name": "Button Groups",
@@ -1508,12 +1451,22 @@ const applicationUIPurchased = {
                     "imageUrl": "/img/category-thumbnails/application-ui/button-groups.png",
                     "components": "5 components",
                     "isNew": false,
-                    "isLocked": false
-                }
+                    "isLocked": false,
+                    "isPublished": false,
+                },
+                {
+                    "name": "Chips",
+                    "url": "/components/application-ui/elements/chips",
+                    "imageUrl": "/img/category-thumbnails/application-ui/chips.png",
+                    "components": "11 components",
+                    "isNew": false,
+                    "isLocked": false,
+                    "isPublished": false,
+                },
             ]
         },
         {
-            "anchor": "product-application-ui-layout",
+            "anchor": "component-application-ui-layout",
             "name": "Layout",
             "subcategories": [
                 {
@@ -1522,7 +1475,8 @@ const applicationUIPurchased = {
                     "imageUrl": "/img/category-thumbnails/application-ui/containers.png",
                     "components": "5 components",
                     "isNew": false,
-                    "isLocked": false
+                    "isLocked": false,
+                    "isPublished": false,
                 },
                 {
                     "name": "Cards",
@@ -1530,36 +1484,31 @@ const applicationUIPurchased = {
                     "imageUrl": "/img/category-thumbnails/application-ui/cards.png",
                     "components": "10 components",
                     "isNew": false,
-                    "isLocked": false
+                    "isLocked": false,
+                    "isPublished": false,
                 },
                 {
-                    "name": "List containers",
-                    "url": "/components/application-ui/layout/list-containers",
-                    "imageUrl": "/img/category-thumbnails/application-ui/list-containers.png",
-                    "components": "7 components",
-                    "isNew": false,
-                    "isLocked": false
-                },
-                {
-                    "name": "Media Objects",
-                    "url": "/components/application-ui/layout/media-objects",
-                    "imageUrl": "/img/category-thumbnails/application-ui/media-objects.png",
+                    "name": "Separators",
+                    "url": "/components/application-ui/layout/separators",
+                    "imageUrl": "/img/category-thumbnails/application-ui/separators.png",
                     "components": "8 components",
                     "isNew": false,
-                    "isLocked": false
+                    "isLocked": false,
+                    "isPublished": false,
                 },
                 {
-                    "name": "Dividers",
-                    "url": "/components/application-ui/layout/dividers",
-                    "imageUrl": "/img/category-thumbnails/application-ui/dividers.png",
+                    "name": "Sheets",
+                    "url": "/components/application-ui/layout/sheets",
+                    "imageUrl": "/img/category-thumbnails/application-ui/sheets.png",
                     "components": "8 components",
                     "isNew": false,
-                    "isLocked": false
+                    "isLocked": false,
+                    "isPublished": false,
                 }
             ]
         },
         {
-            "anchor": "product-application-ui-page-examples",
+            "anchor": "component-application-ui-page-examples",
             "name": "Page Examples",
             "subcategories": [
                 {
@@ -1568,15 +1517,8 @@ const applicationUIPurchased = {
                     "imageUrl": "/img/category-thumbnails/application-ui/home-screens.png",
                     "components": "2 examples",
                     "isNew": false,
-                    "isLocked": false
-                },
-                {
-                    "name": "Detail Screens",
-                    "url": "/components/application-ui/page-examples/detail-screens",
-                    "imageUrl": "/img/category-thumbnails/application-ui/detail-screens.png",
-                    "components": "2 examples",
-                    "isNew": false,
-                    "isLocked": false
+                    "isLocked": false,
+                    "isPublished": false,
                 },
                 {
                     "name": "Settings Screens",
@@ -1584,13 +1526,14 @@ const applicationUIPurchased = {
                     "imageUrl": "/img/category-thumbnails/application-ui/settings-screens.png",
                     "components": "2 examples",
                     "isNew": false,
-                    "isLocked": false
+                    "isLocked": false,
+                    "isPublished": false,
                 }
             ]
         }
     ]
 };
-const ecommercePurchased = {
+export const ecommercePurchased = {
     "name": "Ecommerce",
     "anchor": "product-ecommerce",
     "description": "Checkout forms, shopping carts, product views — everything you need to build your next ecommerce front-end.",

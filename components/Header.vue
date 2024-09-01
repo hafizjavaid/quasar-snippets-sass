@@ -7,7 +7,7 @@
         <q-img fit="contain" style="height: 60px; width: 120px" src="/logo.svg" />
       </div>
       <div class="flex no-wrap q-gutter-x-xs items-center">
-        <q-btn flat padding="4px 10px" dense text-color="grey-9" color="grey-3" no-caps unelevated label="Components"></q-btn>
+        <q-btn to="/components" flat padding="4px 10px" dense text-color="grey-9" color="grey-3" no-caps unelevated label="Components"></q-btn>
         <!-- <q-btn flat padding="4px 10px" dense text-color="grey-9" color="grey-3" no-caps unelevated label="Docs"></q-btn> -->
         <q-btn flat padding="4px 10px" dense text-color="grey-9" color="grey-3" no-caps unelevated label="Changelog"></q-btn>
         <q-btn flat padding="4px 10px" dense text-color="grey-9" color="grey-3" no-caps unelevated label="Templates"></q-btn>
@@ -125,14 +125,14 @@ function toggleLeftDrawer() {
 }
 
 onMounted(async () => {
-  if ($q.cookies.get('isDark')) {
-    $q.dark.set($q.cookies.get('isDark'));
-  }
+  // if ($q.cookies.get('isDark')) {
+  //   $q.dark.set($q.cookies.get('isDark'));
+  // }
 });
 
 function toggleTheme() {
   $q.dark.toggle();
-  $q.cookies.set('isDark', $q.dark.isActive.toString());
+  // $q.cookies.set('isDark', $q.dark.isActive.toString());
 }
 
 const logout = async () => {
