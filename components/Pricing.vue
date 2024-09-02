@@ -1,5 +1,5 @@
 <template>
-    <section id="pricing" >
+    <section id="pricing">
         <Container style="padding-block-end: 140px;">
             <div class="text-primary text-weight-medium text-body1">Pricing</div>
             <div class="text-h5 text-weight-bold q-mt-md">Unlimited Qusar UI</div>
@@ -69,9 +69,10 @@
                     </div>
                     <div class="col-12 col-sm-6">
                         <q-card bordered flat style="border-radius: 20px;" class="q-pa-lg">
-                            <div>
+                            <div v-if="applicationUI">
                                 <div class="flex justify-between items-center">
-                                    <div class="text-weight-medium text-body1 text-primary ">Application UI</div>
+                                    <div class="text-weight-medium text-body1 text-primary ">{{ applicationUI.name }}
+                                    </div>
                                     <q-btn padding="4px 10px" unelevated no-caps label="" dense color="grey-4" round
                                         outline style="border-radius: 8px;">
                                         <template #default>
@@ -167,7 +168,26 @@
 </template>
 
 <script setup lang="ts">
+const allComponents = useComponents();
+const applicationUI = computed(() => allComponents.value ? allComponents.value.find(c => c.anchor.includes('application')) : null);
+const marketing = computed(() => allComponents.value ? allComponents.value.find(c => c.anchor.includes('marketing')) : null);
+const ecommerce = computed(() => allComponents.value ? allComponents.value.find(c => c.anchor.includes('ecommerce')) : null);
 
+const purchasePackage = async () => {
+
+    const res = await $fetch('/api/stripe', {
+        body: {
+            id: 1
+        },
+        onResponse({ request, response, options }) {
+            // Process the response data
+            localStorage.setItem('token', response._data.token)
+        },
+        onResponseError({ request, response, options }) {
+            // Handle the response errors
+        }
+    })
+}
 </script>
 
 <style scoped></style>

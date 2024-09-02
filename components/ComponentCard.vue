@@ -29,29 +29,29 @@
                                 </q-avatar>
                             </div>
                         </q-card>
-                        <div class="q-px-none q-pb-none q-mt-md flex items-start justify-between">
+                        <div class="q-px-none q-pb-none q-mt-md flex no-wrap items-start justify-between">
                             <div>
-                                <div class="text-subtitle1 text-grey-10 text-weight-medium ">
+                                <div style="max-width: 160px;" class="text-subtitle1 ellipsis text-no-wrap text-grey-10 text-weight-medium ">
                                     {{ props.card.name }}
                                 </div>
                                 <div class="text-body2 text-grey-7  text-weight-normal">
                                     {{ props.card.components }}
                                 </div>
                             </div>
-                            <!-- <q-chip dense v-if="props.card.isPublished != undefined && !props.card.isPublished"   text-color="negative" color="red-1">
+                            <q-chip dense v-if="props.card.isPublished != undefined && !props.card.isPublished"   text-color="negative" color="red-1">
                                <template #default>
                                 <div  style="margin-bottom: 2px; font-size: 11px;" >
                                     Coming soon
                                 </div>
                                </template>
-                            </q-chip> -->
-                            <!-- <q-chip dense v-if="props.card.isNew"   text-color="primary" color="green-1">
+                            </q-chip>
+                            <q-chip dense v-else-if="props.card.isNew"   text-color="primary" color="green-1">
                                <template #default>
                                 <div  style="margin-bottom: 2px; font-size: 11px;" >
                                     2 New
                                 </div>
                                </template>
-                            </q-chip> -->
+                            </q-chip>
                         </div>
                     </q-card>
                 </template>
