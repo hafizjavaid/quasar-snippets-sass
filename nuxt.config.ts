@@ -3,6 +3,7 @@ import materialIcons from 'quasar/icon-set/svg-material-icons'
 import materialIconsRound from 'quasar/icon-set/svg-material-icons-round'
 
 export default defineNuxtConfig({
+  // extends: '@barbapapazes/solo-sphere',
   compatibilityDate: '2024-04-03',
   devtools: { enabled: true },
   nitro: {
@@ -36,11 +37,11 @@ export default defineNuxtConfig({
     appUrl: '',
 
   },
-  // content: {
-  //   highlight: {
-  //     theme: "github-dark",
-  //   },
-  // },
+  content: {
+    highlight: {
+      theme: "github-dark",
+    },
+  },
   quasar: {
 
     plugins: [
