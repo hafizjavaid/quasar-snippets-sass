@@ -3,7 +3,7 @@
     <!-- Hero -->
     <Hero></Hero>
     <!-- Navbar -->
-    <div style="padding-block: 60px;">
+    <div class="bg-white" style="padding-block: 60px; position: sticky; top: 0; z-index: 5; ">
         <q-separator></q-separator>
         <Container style="padding-block: 10px;">
             <div class="flex justify-between items-center">
