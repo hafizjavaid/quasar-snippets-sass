@@ -1,11 +1,11 @@
 <template>
   <q-header reveal bordered class="bg-white text-grey-8 q-px-xl">
     <div class="flex justify-between">
-      <div class="flex no-wrap items-center cursor-pointer" @click="navigateTo('/')">
+      <NuxtLink to="/" class="flex no-wrap items-center cursor-pointer">
         <q-btn dense flat round :icon="leftDrawerOpen ? 'arrow_circle_left' : 'arrow_circle_right'"
           @click="toggleLeftDrawer" class="lt-md" />
         <q-img fit="contain" style="height: 60px; width: 120px" src="/logo.svg" />
-      </div>
+      </NuxtLink>
       <div class="flex no-wrap q-gutter-x-xs items-center">
         <NuxtLink to="/components">
           <q-btn flat padding="4px 10px" dense text-color="grey-9" color="grey-3" no-caps unelevated
@@ -32,8 +32,10 @@
         <!-- v-if="!user" -->
         <q-btn text-color="grey-9" flat padding="4px 10px" dense color="gray-900" no-caps unelevated
           label="Sign in"></q-btn>
-        <q-btn padding="4px 10px" unelevated no-caps label="Get all-access" dense color="dark"
-          style="border-radius: 8px;"></q-btn>
+        <NuxtLink to="/all-access">
+          <q-btn padding="4px 10px" unelevated no-caps label="Get all-access" dense color="dark"
+            style="border-radius: 8px;"></q-btn>
+        </NuxtLink>
 
         <!-- <q-btn color="primary" no-caps unelevated label="Login" icon-right="mdi-logout">
           <q-menu flat unelevated>

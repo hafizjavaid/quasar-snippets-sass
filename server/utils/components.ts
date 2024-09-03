@@ -7,7 +7,7 @@ export const marketing = {
     "isLicensed": false,
     "price": {
         "currency": "USD",
-        "advertised": 149,
+        "advertised": 49,
         "amount": 149
     },
     "checkout_id": "66af878c483e68dc8d69b197",
@@ -676,7 +676,7 @@ export const ecommerce = {
     "isLicensed": false,
     "price": {
         "currency": "USD",
-        "advertised": 149,
+        "advertised": 49,
         "amount": 149
     },
     "checkout_id": "66af878c483e68dc8d69b198",
@@ -872,7 +872,7 @@ export const marketingPurchased = {
     "isLicensed": true,
     "price": {
         "currency": "USD",
-        "advertised": 149,
+        "advertised": 49,
         "amount": 149
     },
     "checkout_id": "66af878c483e68dc8d69b197",
@@ -1541,7 +1541,7 @@ export const ecommercePurchased = {
     "isLicensed": true,
     "price": {
         "currency": "USD",
-        "advertised": 149,
+        "advertised": 49,
         "amount": 149
     },
     "checkout_id": "66af878c483e68dc8d69b198",

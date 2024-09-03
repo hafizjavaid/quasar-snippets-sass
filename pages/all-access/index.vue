@@ -24,17 +24,18 @@
                                         <div class="flex items-center q-gutter-x-sm">
                                             <div class="text-h3">
                                                 <span class="text-strike ">$299</span>
-                                                <span class="text-weight-bold q-ml-sm">$199</span>
+                                                <span class="text-weight-bold q-ml-sm">$99</span>
                                             </div>
                                             <div>
                                                 <div class="text-weight-bold">one-time payment</div>
                                                 <div>plus local taxes</div>
                                             </div>
                                         </div>
-                                        <q-btn padding="4px 10px" unelevated no-caps label="Get all-access" dense
-                                            color="dark" class="full-width q-mt-lg" style="border-radius: 8px;"></q-btn>
+                                        <q-btn @click="purchasePackage('66af878c483e68dc8d69b195')" padding="4px 10px"
+                                            unelevated no-caps label="Get all-access" dense color="dark"
+                                            class="full-width q-mt-lg" style="border-radius: 8px;"></q-btn>
 
-                                        <p class="q-mt-sm text-center text-grey-7" >Lifetime access.
+                                        <p class="q-mt-sm text-center text-grey-7">Lifetime access.
                                             Unlimited projects.
                                             Free updates.</p>
                                     </q-card-section>
@@ -86,7 +87,20 @@
 </template>
 
 <script setup lang="ts">
-
+const purchasePackage = async (productId: string) => {
+    await $fetch('/api/stripe', {
+        method: 'POST',
+        body: {
+            id: productId,
+        },
+    }).then((res) => {
+        if (res) {
+            window.location.assign(res);
+        }
+    }).catch((err) => {
+        console.error(err);
+    })
+}
 </script>
 
 <style scoped>

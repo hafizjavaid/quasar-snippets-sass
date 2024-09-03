@@ -21,11 +21,7 @@ export default defineEventHandler(async (event) => {
         });
 
     }
-
-
     if (event.context.user && body.id) {
-
-
         // Check if product is already purchased or not
         const purchase = await db.purchase.findUnique({
             where: {
@@ -41,7 +37,6 @@ export default defineEventHandler(async (event) => {
                 statusMessage: `${product.title} is already Purchased`,
             });
         }
-
         // Product Details ( We will show this in checkout page )
         const line_items: Stripe.Checkout.SessionCreateParams.LineItem[] = [
             {
@@ -94,15 +89,6 @@ export default defineEventHandler(async (event) => {
                 productId: product.id
             },
         })
-
-
         return stripeSession.url
-
-
-
     }
-
-
-
-
 })
