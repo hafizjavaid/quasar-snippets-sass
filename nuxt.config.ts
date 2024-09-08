@@ -19,9 +19,9 @@ export default defineNuxtConfig({
     '@nuxt/fonts',
     '@pinia/nuxt'
   ],
-  
+
   css: ['/assets/main.scss'],
-  
+
   runtimeConfig: {
     public: {
       publicStripeKey: '',
@@ -38,19 +38,32 @@ export default defineNuxtConfig({
 
   },
   content: {
+    documentDriven: true,
     highlight: {
-      theme: "github-dark",
+      theme: {
+        default: 'github-dark',
+        dark: 'github-dark',
+      },
+      preload: ['json', 'js', 'ts', 'html', 'css', 'vue', 'diff', 'shell', 'markdown', 'yaml', 'bash', 'ini'],
+    },
+    navigation: {
+      fields: ['icon'],
+    },
+    experimental: {
+      search: {
+        indexed: true,
+      },
     },
   },
   quasar: {
 
     plugins: [
       // 'AppFullscreen',
-      'BottomSheet',
+      // 'BottomSheet',
       'Dialog',
-      'Loading',
-      'LoadingBar',
-      'Notify',
+      // 'Loading',
+      // 'LoadingBar',
+      // 'Notify',
       // 'Cookies'
     ],
     sassVariables: '/assets/quasar-variables.scss',

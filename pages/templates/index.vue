@@ -1,5 +1,5 @@
 <template>
-    <NuxtLayout>
+    <!-- <NuxtLayout> -->
 
         <!-- Hero Section -->
         <!-- Hero Section -->
@@ -26,13 +26,13 @@
                 
         </div>
 
-    </NuxtLayout>
+    <!-- </NuxtLayout> -->
 </template>
 
 <script lang="ts" setup>
-const { data: navigation } = await useAsyncData('navigation', () =>
-  fetchContentNavigation()
-);
+// const { data: navigation } = await useAsyncData('navigation', () =>
+//   fetchContentNavigation()
+// );
 </script>
 
 <style lang="scss" scoped></style>

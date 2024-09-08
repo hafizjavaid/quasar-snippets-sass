@@ -31,8 +31,8 @@
         <q-separator></q-separator>
     </div>
     <Container style="padding-block-end: 60px;">
-        <div v-for="mainCategory in allComponents" :key="mainCategory.anchor" style="margin-bottom: 100px;">
-            <div :id="mainCategory.anchor" class="q-mb-xl">
+        <div  v-for="mainCategory in allComponents" :key="mainCategory.anchor" style="margin-bottom: 100px;">
+            <div :id="mainCategory.anchor"  class="q-mb-xl">
                 <div class="flex items-center q-gutter-x-sm text-grey-9">
                     <!-- <q-icon :name="mainCategory.icon" size="24px"></q-icon> -->
                     <div class="text-h4  text-weight-bold"> {{ mainCategory.name }} </div>
@@ -43,7 +43,7 @@
             </div>
             <!-- <q-separator class="q-my-xl  text-grey-1 bg-grey-3" /> -->
             <template v-if="mainCategory.categories">
-                <q-card v-for="(category, categoryIndex) in mainCategory.categories" :key="categoryIndex" bordered flat
+                <q-card  v-for="(category, categoryIndex) in mainCategory.categories" :key="categoryIndex" bordered flat
                     class="q-mb-xl">
                     <q-card-section class="q-py-md q-px-lg ">
                         <div class="text-h6">{{ category.name }}</div>
