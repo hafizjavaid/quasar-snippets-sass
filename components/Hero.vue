@@ -15,11 +15,13 @@
                         at making your development process easier and faster.
                     </p>
                     <div class="flex q-gutter-x-md">
-                        <q-btn unelevated no-caps color="primary">
-                            Browse Components
-                            <Icon class="text-white q-ml-sm" name="flowbite:arrow-right-outline"
-                                style="width: 24px; height: 24px;" />
-                        </q-btn>
+                        <NuxtLink to="/components">
+                            <q-btn unelevated no-caps color="primary">
+                                Browse Components
+                                <Icon class="text-white q-ml-sm" name="flowbite:arrow-right-outline"
+                                    style="width: 24px; height: 24px;" />
+                            </q-btn>
+                        </NuxtLink>
                     </div>
                 </div>
                 <div class="col-12 col-sm-5 offset-md-1">

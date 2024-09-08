@@ -15,7 +15,7 @@
           <q-btn flat padding="4px 10px" dense text-color="grey-9" color="grey-3" no-caps unelevated
             label="Changelog"></q-btn>
         </NuxtLink>
-        <NuxtLink to="/components">
+        <NuxtLink to="/templates">
           <q-btn flat padding="4px 10px" dense text-color="grey-9" color="grey-3" no-caps unelevated
             label="Templates"></q-btn>
         </NuxtLink>
