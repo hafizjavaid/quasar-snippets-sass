@@ -98,7 +98,7 @@
 </template>
 
 <script setup lang="ts">
-import { getRandomElementsFromSubcategories } from '../utils';
+// import { getRandomElementsFromSubcategories } from '../utils';
 const allComponents = useComponents();
 const applicationUI = computed(() => allComponents.value ? allComponents.value.find(c => c.anchor.includes('application')) : null);
 const marketing = computed(() => allComponents.value ? allComponents.value.find(c => c.anchor.includes('marketing')) : null);

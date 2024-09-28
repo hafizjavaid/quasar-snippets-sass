@@ -1,4 +1,4 @@
-export default defineEventHandler(async (event) => {
+export default defineCachedEventHandler(async (event) => {
 
     // await validateRequest(event);
     if (!event.context.user) {
@@ -13,4 +13,6 @@ export default defineEventHandler(async (event) => {
         }
     })
     return userPurchases;
+}, {
+    maxAge: 60 * 60 * 60
 })

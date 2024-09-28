@@ -8,5 +8,5 @@ export function getRandomElementsFromSubcategories(obj: SingleComponent, n: numb
     const shuffled = allSubcategories.sort(() => 0.5 - Math.random());
   
     // Return the first n elements
-    return shuffled.slice(0, n);
+    return shuffled.slice(0, n).filter(c => c.isPublished);
   }
