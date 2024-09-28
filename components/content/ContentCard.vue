@@ -80,7 +80,7 @@ withDefaults(defineProps<CardProps>(), {
   isNew: false,
 });
 const expanded = ref(false);
-const view = ref("code");
+const view = ref("preview");
 const purchase = usePurchase();
 
 const path = useRoute().path;

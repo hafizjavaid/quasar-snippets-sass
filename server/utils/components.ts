@@ -349,7 +349,7 @@ export const applicationUI = {
                     "components": "13 components",
                     "isNew": false,
                     "isLocked": false,
-                    "isPublished": false,
+                    "isPublished": true,
                 },
                 {
                     "name": "Grid Lists",
@@ -1214,7 +1214,7 @@ export const applicationUIPurchased = {
                     "components": "13 components",
                     "isNew": false,
                     "isLocked": false,
-                    "isPublished": false,
+                    "isPublished": true,
                 },
                 {
                     "name": "Grid Lists",
