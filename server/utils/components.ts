@@ -19,7 +19,7 @@ export const marketing = {
             "subcategories": [
                 {
                     "name": "Hero Sections",
-                    "url": "/components/marketing/sections/heroes",
+                    "url": "/components/marketing/page-sections/heroes",
                     "imageUrl": "/img/category-thumbnails/marketing/heroes.png",
                     "components": "12 components",
                     "isNew": false,
@@ -27,7 +27,7 @@ export const marketing = {
                 },
                 {
                     "name": "Feature Sections",
-                    "url": "/components/marketing/sections/feature-sections",
+                    "url": "/components/marketing/page-sections/feature-sections",
                     "imageUrl": "/img/category-thumbnails/marketing/feature-sections.png",
                     "components": "18 components",
                     "isNew": false,
@@ -35,7 +35,7 @@ export const marketing = {
                 },
                 {
                     "name": "CTA Sections",
-                    "url": "/components/marketing/sections/cta-sections",
+                    "url": "/components/marketing/page-sections/cta-sections",
                     "imageUrl": "/img/category-thumbnails/marketing/cta-sections.png",
                     "components": "11 components",
                     "isNew": false,
@@ -43,7 +43,7 @@ export const marketing = {
                 },
                 {
                     "name": "Pricing Sections",
-                    "url": "/components/marketing/sections/pricing",
+                    "url": "/components/marketing/page-sections/pricing",
                     "imageUrl": "/img/category-thumbnails/marketing/pricing.png",
                     "components": "13 components",
                     "isNew": false,
@@ -51,7 +51,7 @@ export const marketing = {
                 },
                 {
                     "name": "Header Sections",
-                    "url": "/components/marketing/sections/header",
+                    "url": "/components/marketing/page-sections/header",
                     "imageUrl": "/img/category-thumbnails/marketing/header.png",
                     "components": "10 components",
                     "isNew": false,
@@ -59,7 +59,7 @@ export const marketing = {
                 },
                 {
                     "name": "Newsletter Sections",
-                    "url": "/components/marketing/sections/newsletter-sections",
+                    "url": "/components/marketing/page-sections/newsletter-sections",
                     "imageUrl": "/img/category-thumbnails/marketing/newsletter-sections.png",
                     "components": "7 components",
                     "isNew": false,
@@ -67,7 +67,7 @@ export const marketing = {
                 },
                 {
                     "name": "Stats",
-                    "url": "/components/marketing/sections/stats-sections",
+                    "url": "/components/marketing/page-sections/stats-sections",
                     "imageUrl": "/img/category-thumbnails/marketing/stats-sections.png",
                     "components": "10 components",
                     "isNew": false,
@@ -75,7 +75,7 @@ export const marketing = {
                 },
                 {
                     "name": "Testimonials",
-                    "url": "/components/marketing/sections/testimonials",
+                    "url": "/components/marketing/page-sections/testimonials",
                     "imageUrl": "/img/category-thumbnails/marketing/testimonials.png",
                     "components": "9 components",
                     "isNew": false,
@@ -83,7 +83,7 @@ export const marketing = {
                 },
                 {
                     "name": "Blog Sections",
-                    "url": "/components/marketing/sections/blog-sections",
+                    "url": "/components/marketing/page-sections/blog-sections",
                     "imageUrl": "/img/category-thumbnails/marketing/blog-sections.png",
                     "components": "7 components",
                     "isNew": false,
@@ -91,7 +91,7 @@ export const marketing = {
                 },
                 {
                     "name": "Contact Sections",
-                    "url": "/components/marketing/sections/contact-sections",
+                    "url": "/components/marketing/page-sections/contact-sections",
                     "imageUrl": "/img/category-thumbnails/marketing/contact-sections.png",
                     "components": "8 components",
                     "isNew": false,
@@ -99,7 +99,7 @@ export const marketing = {
                 },
                 {
                     "name": "Team Sections",
-                    "url": "/components/marketing/sections/team-sections",
+                    "url": "/components/marketing/page-sections/team-sections",
                     "imageUrl": "/img/category-thumbnails/marketing/team-sections.png",
                     "components": "9 components",
                     "isNew": false,
@@ -107,7 +107,7 @@ export const marketing = {
                 },
                 {
                     "name": "Content Sections",
-                    "url": "/components/marketing/sections/content-sections",
+                    "url": "/components/marketing/page-sections/content-sections",
                     "imageUrl": "/img/category-thumbnails/marketing/content-sections.png",
                     "components": "6 components",
                     "isNew": false,
@@ -115,7 +115,7 @@ export const marketing = {
                 },
                 {
                     "name": "Logo Clouds",
-                    "url": "/components/marketing/sections/logo-clouds",
+                    "url": "/components/marketing/page-sections/logo-clouds",
                     "imageUrl": "/img/category-thumbnails/marketing/logo-clouds.png",
                     "components": "12 components",
                     "isNew": false,
@@ -123,7 +123,7 @@ export const marketing = {
                 },
                 {
                     "name": "FAQs",
-                    "url": "/components/marketing/sections/faq-sections",
+                    "url": "/components/marketing/page-sections/faq-sections",
                     "imageUrl": "/img/category-thumbnails/marketing/faq-sections.png",
                     "components": "10 components",
                     "isNew": false,
@@ -131,7 +131,7 @@ export const marketing = {
                 },
                 {
                     "name": "Footers",
-                    "url": "/components/marketing/sections/footers",
+                    "url": "/components/marketing/page-sections/footers",
                     "imageUrl": "/img/category-thumbnails/marketing/footers.png",
                     "components": "10 components",
                     "isNew": false,
@@ -884,7 +884,7 @@ export const marketingPurchased = {
             "subcategories": [
                 {
                     "name": "Hero Sections",
-                    "url": "/components/marketing/sections/heroes",
+                    "url": "/components/marketing/page-sections/heroes",
                     "imageUrl": "/img/category-thumbnails/marketing/heroes.png",
                     "components": "12 components",
                     "isNew": false,
@@ -892,7 +892,7 @@ export const marketingPurchased = {
                 },
                 {
                     "name": "Feature Sections",
-                    "url": "/components/marketing/sections/feature-sections",
+                    "url": "/components/marketing/page-sections/feature-sections",
                     "imageUrl": "/img/category-thumbnails/marketing/feature-sections.png",
                     "components": "18 components",
                     "isNew": false,
@@ -900,7 +900,7 @@ export const marketingPurchased = {
                 },
                 {
                     "name": "CTA Sections",
-                    "url": "/components/marketing/sections/cta-sections",
+                    "url": "/components/marketing/page-sections/cta-sections",
                     "imageUrl": "/img/category-thumbnails/marketing/cta-sections.png",
                     "components": "11 components",
                     "isNew": false,
@@ -908,7 +908,7 @@ export const marketingPurchased = {
                 },
                 {
                     "name": "Pricing Sections",
-                    "url": "/components/marketing/sections/pricing",
+                    "url": "/components/marketing/page-sections/pricing",
                     "imageUrl": "/img/category-thumbnails/marketing/pricing.png",
                     "components": "13 components",
                     "isNew": false,
@@ -916,7 +916,7 @@ export const marketingPurchased = {
                 },
                 {
                     "name": "Header Sections",
-                    "url": "/components/marketing/sections/header",
+                    "url": "/components/marketing/page-sections/header",
                     "imageUrl": "/img/category-thumbnails/marketing/header.png",
                     "components": "10 components",
                     "isNew": false,
@@ -924,7 +924,7 @@ export const marketingPurchased = {
                 },
                 {
                     "name": "Newsletter Sections",
-                    "url": "/components/marketing/sections/newsletter-sections",
+                    "url": "/components/marketing/page-sections/newsletter-sections",
                     "imageUrl": "/img/category-thumbnails/marketing/newsletter-sections.png",
                     "components": "7 components",
                     "isNew": false,
@@ -932,7 +932,7 @@ export const marketingPurchased = {
                 },
                 {
                     "name": "Stats",
-                    "url": "/components/marketing/sections/stats-sections",
+                    "url": "/components/marketing/page-sections/stats-sections",
                     "imageUrl": "/img/category-thumbnails/marketing/stats-sections.png",
                     "components": "10 components",
                     "isNew": false,
@@ -940,7 +940,7 @@ export const marketingPurchased = {
                 },
                 {
                     "name": "Testimonials",
-                    "url": "/components/marketing/sections/testimonials",
+                    "url": "/components/marketing/page-sections/testimonials",
                     "imageUrl": "/img/category-thumbnails/marketing/testimonials.png",
                     "components": "9 components",
                     "isNew": false,
@@ -948,7 +948,7 @@ export const marketingPurchased = {
                 },
                 {
                     "name": "Blog Sections",
-                    "url": "/components/marketing/sections/blog-sections",
+                    "url": "/components/marketing/page-sections/blog-sections",
                     "imageUrl": "/img/category-thumbnails/marketing/blog-sections.png",
                     "components": "7 components",
                     "isNew": false,
@@ -956,7 +956,7 @@ export const marketingPurchased = {
                 },
                 {
                     "name": "Contact Sections",
-                    "url": "/components/marketing/sections/contact-sections",
+                    "url": "/components/marketing/page-sections/contact-sections",
                     "imageUrl": "/img/category-thumbnails/marketing/contact-sections.png",
                     "components": "8 components",
                     "isNew": false,
@@ -964,7 +964,7 @@ export const marketingPurchased = {
                 },
                 {
                     "name": "Team Sections",
-                    "url": "/components/marketing/sections/team-sections",
+                    "url": "/components/marketing/page-sections/team-sections",
                     "imageUrl": "/img/category-thumbnails/marketing/team-sections.png",
                     "components": "9 components",
                     "isNew": false,
@@ -972,7 +972,7 @@ export const marketingPurchased = {
                 },
                 {
                     "name": "Content Sections",
-                    "url": "/components/marketing/sections/content-sections",
+                    "url": "/components/marketing/page-sections/content-sections",
                     "imageUrl": "/img/category-thumbnails/marketing/content-sections.png",
                     "components": "6 components",
                     "isNew": false,
@@ -980,7 +980,7 @@ export const marketingPurchased = {
                 },
                 {
                     "name": "Logo Clouds",
-                    "url": "/components/marketing/sections/logo-clouds",
+                    "url": "/components/marketing/page-sections/logo-clouds",
                     "imageUrl": "/img/category-thumbnails/marketing/logo-clouds.png",
                     "components": "12 components",
                     "isNew": false,
@@ -988,7 +988,7 @@ export const marketingPurchased = {
                 },
                 {
                     "name": "FAQs",
-                    "url": "/components/marketing/sections/faq-sections",
+                    "url": "/components/marketing/page-sections/faq-sections",
                     "imageUrl": "/img/category-thumbnails/marketing/faq-sections.png",
                     "components": "10 components",
                     "isNew": false,
@@ -996,7 +996,7 @@ export const marketingPurchased = {
                 },
                 {
                     "name": "Footers",
-                    "url": "/components/marketing/sections/footers",
+                    "url": "/components/marketing/page-sections/footers",
                     "imageUrl": "/img/category-thumbnails/marketing/footers.png",
                     "components": "10 components",
                     "isNew": false,
