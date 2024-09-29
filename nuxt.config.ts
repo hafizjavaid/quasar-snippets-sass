@@ -24,9 +24,14 @@ export default defineNuxtConfig({
   css: ['/assets/main.scss'],
 
   runtimeConfig: {
+    session: {
+      maxAge: 60 * 60 * 24 * 7, // Session expires after 7 days
+    },
     public: {
       publicStripeKey: '',
+      baseUrl: process.env.BASE_URL,
     },
+    expectedOrigin: process.env.BASE_URL ?? "http://localhost:3000",
     githubClientId: process.env.GITHUB_CLIENT_ID,
     githubClientSecret: process.env.GITHUB_CLIENT_SECRET,
     cloudinaryApiKey: '',
