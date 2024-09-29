@@ -4,14 +4,20 @@
     <NuxtPage />
 
   </NuxtLayout> -->
-  <QLayout view="hHh lpR fFf">
+  <!-- <QLayout view="hHh lpR fFf">
     <Header />
     <NuxtPage />
     <Footer></Footer>
     <BottomLinks></BottomLinks>
-  </QLayout>
+  </QLayout> -->
+  <NuxtLoadingIndicator />
+  <Toaster position="top-center" />
+  <NuxtPage />
 </template>
+<script setup lang="ts">
+import { Toaster } from "vue-sonner";
 
+</script>
 
 
 <style lang="scss">

@@ -32,3 +32,10 @@ export type SingleComponent = {
     pricing_description: string;
     categories: Category[];
 };
+
+export type APIError = {
+    statusCode: number,
+    statusMessage: string,
+    message: string,
+    data?: Record<string, string[]>
+}

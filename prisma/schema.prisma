@@ -6,33 +6,64 @@ datasource db {
   provider = "mongodb"
   url      = env("DATABASE_URL")
 }
+
+enum UserRole {
+  USER
+  ADMIN
+}
+
 model User {
   id              String @id @map("_id")
-  github_id Int?
-  email    String @unique 
-  username String? 
-  password String?
-  image String?
-  sessions Session[]
-
-  // products Product[]
-
+  email           String   @unique
+  emailVerified   Boolean  @default(false)
+  role            UserRole @default(USER)
+  name            String
+  avatarUrl       String?
+  hashedPassword  String?
+  banned          Boolean  @default(false)
+  bannedReason    String?
+  onboarded       Boolean  @default(false)
   createdAt       DateTime @default(now())
   updatedAt       DateTime @updatedAt
+  lastActive      DateTime @updatedAt
+
+   // Relations
+  credentials     Credential[]
+  oauthAccounts   OauthAccount[]
 }
 
-model Session {
+model Credential {
   id              String @id @map("_id")
-  userId    String
-  expiresAt DateTime
-  user      User     @relation(references: [id], fields: [userId], onDelete: Cascade)
+  userId     String
+  name       String?
+  externalID String   @unique
+  publicKey  Bytes    @unique
+  signCount  Int      @default(0)
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+
+  // Relation
+  user       User     @relation(fields: [userId], references: [id], onDelete: Cascade)
 }
 
-// Application UI OR Marketing UI or Any single temaplate etc
+model OauthAccount {
+  id              String @id @map("_id")
+  providerId    String
+  providerUserId String
+  userId        String
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+
+  // Relations
+  user          User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  // Unique constraint
+  @@unique([providerId, providerUserId])
+}
+
 model Product {
   id              String @id @default(auto()) @map("_id") @db.ObjectId
-  // userId String
-  // user      User     @relation(references: [id], fields: [userId], onDelete: Cascade)
+
   title String 
   description String? 
   imageUrl String? 
@@ -43,7 +74,6 @@ model Product {
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 
-
 }
 
 model Purchase {
@@ -52,8 +82,6 @@ model Purchase {
 
   productId String @db.ObjectId   
   product Product @relation(fields: [productId], references: [id], onDelete: Cascade)
-
-  // type       PurchaseType
 
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt()
@@ -65,18 +93,7 @@ model Purchase {
 model StripeCustomer   {
   id              String @id @default(auto()) @map("_id") @db.ObjectId
   userId String @unique
-  // stripeCustomerId String @unique
-  // the map is just to give another name so we can access by two ways (the maped name is used by stripe that's why)
   stripeCustomerId       String?   @unique @map(name: "stripe_customer_id")
-  // stripeSubscriptionId   String?   @unique @map(name: "stripe_subscription_id")
-  // stripePriceId          String?   @map(name: "stripe_price_id")
-  // stripeCurrentPeriodEnd DateTime? @map(name: "stripe_current_period_end")
-
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 }
-
-// enum PurchaseType {
-//   PERSONAL
-//   ALL_ACCESS
-// }
