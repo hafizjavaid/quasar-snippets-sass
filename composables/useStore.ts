@@ -22,7 +22,7 @@ export default () => {
     }
     const showError = (error: APIError) => {
         console.log(error);
-        toast.error(error.message);
+        toast.error(error.statusMessage ? error.statusMessage : error.message);
     }
     const showMessage = (title: string) => {
         toast.success(title);

@@ -17,7 +17,7 @@ class UserActions {
             const user = await db.user.create({
                 data: {
                     email: payload.email,
-                    name: payload.email,
+                    name: payload.name,
                     avatarUrl: payload.avatarUrl,
                     emailVerified: true,
                     id: payload.id 
@@ -31,9 +31,9 @@ class UserActions {
     }
     async findOauthAccountByUserId(userId) {
         try {
-            const oauthAccount = db.oauthAccount.findUnique({
+            const oauthAccount = db.oauthAccount.findFirst({
                 where: {
-                    userId
+                    userId: userId
                 }
             })
             return oauthAccount || null;

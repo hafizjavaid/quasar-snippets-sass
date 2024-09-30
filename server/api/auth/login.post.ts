@@ -21,6 +21,8 @@ export default defineEventHandler(async (event) => {
                 statusMessage: "User not found",
             });
         }
+        console.log(existingUser);
+        
         if (!existingUser.hashedPassword) {
             const connectedOauthAccount = await userActions.findOauthAccountByUserId(existingUser.id);
             if (connectedOauthAccount) {

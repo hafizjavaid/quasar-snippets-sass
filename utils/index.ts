@@ -18,6 +18,8 @@ export const handleError = (error: any) => {
   let message = generalMessage;
   let data = undefined;
 
+  console.log(error.response);
+  
   if (error.response) {
     statusCode = error.response.status
     statusMessage = error.response.statusText
