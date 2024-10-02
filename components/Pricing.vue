@@ -96,11 +96,19 @@
 </NuxtLink>
 </ScriptLemonSqueezy> -->
 
-                                    <q-btn @click="createCheckout(applicationUI.productVariantId)" padding="4px 10px"
+<!-- <pre>{{ applicationUI.isLicensed }}</pre> -->
+                                    <q-btn v-if="!applicationUI.isLicensed"
+                                        @click="createCheckout(applicationUI.productVariantId)" padding="4px 10px"
                                         unelevated no-caps label="" dense color="grey-4" round outline
                                         style="border-radius: 8px;">
                                         <template #default>
                                             <div class="text-dark">Unlock Package</div>
+                                        </template>
+                                    </q-btn>
+                                    <q-btn v-else padding="4px 10px" unelevated no-caps label="" dense color="grey-4"
+                                        round outline style="border-radius: 8px;">
+                                        <template #default>
+                                            💪 <div class="text-dark q-ml-xs">You already own this</div>
                                         </template>
                                     </q-btn>
                                 </div>
@@ -116,7 +124,7 @@
                                 </div>
                                 <q-card-section class="q-px-none">
                                     <div class="text-body1">
-                                        {{ applicationUI.priceDescription }}
+                                        {{ applicationUI.description }}
                                     </div>
                                 </q-card-section>
                             </div>
@@ -157,7 +165,7 @@
                                 </div>
                                 <q-card-section class="q-px-none">
                                     <div class="text-body1">
-                                        {{ marketing.priceDescription }}
+                                        {{ marketing.description }}
                                     </div>
                                 </q-card-section>
                             </div>
@@ -198,7 +206,7 @@
                                 </div>
                                 <q-card-section class="q-px-none">
                                     <div class="text-body1">
-                                        {{ ecommerce.priceDescription }}
+                                        {{ ecommerce.description }}
                                     </div>
                                 </q-card-section>
                             </div>
@@ -215,13 +223,15 @@
 
 <script setup lang="ts">
 
-const { user } = useUserSession()
+// const { user } = useUserSession()
 
-const { data, status } = await useLazyFetch('/api/products');
+// const { data, status } = await useLazyFetch('/api/components');
+const existingComponents = useComponents();
+
 
 const allAccess = computed(() => {
-    if (data.value) {
-        const p = data.value.find(product => product.name === 'All-access')
+    if (existingComponents.value) {
+        const p = existingComponents.value.find(product => product.name === 'All-access')
         if (p) {
             return p;
         }
@@ -230,8 +240,8 @@ const allAccess = computed(() => {
     return null
 })
 const applicationUI = computed(() => {
-    if (data.value) {
-        const p = data.value.find(product => product.name === 'Application UI')
+    if (existingComponents.value) {
+        const p = existingComponents.value.find(product => product.name === 'Application UI')
         if (p) {
             return p;
         }
@@ -240,8 +250,8 @@ const applicationUI = computed(() => {
     return null
 })
 const marketing = computed(() => {
-    if (data.value) {
-        const p = data.value.find(product => product.name === 'Marketing')
+    if (existingComponents.value) {
+        const p = existingComponents.value.find(product => product.name === 'Marketing')
         if (p) {
             return p;
         }
@@ -250,8 +260,8 @@ const marketing = computed(() => {
     return null
 })
 const ecommerce = computed(() => {
-    if (data.value) {
-        const p = data.value.find(product => product.name === 'Ecommerce')
+    if (existingComponents.value) {
+        const p = existingComponents.value.find(product => product.name === 'Ecommerce')
         if (p) {
             return p;
         }
@@ -277,6 +287,7 @@ const createCheckout = async (variantId: number) => {
         // toast.error("Error creating checkout link");
     }
 };
+
 </script>
 
 <style scoped></style>

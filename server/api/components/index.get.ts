@@ -1,63 +1,65 @@
 import type { SingleComponent } from "~/types";
-import {
-    marketing, marketingPurchased, ecommerce, ecommercePurchased
-    , applicationUI, applicationUIPurchased
-} from "../../utils/components";
+
+import { allAccess } from "~/server/utils/components";
 
 
+export default defineEventHandler(async (event) => {
 
-export default defineCachedEventHandler(async (event) => {
+    const { user } = await getUserSession(event);
 
     // All Free Components
-    if (!event.context.user) {
+    if (!user) {
+        console.log('No user');
+        
         return [
             { ...marketing },
             { ...ecommerce },
-            { ...applicationUI }
-        ] as SingleComponent[];
+            { ...applicationUI },
+            { ...allAccess },
+
+        ] as SingleComponent[]
     }
 
     // User Purchased Items
     const userPurchases = await db.purchase.findMany({
         where: {
-            userId: event.context.user?.id
+            userId: user.id
         },
-        include: {
-            product: true
-        }
     });
 
+    console.log('userPurchases', userPurchases);
+
+
     // All Access
-    const isAllAccess = userPurchases.find(p => p.product.title === 'All Access');
+    const isAllAccess = userPurchases.find(p => p.productName === 'All-access' && p.productId === 538563 + '');
 
     // All Premium Componets
     if (isAllAccess) {
-
         return [
-            { ...marketingPurchased },
-            { ...ecommercePurchased },
-            { ...applicationUIPurchased }
-        ] as SingleComponent[];
+            { ...marketing, isLicensed: true },
+            { ...ecommerce, isLicensed: true },
+            { ...applicationUI, isLicensed: true },
+            { ...allAccess, isLicensed: true },
+        ] as SingleComponent[]
     };
 
 
     // Check user access for different components 
-    const isMaketingAccess = userPurchases.some(p => p.product.id === marketing.checkout_id);
-    const isEcommereceAccess = userPurchases.some(p => p.product.id === ecommerce.checkout_id);
-    const isApplicationUIAccess = userPurchases.some(p => p.product.id === applicationUI.checkout_id);
+    const isMaketingAccess = userPurchases.some(p => p.productId === marketing.productVariantId + '');
+    const isEcommereceAccess = userPurchases.some(p => p.productId === ecommerce.productVariantId + '');
+    const isApplicationUIAccess = userPurchases.some(p => p.productId === applicationUI.productVariantId + '');
+
+    // console.log('isMaketingAccess', isMaketingAccess);
+    // console.log('isEcommereceAccess', isEcommereceAccess);
+    console.log('isApplicationUIAccess', isApplicationUIAccess);
+
+
 
     const userComponents = [
-        !isMaketingAccess ? { ...marketing } : { ...marketingPurchased },
-        !isEcommereceAccess ? { ...ecommerce } : { ...ecommercePurchased },
-        !isApplicationUIAccess ? { ...applicationUI } : { ...applicationUIPurchased },
+        !isMaketingAccess ? { ...marketing } : { ...marketing, isLicensed: true },
+        !isEcommereceAccess ? { ...ecommerce } : { ...ecommerce, isLicensed: true },
+        !isApplicationUIAccess ? { ...applicationUI } : { ...applicationUI, isLicensed: true },
+        { ...allAccess, isLicensed: false },
     ];
-
     return userComponents as SingleComponent[];
-
-
-},
-    {
-        maxAge: 60 * 60 * 60
-    }
-
-);
+});

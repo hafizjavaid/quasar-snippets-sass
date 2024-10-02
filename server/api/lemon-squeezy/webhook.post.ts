@@ -11,10 +11,16 @@ interface WebhookPayload {
             first_order_item: {
                 product_name: string;
                 product_id: number
+                variant_id: number
             };
             customer_id: number,
         };
     };
+    meta: {
+        custom_data: {
+            user_id: string
+        }
+    }
 }
 
 export default defineEventHandler(async (event) => {
@@ -27,16 +33,37 @@ export default defineEventHandler(async (event) => {
         await validateSignature(body, signatureHeader, webhookSecret);
 
         const payload: WebhookPayload = JSON.parse(body);
-        console.log('---Payload', payload);
-
-
+        const { meta: { custom_data: { user_id } }, data } = payload;
 
         // Check if customer already exist or not and then Save Customer 
+        // Find Customer 
+        let lemonSqueezyCustomer = await db.lemonSqueezyCustomer.findUnique({
+            where: {
+                userId: user_id,
+            },
+            select: {
+                lemonSqueezyCustomerId: true
+            }
+        })
+
+        // Create Customer 
+        if (!lemonSqueezyCustomer) {
+            lemonSqueezyCustomer = await db.lemonSqueezyCustomer.create({
+                data: {
+                    userId: user_id,
+                    lemonSqueezyCustomerId: data.attributes.customer_id + ''
+                },
+            })
+        }
 
         // Add Purchase 
-
-
-
+        await db.purchase.create({
+            data: {
+                userId: user_id,
+                productId: data.attributes.first_order_item.variant_id + '',
+                productName: data.attributes.first_order_item.product_name
+            },
+        })
 
         return "OK";
     } catch (error) {

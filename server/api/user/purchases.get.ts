@@ -1,18 +1,13 @@
 export default defineCachedEventHandler(async (event) => {
+    const { user } = await getUserSession(event);
 
-    // await validateRequest(event);
-    if (!event.context.user) {
+    if (!user) {
         return [];
     }
     const userPurchases = await db.purchase.findMany({
         where: {
-            userId: event.context.user?.id
+            userId: user.id
         },
-        include: {
-            product: true
-        }
     })
     return userPurchases;
-}, {
-    maxAge: 60 * 60 * 60
 })

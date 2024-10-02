@@ -6,7 +6,7 @@ declare module '#auth-utils' {
         emailVerified: boolean;
         role: 'USER' | 'ADMIN'; // Assuming 'USER' is not the only role
         name: string;
-        avatarUrl: string;
+        avatarUrl: string | null;
         banned: boolean;
         bannedReason: string | null;
         onboarded: boolean;

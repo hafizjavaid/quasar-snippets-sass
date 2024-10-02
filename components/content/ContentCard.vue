@@ -25,7 +25,7 @@
         <div style="border-radius: 8px; font-size: 10px;" class="bg-grey-4 q-pa-xs">
           <q-tabs v-model="view" narrow-indicator inline-label active-bg-color="white" active-color="primary"
             style="border-radius: 8px;" indicator-color="transparent" no-caps>
-            <q-tab style="min-height: unset;" :ripple="false" name="code">
+            <q-tab   style="min-height: unset;" :ripple="false" name="code">
               <template #default>
                 <div style="font-size: 14px;" class="text-weight-medium flex items-center q-gutter-x-xs">
                   <q-icon class="text-weight-medium" name="mdi-content-copy"></q-icon>
@@ -81,9 +81,9 @@ withDefaults(defineProps<CardProps>(), {
 });
 const expanded = ref(false);
 const view = ref("preview");
-const purchase = usePurchase();
+// const purchase = usePurchase();
 
-const path = useRoute().path;
+// const path = useRoute().path;
 
 
 </script>

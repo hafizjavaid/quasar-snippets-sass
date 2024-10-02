@@ -35,6 +35,10 @@ type FormState = {
 
 }
 
+definePageMeta({
+    layout: 'auth'
+})
+
 const { toggleLoading, showError, showMessage } = useStore();
 
 const state = ref<FormState>({

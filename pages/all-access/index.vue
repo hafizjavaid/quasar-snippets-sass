@@ -31,9 +31,9 @@
                                                 <div>plus local taxes</div>
                                             </div>
                                         </div>
-                                        <q-btn @click="purchasePackage('66af878c483e68dc8d69b195')" padding="4px 10px"
-                                            unelevated no-caps label="Get all-access" dense color="dark"
-                                            class="full-width q-mt-lg" style="border-radius: 8px;"></q-btn>
+                                        <q-btn @click="createCheckout(538563)" padding="4px 10px" unelevated no-caps
+                                            label="Get all-access" dense color="dark" class="full-width q-mt-lg"
+                                            style="border-radius: 8px;"></q-btn>
 
                                         <p class="q-mt-sm text-center text-grey-7">Lifetime access.
                                             Unlimited projects.
@@ -87,20 +87,28 @@
 </template>
 
 <script setup lang="ts">
-const purchasePackage = async (productId: string) => {
-    await $fetch('/api/stripe', {
-        method: 'POST',
-        body: {
-            id: productId,
-        },
-    }).then((res) => {
-        if (res) {
-            window.location.assign(res);
-        }
-    }).catch((err) => {
-        console.error(err);
-    })
-}
+definePageMeta({
+    layout: 'default',
+    middleware: 'auth'
+})
+const { baseUrl } = useRuntimeConfig().public;
+
+const createCheckout = async (variantId: number) => {
+    try {
+        // loading.value = true;
+        const data = await $fetch("/api/lemon-squeezy/checkout", {
+            method: "POST",
+            body: {
+                variantId: variantId + '',
+                redirectUrl: `${baseUrl}`,
+            },
+        });
+        window.location.href = data;
+    } catch (error) {
+        // loading.value = false;
+        // toast.error("Error creating checkout link");
+    }
+};
 </script>
 
 <style scoped>

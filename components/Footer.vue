@@ -7,12 +7,14 @@
                         <div v-for="component in flatedComponents" :key="component.anchor"
                             class="col-12 col-sm-6 col-md-4 col-lg-3">
                             <div class="text-body1 text-weight-medium q-mb-lg"> {{ component.name }} </div>
-                            <NuxtLink v-for="item in component.categories.slice(0, 14)" :key="item.name"
-                                class="footer-item block" to="/application-ui/core-layouts/stacked-layouts">
-                                <q-item-section>
-                                    {{ item.name }}
-                                </q-item-section>
-                            </NuxtLink>
+                            <template v-if="component?.categories">
+                                <NuxtLink v-for="item in component.categories.slice(0, 14)" :key="item.name"
+                                    class="footer-item block" to="/application-ui/core-layouts/stacked-layouts">
+                                    <q-item-section>
+                                        {{ item.name }}
+                                    </q-item-section>
+                                </NuxtLink>
+                            </template>
 
                             <NuxtLink :to="`/components#${component?.anchor}`">
                                 <q-btn color="grey-2" style="border-radius: 8px" text-color="grey-9"
@@ -31,10 +33,10 @@
 const allComponents = useComponents();
 const flatedComponents = computed(() => {
     if (allComponents.value) {
-        return allComponents.value.map(c => {
+        return allComponents.value.filter(c => c.name !== 'All-access').map(c => {
             return {
                 ...c,
-                categories: c.categories.flatMap(category => category.subcategories)
+                categories: c.categories?.flatMap(category => category.subcategories)
             }
         })
     }

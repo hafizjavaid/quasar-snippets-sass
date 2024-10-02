@@ -10,24 +10,21 @@ export default defineEventHandler(async (event) => {
         checkoutLinkSchema.parse(body),
     );
 
-    console.log(variantId, redirectUrl);
+    const purchase = await db.purchase.findUnique({
+        where: {
+            userId_productId: {
+                userId: user.id,
+                productId: variantId + '',
+            },
+        },
+    })
 
-
-    // const purchase = await db.purchase.findUnique({
-    //     where: {
-    //         userId_productId: {
-    //             userId: user.id,
-    //             productId: variantId + '',
-    //         },
-    //     },
-    // })
-
-    // if (purchase) {
-    //     throw createError({
-    //         statusCode: 400,
-    //         statusMessage: `Product is already Purchased`,
-    //     });
-    // }
+    if (purchase) {
+        throw createError({
+            statusCode: 400,
+            statusMessage: `Product is already Purchased`,
+        });
+    }
 
     // // Find Customer 
     // let lemonSqueezyCustomer = await db.lemonSqueezyCustomer.findUnique({

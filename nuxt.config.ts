@@ -6,6 +6,9 @@ export default defineNuxtConfig({
   // extends: '@barbapapazes/solo-sphere',
   compatibilityDate: '2024-04-03',
   devtools: { enabled: true },
+  experimental: {
+    typedPages: true
+  },
   nitro: {
     prerender: {
       routes: ['/sitemap.xml']

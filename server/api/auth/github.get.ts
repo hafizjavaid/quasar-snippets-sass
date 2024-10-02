@@ -35,7 +35,7 @@ export default oauthGitHubEventHandler({
         emailRequired: true,
     },
     async onSuccess(event, { user }) {
-        console.log(user);
+        // console.log(user);
 
         const oauthUser = {
             email: user.email,

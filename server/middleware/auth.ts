@@ -1,8 +1,4 @@
-//  This middleware is only to extend H3EventContext, there's no verification
 
-import { verifyRequestOrigin } from "lucia";
-
-import type { User, Session } from "lucia";
 
 export default defineEventHandler(async (event) => {
     // TODO For Stripe, it's not working but it's important
@@ -13,28 +9,9 @@ export default defineEventHandler(async (event) => {
     //         return event.node.res.writeHead(403).end();
     //     }
     // }
-    const sessionId = getCookie(event, lucia.sessionCookieName) ?? null;
-    if (!sessionId) {
-        event.context.session = null;
-        event.context.user = null;
-        return;
-    }
+    // const session = await requireUserSession(event);
 
-    const { session, user } = await lucia.validateSession(sessionId);
-    if (session && session.fresh) {
-        appendHeader(event, "Set-Cookie", lucia.createSessionCookie(session.id).serialize());
-    }
-    if (!session) {
-        appendHeader(event, "Set-Cookie", lucia.createBlankSessionCookie().serialize());
-    }
-    event.context.session = session;
-    event.context.user = user;
+    // event.context.session = session;
+    // event.context.user = session.user;
 
 });
-
-declare module "h3" {
-    interface H3EventContext {
-        user: User | null;
-        session: Session | null;
-    }
-}

@@ -37,6 +37,7 @@ export const github = new GitHub(process.env.GITHUB_CLIENT_ID!, process.env.GITH
 
 
 export const validateRequest = async (event: H3Event) => {
+	
 	if (!event.context.user) {
 		throw createError({
 			statusCode: 401,
