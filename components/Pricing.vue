@@ -8,12 +8,21 @@
             <div class="q-py-xl">
                 <div class="row items-center ">
                     <div class="col-12 col-sm-6" style="z-index: 2;">
-                        <q-card color="grey-2" bordered style="border-radius: 20px;" class="q-pa-lg bg-grey-2">
+                        <q-card v-if="allAccess" color="grey-2" bordered style="border-radius: 20px;"
+                            class="q-pa-lg bg-grey-2">
                             <div class="flex justify-between q-mb-sm">
                                 <div class="text-primary text-weight-medium text-body1">Get with all-access</div>
-                                <q-btn @click="purchasePackage('66af878c483e68dc8d69b195')" padding="4px 10px"
-                                    unelevated no-caps label="Get all-access" dense color="dark"
+                                <!-- <ScriptLemonSqueezy>
+                                    <NuxtLink
+                                        :href="`${allAccess.checkoutUrl}?checkout[discount_code]=IYNZQ4MG${user && 'email' in user ? `&checkout[email]=${user.email}` : ''}`">
+                                        <q-btn padding="4px 10px" unelevated no-caps label="Get all-access" dense
+                                            color="dark" style="border-radius: 8px;"></q-btn>
+                                    </NuxtLink>
+                                </ScriptLemonSqueezy> -->
+                                <q-btn @click="createCheckout(allAccess.productVariantId)" padding="4px 10px" unelevated
+                                    no-caps label="Get all-access" dense color="dark"
                                     style="border-radius: 8px;"></q-btn>
+
                             </div>
                             <div class="flex items-center q-gutter-x-sm">
                                 <div class="text-h3">
@@ -74,7 +83,20 @@
                                 <div class="flex justify-between items-center">
                                     <div class="text-weight-medium text-body1 text-primary ">{{ applicationUI.name }}
                                     </div>
-                                    <q-btn @click="purchasePackage(applicationUI.checkout_id)" padding="4px 10px"
+
+                                    <!-- <ScriptLemonSqueezy>
+                                        <NuxtLink
+                                            :href="`${applicationUI.checkoutUrl}?checkout[discount_code]=IYNZQ4MG${user && 'email' in user ? `&checkout[email]=${user.email}` : ''}`">
+                                            <q-btn padding="4px 10px" unelevated no-caps label="" dense color="grey-4"
+                                                round outline style="border-radius: 8px;">
+                                                <template #default>
+                                                    <div class="text-dark">Unlock Package</div>
+                                                </template>
+</q-btn>
+</NuxtLink>
+</ScriptLemonSqueezy> -->
+
+                                    <q-btn @click="createCheckout(applicationUI.productVariantId)" padding="4px 10px"
                                         unelevated no-caps label="" dense color="grey-4" round outline
                                         style="border-radius: 8px;">
                                         <template #default>
@@ -94,11 +116,7 @@
                                 </div>
                                 <q-card-section class="q-px-none">
                                     <div class="text-body1">
-                                        Gain access to all of the QuasarUI components in the Application UI category —
-                                        all
-                                        of
-                                        the components you need to
-                                        build out your application's UI.
+                                        {{ applicationUI.priceDescription }}
                                     </div>
                                 </q-card-section>
                             </div>
@@ -107,8 +125,22 @@
                                 <div class="flex justify-between items-center">
                                     <div class="text-weight-medium text-body1 text-primary "> {{ marketing.name }}
                                     </div>
-                                    <q-btn @click="purchasePackage(marketing.checkout_id)" padding="4px 10px" unelevated
-                                        no-caps label="" dense color="grey-4" round outline style="border-radius: 8px;">
+
+                                    <!-- <ScriptLemonSqueezy>
+                                        <NuxtLink
+                                            :href="`${marketing.checkoutUrl}?checkout[discount_code]=IYNZQ4MG${user && 'email' in user ? `&checkout[email]=${user.email}` : ''}`">
+                                            <q-btn padding="4px 10px" unelevated no-caps label="" dense color="grey-4"
+                                                round outline style="border-radius: 8px;">
+                                                <template #default>
+                                                    <div class="text-dark">Unlock Package</div>
+                                                </template>
+                                            </q-btn>
+                                        </NuxtLink>
+                                    </ScriptLemonSqueezy> -->
+
+                                    <q-btn @click="createCheckout(marketing.productVariantId)" padding="4px 10px"
+                                        unelevated no-caps label="" dense color="grey-4" round outline
+                                        style="border-radius: 8px;">
                                         <template #default>
                                             <div class="text-dark">Unlock Package</div>
                                         </template>
@@ -125,9 +157,7 @@
                                 </div>
                                 <q-card-section class="q-px-none">
                                     <div class="text-body1">
-                                        Gain access to all of the QuasarUI components in the Marketing category — all of
-                                        the components you need to
-                                        build out your marketing pages.
+                                        {{ marketing.priceDescription }}
                                     </div>
                                 </q-card-section>
                             </div>
@@ -137,8 +167,21 @@
                                 <div class="flex justify-between items-center">
                                     <div class="text-weight-medium text-body1 text-primary "> {{ ecommerce.name }}
                                     </div>
-                                    <q-btn @click="purchasePackage(ecommerce.checkout_id)" padding="4px 10px" unelevated
-                                        no-caps label="" dense color="grey-4" round outline style="border-radius: 8px;">
+
+                                    <!-- <ScriptLemonSqueezy>
+                                        <NuxtLink
+                                            :href="`${ecommerce.checkoutUrl}?checkout[discount_code]=IYNZQ4MG${user && 'email' in user ? `&checkout[email]=${user.email}` : ''}`">
+                                            <q-btn padding="4px 10px" unelevated no-caps label="" dense color="grey-4"
+                                                round outline style="border-radius: 8px;">
+                                                <template #default>
+                                                    <div class="text-dark">Unlock Package</div>
+                                                </template>
+                                            </q-btn>
+                                        </NuxtLink>
+                                    </ScriptLemonSqueezy> -->
+                                    <q-btn @click="createCheckout(ecommerce.productVariantId)" padding="4px 10px"
+                                        unelevated no-caps label="" dense color="grey-4" round outline
+                                        style="border-radius: 8px;">
                                         <template #default>
                                             <div class="text-dark">Unlock Package</div>
                                         </template>
@@ -155,9 +198,7 @@
                                 </div>
                                 <q-card-section class="q-px-none">
                                     <div class="text-body1">
-                                        Gain access to all of the QuasarUI components in the E-commerce category — all
-                                        of the components you need to
-                                        build out your e-commerce pages.
+                                        {{ ecommerce.priceDescription }}
                                     </div>
                                 </q-card-section>
                             </div>
@@ -173,25 +214,69 @@
 </template>
 
 <script setup lang="ts">
-const allComponents = useComponents();
-const applicationUI = computed(() => allComponents.value ? allComponents.value.find(c => c.anchor.includes('application')) : null);
-const marketing = computed(() => allComponents.value ? allComponents.value.find(c => c.anchor.includes('marketing')) : null);
-const ecommerce = computed(() => allComponents.value ? allComponents.value.find(c => c.anchor.includes('ecommerce')) : null);
 
-const purchasePackage = async (productId: string) => {
-    await $fetch('/api/stripe', {
-        method: 'POST',
-        body: {
-            id: productId,
-        },
-    }).then((res) => {
-        if (res) {
-            window.location.assign(res);
+const { user } = useUserSession()
+
+const { data, status } = await useLazyFetch('/api/products');
+
+const allAccess = computed(() => {
+    if (data.value) {
+        const p = data.value.find(product => product.name === 'All-access')
+        if (p) {
+            return p;
         }
-    }).catch((err) => {
-        console.error(err);
-    })
-}
+        return null
+    }
+    return null
+})
+const applicationUI = computed(() => {
+    if (data.value) {
+        const p = data.value.find(product => product.name === 'Application UI')
+        if (p) {
+            return p;
+        }
+        return null
+    }
+    return null
+})
+const marketing = computed(() => {
+    if (data.value) {
+        const p = data.value.find(product => product.name === 'Marketing')
+        if (p) {
+            return p;
+        }
+        return null
+    }
+    return null
+})
+const ecommerce = computed(() => {
+    if (data.value) {
+        const p = data.value.find(product => product.name === 'Ecommerce')
+        if (p) {
+            return p;
+        }
+        return null
+    }
+    return null
+})
+const { baseUrl } = useRuntimeConfig().public;
+
+const createCheckout = async (variantId: number) => {
+    try {
+        // loading.value = true;
+        const data = await $fetch("/api/lemon-squeezy/checkout", {
+            method: "POST",
+            body: {
+                variantId: variantId + '',
+                redirectUrl: `${baseUrl}`,
+            },
+        });
+        window.location.href = data;
+    } catch (error) {
+        // loading.value = false;
+        // toast.error("Error creating checkout link");
+    }
+};
 </script>
 
 <style scoped></style>

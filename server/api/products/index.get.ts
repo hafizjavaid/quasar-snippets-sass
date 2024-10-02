@@ -1,4 +1,8 @@
-export default defineEventHandler(async (event) => {
-    const products = await db.product.findMany();
-    return products;
+import { products } from "~/server/utils/products"
+
+export default defineCachedEventHandler(async (event) => {
+    return products
+
+}, {
+    maxAge: 1
 })

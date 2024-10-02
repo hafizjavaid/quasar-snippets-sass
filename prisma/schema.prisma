@@ -61,27 +61,13 @@ model OauthAccount {
   @@unique([providerId, providerUserId])
 }
 
-model Product {
-  id              String @id @default(auto()) @map("_id") @db.ObjectId
-
-  title String 
-  description String? 
-  imageUrl String? 
-  price Float?
-  
-  purchases Purchase[]
-
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
-
-}
 
 model Purchase {
   id              String @id @default(auto()) @map("_id") @db.ObjectId
   userId String
 
-  productId String @db.ObjectId   
-  product Product @relation(fields: [productId], references: [id], onDelete: Cascade)
+  productId String
+  productName String 
 
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt()
@@ -90,10 +76,10 @@ model Purchase {
   @@index([productId])
 }
 
-model StripeCustomer   {
+model LemonSqueezyCustomer   {
   id              String @id @default(auto()) @map("_id") @db.ObjectId
   userId String @unique
-  stripeCustomerId       String?   @unique @map(name: "stripe_customer_id")
+  lemonSqueezyCustomerId       String?   @unique 
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 }

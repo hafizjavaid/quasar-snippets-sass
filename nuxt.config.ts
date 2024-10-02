@@ -18,7 +18,8 @@ export default defineNuxtConfig({
     "@nuxt/icon",
     '@nuxt/fonts',
     '@pinia/nuxt',
-    'nuxt-auth-utils'
+    'nuxt-auth-utils',
+    '@nuxt/scripts'
   ],
 
   css: ['/assets/main.scss'],
@@ -29,7 +30,7 @@ export default defineNuxtConfig({
     },
     public: {
       publicStripeKey: '',
-      baseUrl: process.env.BASE_URL,
+      baseUrl: '',
     },
     expectedOrigin: process.env.BASE_URL ?? "http://localhost:3000",
     githubClientId: process.env.GITHUB_CLIENT_ID,
@@ -37,10 +38,12 @@ export default defineNuxtConfig({
     cloudinaryApiKey: '',
     cloudinaryApiSecret: '',
     cloudinaryCloudName: process.env.CLOUDINARY_CLOUD_NAME,
-
     stripeSecret: '',
     stripeWebhookSecret: '',
     appUrl: '',
+
+    lemonSqueezyApiKey: process.env.LEMONSQUEEZY_API_KEY,
+    lemonSqueezyWebhookSecret: process.env.LEMONSQUEEZY_WEBHOOK_SECRET,
 
   },
   content: {
