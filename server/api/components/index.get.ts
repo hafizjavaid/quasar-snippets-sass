@@ -49,7 +49,7 @@ export default defineEventHandler(async (event) => {
     const isEcommereceAccess = userPurchases.some(p => p.productId === ecommerce.productVariantId + '');
     const isApplicationUIAccess = userPurchases.some(p => p.productId === applicationUI.productVariantId + '');
 
-    // console.log('isMaketingAccess', isMaketingAccess);
+    console.log('isMaketingAccess', isMaketingAccess);
     // console.log('isEcommereceAccess', isEcommereceAccess);
     console.log('isApplicationUIAccess', isApplicationUIAccess);
 

@@ -12,16 +12,15 @@
                             class="q-pa-lg bg-grey-2">
                             <div class="flex justify-between q-mb-sm">
                                 <div class="text-primary text-weight-medium text-body1">Get with all-access</div>
-                                <!-- <ScriptLemonSqueezy>
-                                    <NuxtLink
-                                        :href="`${allAccess.checkoutUrl}?checkout[discount_code]=IYNZQ4MG${user && 'email' in user ? `&checkout[email]=${user.email}` : ''}`">
-                                        <q-btn padding="4px 10px" unelevated no-caps label="Get all-access" dense
-                                            color="dark" style="border-radius: 8px;"></q-btn>
-                                    </NuxtLink>
-                                </ScriptLemonSqueezy> -->
-                                <q-btn @click="createCheckout(allAccess.productVariantId)" padding="4px 10px" unelevated
+                                <q-btn v-if="!allAccess.isLicensed" @click="createCheckout(allAccess.productVariantId)" padding="4px 10px" unelevated
                                     no-caps label="Get all-access" dense color="dark"
                                     style="border-radius: 8px;"></q-btn>
+                                <q-btn v-else padding="4px 10px" unelevated no-caps label="" dense color="grey-4" round
+                                    outline style="border-radius: 8px;">
+                                    <template #default>
+                                        💪 <div class="text-dark q-ml-xs">You already own this</div>
+                                    </template>
+                                </q-btn>
 
                             </div>
                             <div class="flex items-center q-gutter-x-sm">
@@ -83,20 +82,6 @@
                                 <div class="flex justify-between items-center">
                                     <div class="text-weight-medium text-body1 text-primary ">{{ applicationUI.name }}
                                     </div>
-
-                                    <!-- <ScriptLemonSqueezy>
-                                        <NuxtLink
-                                            :href="`${applicationUI.checkoutUrl}?checkout[discount_code]=IYNZQ4MG${user && 'email' in user ? `&checkout[email]=${user.email}` : ''}`">
-                                            <q-btn padding="4px 10px" unelevated no-caps label="" dense color="grey-4"
-                                                round outline style="border-radius: 8px;">
-                                                <template #default>
-                                                    <div class="text-dark">Unlock Package</div>
-                                                </template>
-</q-btn>
-</NuxtLink>
-</ScriptLemonSqueezy> -->
-
-<!-- <pre>{{ applicationUI.isLicensed }}</pre> -->
                                     <q-btn v-if="!applicationUI.isLicensed"
                                         @click="createCheckout(applicationUI.productVariantId)" padding="4px 10px"
                                         unelevated no-caps label="" dense color="grey-4" round outline
@@ -134,23 +119,18 @@
                                     <div class="text-weight-medium text-body1 text-primary "> {{ marketing.name }}
                                     </div>
 
-                                    <!-- <ScriptLemonSqueezy>
-                                        <NuxtLink
-                                            :href="`${marketing.checkoutUrl}?checkout[discount_code]=IYNZQ4MG${user && 'email' in user ? `&checkout[email]=${user.email}` : ''}`">
-                                            <q-btn padding="4px 10px" unelevated no-caps label="" dense color="grey-4"
-                                                round outline style="border-radius: 8px;">
-                                                <template #default>
-                                                    <div class="text-dark">Unlock Package</div>
-                                                </template>
-                                            </q-btn>
-                                        </NuxtLink>
-                                    </ScriptLemonSqueezy> -->
-
-                                    <q-btn @click="createCheckout(marketing.productVariantId)" padding="4px 10px"
+                                    <q-btn v-if="!marketing.isLicensed"
+                                        @click="createCheckout(marketing.productVariantId)" padding="4px 10px"
                                         unelevated no-caps label="" dense color="grey-4" round outline
                                         style="border-radius: 8px;">
                                         <template #default>
                                             <div class="text-dark">Unlock Package</div>
+                                        </template>
+                                    </q-btn>
+                                    <q-btn v-else padding="4px 10px" unelevated no-caps label="" dense color="grey-4"
+                                        round outline style="border-radius: 8px;">
+                                        <template #default>
+                                            💪 <div class="text-dark q-ml-xs">You already own this</div>
                                         </template>
                                     </q-btn>
                                 </div>
@@ -175,23 +155,18 @@
                                 <div class="flex justify-between items-center">
                                     <div class="text-weight-medium text-body1 text-primary "> {{ ecommerce.name }}
                                     </div>
-
-                                    <!-- <ScriptLemonSqueezy>
-                                        <NuxtLink
-                                            :href="`${ecommerce.checkoutUrl}?checkout[discount_code]=IYNZQ4MG${user && 'email' in user ? `&checkout[email]=${user.email}` : ''}`">
-                                            <q-btn padding="4px 10px" unelevated no-caps label="" dense color="grey-4"
-                                                round outline style="border-radius: 8px;">
-                                                <template #default>
-                                                    <div class="text-dark">Unlock Package</div>
-                                                </template>
-                                            </q-btn>
-                                        </NuxtLink>
-                                    </ScriptLemonSqueezy> -->
-                                    <q-btn @click="createCheckout(ecommerce.productVariantId)" padding="4px 10px"
+                                    <q-btn v-if="!ecommerce.isLicensed"
+                                        @click="createCheckout(ecommerce.productVariantId)" padding="4px 10px"
                                         unelevated no-caps label="" dense color="grey-4" round outline
                                         style="border-radius: 8px;">
                                         <template #default>
                                             <div class="text-dark">Unlock Package</div>
+                                        </template>
+                                    </q-btn>
+                                    <q-btn v-else padding="4px 10px" unelevated no-caps label="" dense color="grey-4"
+                                        round outline style="border-radius: 8px;">
+                                        <template #default>
+                                            💪 <div class="text-dark q-ml-xs">You already own this</div>
                                         </template>
                                     </q-btn>
                                 </div>
@@ -222,12 +197,8 @@
 </template>
 
 <script setup lang="ts">
-
-// const { user } = useUserSession()
-
-// const { data, status } = await useLazyFetch('/api/components');
 const existingComponents = useComponents();
-
+const { toggleLoading, showError } = useStore();
 
 const allAccess = computed(() => {
     if (existingComponents.value) {
@@ -273,7 +244,7 @@ const { baseUrl } = useRuntimeConfig().public;
 
 const createCheckout = async (variantId: number) => {
     try {
-        // loading.value = true;
+        toggleLoading(true);
         const data = await $fetch("/api/lemon-squeezy/checkout", {
             method: "POST",
             body: {
@@ -283,8 +254,10 @@ const createCheckout = async (variantId: number) => {
         });
         window.location.href = data;
     } catch (error) {
-        // loading.value = false;
-        // toast.error("Error creating checkout link");
+        const err = handleError(error);
+        showError(err);
+    } finally {
+        toggleLoading(false);
     }
 };
 

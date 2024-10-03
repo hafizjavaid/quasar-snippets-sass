@@ -34,8 +34,7 @@
           <q-btn v-if="!user" text-color="grey-9" flat padding="4px 10px" dense color="gray-900" no-caps unelevated
             label="Sign in"></q-btn>
 
-
-          <NuxtLink to="/all-access">
+          <NuxtLink v-if="!isAllAccess" to="/all-access">
             <q-btn padding="4px 10px" unelevated no-caps label="Get all-access" dense color="dark"
               style="border-radius: 8px;"></q-btn>
           </NuxtLink>
@@ -77,7 +76,7 @@
                 </q-card-section>
                 <q-separator />
                 <q-card-section class="q-pa-sm">
-                  <q-list>
+                  <q-list dense >
                     <q-item clickable v-ripple>
                       <q-item-section>
                         <div class="flex items-center q-gutter-x-sm">
@@ -158,6 +157,15 @@ const logout = async () => {
     toggleLoading(false);
   }
 }
+
+const isAllAccess = computed(() => {
+  if (allComponents.value) {
+    const isA = allComponents.value.every(component => component.isLicensed);
+    console.log(isA);
+    return allComponents.value.every(component => component.isLicensed)
+  }
+  return false
+})
 </script>
 
 <style></style>
