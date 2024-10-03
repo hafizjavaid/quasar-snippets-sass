@@ -83,11 +83,13 @@ withDefaults(defineProps<CardProps>(), {
 const expanded = ref(false);
 const view = ref("preview");
 
-const path = useRoute().path;
 const allComponents = useComponents();
+const { loggedIn } = useUserSession();
+
+
 
 const showCode = computed(() => {
-  if (allComponents.value) {
+  if (loggedIn.value && allComponents.value) {
     const isAllAccess = allComponents.value.every(component => component.isLicensed);
     // All Access
     if (isAllAccess) return true;
