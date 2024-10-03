@@ -22,7 +22,7 @@ export default defineNuxtRouteMiddleware(async (to) => {
             const err = handleError(error);
             showError(err);
         } finally {
-            toggleLoading(true);
+            toggleLoading(false);
 
         }
     }

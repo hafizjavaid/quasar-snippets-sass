@@ -13,6 +13,7 @@
   <NuxtLoadingIndicator />
   <Toaster position="top-center" />
   <NuxtPage />
+  <Loader />
 </template>
 <script setup lang="ts">
 import { Toaster } from "vue-sonner";

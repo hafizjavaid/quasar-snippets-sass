@@ -15,8 +15,7 @@ export default defineNuxtPlugin(() => {
                 const err = handleError(error);
                 showError(err);
             } finally {
-                toggleLoading(true);
-
+                toggleLoading(false);
             }
         }
 
