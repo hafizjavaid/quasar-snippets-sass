@@ -22,7 +22,8 @@ export default defineNuxtConfig({
     '@nuxt/fonts',
     '@pinia/nuxt',
     'nuxt-auth-utils',
-    '@nuxt/scripts'
+    '@nuxt/scripts',
+    '@nuxthub/core'
   ],
 
   css: ['/assets/main.scss'],
@@ -56,7 +57,7 @@ export default defineNuxtConfig({
         default: 'github-dark',
         dark: 'github-dark',
       },
-      preload: ['json', 'js', 'ts', 'html', 'css', 'vue', 'diff', 'shell', 'markdown', 'yaml', 'bash', 'ini'],
+      preload: ['markdown'],
     },
     navigation: {
       fields: ['icon'],
@@ -121,5 +122,8 @@ export default defineNuxtConfig({
       //   },
       // },
     },
-  }
+  },
+  hub: {
+    kv: true,
+  },
 })

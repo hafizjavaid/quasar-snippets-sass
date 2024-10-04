@@ -63,12 +63,7 @@
                 </template>
             </div>
         </Container>
-    
-        <Pricing></Pricing>
-        <Faq></Faq>
     </NuxtLayout>
-
-
 </template>
 
 <script lang="ts" setup>
@@ -78,10 +73,6 @@ definePageMeta({
 const allComponents = useComponents();
 
 const components = computed(() => allComponents.value?.filter(c => c.name !== 'All-access'))
-// const applicationUI = computed(() => allComponents.value ? allComponents.value.find(c => c.anchor.includes('application')) : null);
-// const marketing = computed(() => allComponents.value ? allComponents.value.find(c => c.anchor.includes('marketing')) : null);
-// const ecommerce = computed(() => allComponents.value ? allComponents.value.find(c => c.anchor.includes('ecommerce')) : null);
-
 </script>
 
 <style lang="scss" scoped></style>

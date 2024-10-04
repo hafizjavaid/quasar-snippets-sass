@@ -198,7 +198,7 @@
 
 <script setup lang="ts">
 const existingComponents = useComponents();
-const { toggleLoading, showError } = useStore();
+const { createCheckout } = useCheckout();
 
 const allAccess = computed(() => {
     if (existingComponents.value) {
@@ -240,27 +240,6 @@ const ecommerce = computed(() => {
     }
     return null
 })
-const { baseUrl } = useRuntimeConfig().public;
-
-const createCheckout = async (variantId: number) => {
-    try {
-        toggleLoading(true);
-        const data = await $fetch("/api/lemon-squeezy/checkout", {
-            method: "POST",
-            body: {
-                variantId: variantId + '',
-                redirectUrl: `${baseUrl}`,
-            },
-        });
-        window.location.href = data;
-    } catch (error) {
-        const err = handleError(error);
-        showError(err);
-    } finally {
-        toggleLoading(false);
-    }
-};
-
 </script>
 
 <style scoped></style>

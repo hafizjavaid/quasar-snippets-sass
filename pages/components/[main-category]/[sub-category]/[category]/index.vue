@@ -10,8 +10,6 @@
                  </ContentQuery>
              </ContentList>
          </div>
-         <!-- <Pricing></Pricing> -->
-         <!-- <Faq></Faq> -->
      </NuxtLayout>
 </template>
 

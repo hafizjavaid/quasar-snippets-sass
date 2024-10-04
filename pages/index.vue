@@ -17,8 +17,6 @@
     </div>
     <Hero></Hero>
     <Preview></Preview>
-    <Pricing></Pricing>
-    <Faq></Faq>
   </NuxtLayout>
 </template>
 

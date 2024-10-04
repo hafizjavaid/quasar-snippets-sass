@@ -11,10 +11,11 @@
                             Get everything, forever.
                         </div>
                         <p class="text-center q-mx-auto" style="max-width: 800px;">
-                            Get lifetime access to 500+ components and every template available today, plus any new content
+                            Get lifetime access to 500+ components and every template available today, plus any new
+                            content
                             we add in the future for a simple one-time price.
                         </p>
-    
+
                     </div>
                     <div class="q-pt-xl">
                         <div class="row items-center justify-center">
@@ -35,14 +36,14 @@
                                             <q-btn @click="createCheckout(538563)" padding="4px 10px" unelevated no-caps
                                                 label="Get all-access" dense color="dark" class="full-width q-mt-lg"
                                                 style="border-radius: 8px;"></q-btn>
-    
+
                                             <p class="q-mt-sm text-center text-grey-7">Lifetime access.
                                                 Unlimited projects.
                                                 Free updates.</p>
                                         </q-card-section>
                                     </q-card>
                                     <q-separator class="q-my-lg"></q-separator>
-    
+
                                     <div class="flex items-center  no-wrap q-gutter-x-md  q-mb-xl">
                                         <q-icon size="40px" name="img:/icons/box.svg" color="primary">
                                         </q-icon>
@@ -74,18 +75,17 @@
                                             additional fees.
                                         </div>
                                     </div>
-    
+
                                 </q-card>
                             </div>
-    
-    
+
+
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        
-        <Faq></Faq>
+
     </nuxt-layout>
 </template>
 
@@ -94,24 +94,8 @@ definePageMeta({
     layout: 'default',
     middleware: 'auth'
 })
-const { baseUrl } = useRuntimeConfig().public;
+const { createCheckout } = useCheckout();
 
-const createCheckout = async (variantId: number) => {
-    try {
-        // loading.value = true;
-        const data = await $fetch("/api/lemon-squeezy/checkout", {
-            method: "POST",
-            body: {
-                variantId: variantId + '',
-                redirectUrl: `${baseUrl}`,
-            },
-        });
-        window.location.href = data;
-    } catch (error) {
-        // loading.value = false;
-        // toast.error("Error creating checkout link");
-    }
-};
 </script>
 
 <style scoped>
