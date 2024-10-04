@@ -43,8 +43,8 @@
                 </div>
                 <!-- <q-separator class="q-my-xl  text-grey-1 bg-grey-3" /> -->
                 <template v-if="mainCategory.categories">
-                    <q-card v-for="(category, categoryIndex) in mainCategory.categories" :key="categoryIndex" bordered flat
-                        class="q-mb-xl">
+                    <q-card v-for="(category, categoryIndex) in mainCategory.categories" :key="categoryIndex" bordered
+                        flat class="q-mb-xl">
                         <q-card-section class="q-py-md q-px-lg ">
                             <div class="text-h6">{{ category.name }}</div>
                         </q-card-section>
@@ -54,7 +54,22 @@
                                 <div class="row q-col-gutter-md">
                                     <div v-for="(subCategory, subCategoryIndex) in category.subcategories"
                                         :key="subCategoryIndex" class="col-sm-6 col-md-4 col-lg-3 col-12">
-                                        <ComponentCard :card="subCategory"></ComponentCard>
+                                        <NuxtLink v-if="subCategory.isPublished" class="text-grey-6"
+                                            style="text-decoration: none;" :to="subCategory.url">
+                                            <ComponentCard :card="subCategory" :isLicensed="mainCategory.isLicensed">
+                                            </ComponentCard>
+                                        </NuxtLink>
+                                        <div v-else class="text-grey-6">
+                                            <ComponentCard :card="subCategory" :isLicensed="mainCategory.isLicensed">
+                                            </ComponentCard>
+                                            <q-tooltip class="bg-primary">
+                                                <div class="text-body2">
+
+                                                    <strong>{{ subCategory.name }}</strong> components are under
+                                                    development. Soon they will be live and ready to use
+                                                </div>
+                                            </q-tooltip>
+                                        </div>
                                     </div>
                                 </div>
                             </q-card-section>
