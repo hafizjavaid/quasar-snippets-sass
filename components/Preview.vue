@@ -1,8 +1,10 @@
 <template>
     <section>
-        <!-- <pre>{{ applicationUIComponents }}</pre> -->
+        <!-- <pre>{{ applicationUIComponents }}</pre>
         <div style="max-width: 1300px; padding-block-start: 100px; width: 100%;" class="q-mx-auto">
-            <div class="q-px-xl">
+            <div class="q-px-xl"> -->
+        <Container>
+            <div style="padding-block-start: 100px; width: 100%;">
                 <div class="text-primary text-weight-medium text-body1">Components</div>
                 <div class="text-h5 text-weight-bold q-mt-md">Beautifully crafted UI components</div>
                 <div>Over 500+ professionally designed, fully responsive, expertly crafted component examples you can
@@ -93,7 +95,9 @@
 
                 </div>
             </div>
-        </div>
+        </Container>
+        <!-- </div>
+        </div> -->
     </section>
 </template>
 
