@@ -2,13 +2,13 @@ import type { SingleComponent, Subcategory } from "~/types";
 
 export function getRandomElementsFromSubcategories(obj: SingleComponent, n: number): Subcategory[] {
   // Flatten all subcategories into a single array
-  const allSubcategories = obj.categories.flatMap(category => category.subcategories);
+  const allSubcategories = obj.categories?.flatMap(category => category.subcategories.filter(c => c.isPublished));
 
   // Shuffle the array and pick the first n elements
-  const shuffled = allSubcategories.sort(() => 0.5 - Math.random());
+  const shuffled = allSubcategories?.sort(() => 0.5 - Math.random());
 
   // Return the first n elements
-  return shuffled.slice(0, n).filter(c => c.isPublished);
+  return shuffled ? shuffled.slice(0, n).filter(c => c.isPublished) : [] as Subcategory[];
 }
 
 export const handleError = (error: any) => {
@@ -19,7 +19,7 @@ export const handleError = (error: any) => {
   let data = undefined;
 
   console.log(error.response);
-  
+
   if (error.response) {
     statusCode = error.response.status
     statusMessage = error.response.statusText

@@ -27,7 +27,10 @@
                                 <div v-if="applicationUIComponents.length" class="row q-col-gutter-md">
                                     <div v-for="component in applicationUIComponents" :key="component.url" :ratio="1"
                                         class="col-sm-6 col-md-4 col-lg-3 col-12">
-                                        <ComponentCard :card="component"></ComponentCard>
+                                        <NuxtLink class="text-grey-6" style="text-decoration: none;"
+                                            :to="component.url">
+                                            <ComponentCard :isLicensed="true" :card="component"></ComponentCard>
+                                        </NuxtLink>
                                     </div>
                                 </div>
                                 <div v-else class="text-center">
@@ -49,7 +52,9 @@
                             <div v-if="marketingUIComponents.length" class="row q-col-gutter-md">
                                 <div v-for="component in marketingUIComponents" :key="component.url" :ratio="1"
                                     class="col-sm-6 col-md-4 col-lg-3 col-12">
-                                    <ComponentCard :card="component"></ComponentCard>
+                                    <NuxtLink class="text-grey-6" style="text-decoration: none;" :to="component.url">
+                                        <ComponentCard :isLicensed="true" :card="component"></ComponentCard>
+                                    </NuxtLink>
                                 </div>
                             </div>
                             <div v-else class="text-center">
@@ -71,7 +76,9 @@
                             <div v-if="ecommerceUIComponents.length" class="row q-col-gutter-md">
                                 <div v-for="component in ecommerceUIComponents" :key="component.url" :ratio="1"
                                     class="col-sm-6 col-md-4 col-lg-3 col-12">
-                                    <ComponentCard :card="component"></ComponentCard>
+                                    <NuxtLink class="text-grey-6" style="text-decoration: none;" :to="component.url">
+                                        <ComponentCard :isLicensed="true" :card="component"></ComponentCard>
+                                    </NuxtLink>
                                 </div>
                             </div>
                             <div v-else class="text-center">
