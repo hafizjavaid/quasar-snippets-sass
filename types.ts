@@ -32,6 +32,7 @@ export type SingleComponent = {
     anchor: string;
     isLicensed: boolean;
     categories?: Category[];
+    linkIdentifier: string
 
     // name: 'All-access',
     // description: 'Includes access to all 500+ components and templates available in Quasar UI today, plus all future updates.',

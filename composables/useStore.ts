@@ -1,7 +1,7 @@
 import type { APIError } from "~/types";
 import { toast } from "vue-sonner";
 
-// Global Store for our application
+
 interface StateProps {
     isLoading: boolean
     appError: null | APIError
@@ -14,6 +14,7 @@ const state = reactive<StateProps>({
 
 export default () => {
     const { isLoading, appError } = toRefs(state);
+
     const toggleLoading = (value: boolean) => {
         state.isLoading = value
     }
@@ -34,6 +35,6 @@ export default () => {
         appError,
         toggleError,
         showError,
-        showMessage
+        showMessage,
     }
 }

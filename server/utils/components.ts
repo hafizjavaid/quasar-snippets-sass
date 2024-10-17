@@ -237,7 +237,8 @@ export const marketing = {
     },
     checkoutUrl: "https://quasarsnippets.lemonsqueezy.com/buy/924e8572-021c-46c4-aee8-fd2ac6251277",
     productId: 362527,
-    productVariantId: 538584
+    productVariantId: 538584,
+    linkIdentifier: 'marketing',
 };
 export const applicationUI = {
     "anchor": "component-application-ui",
@@ -692,7 +693,8 @@ export const applicationUI = {
     },
     checkoutUrl: "https://quasarsnippets.lemonsqueezy.com/buy/2ae15964-bfd7-40c8-8215-dcf604ffcf67",
     productId: 362520,
-    productVariantId: 538577
+    productVariantId: 538577,
+    linkIdentifier: 'application-ui',
 };
 export const ecommerce = {
     "anchor": "product-ecommerce",
@@ -911,7 +913,8 @@ export const ecommerce = {
     },
     checkoutUrl: "https://quasarsnippets.lemonsqueezy.com/buy/87e1eb00-204b-4f16-b406-cb96fac4af77",
     productId: 362528,
-    productVariantId: 538585
+    productVariantId: 538585,
+    linkIdentifier: 'ecommerce',
 };
 
 export const allAccess = {
@@ -927,6 +930,8 @@ export const allAccess = {
     productId: 362511,
     productVariantId: 538563,
     isLicensed: false,
+    linkIdentifier: 'all-access',
+
 }
 
 
