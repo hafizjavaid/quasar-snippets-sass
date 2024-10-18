@@ -10,7 +10,7 @@ export const marketing = {
             "subcategories": [
                 {
                     "name": "Hero Sections",
-                    "url": "/components/marketing/page-sections/heroes",
+                    "url": "/components/marketing/page-sections/hero-sections",
                     "imageUrl": "/img/category-thumbnails/marketing/heroes.png",
                     "isPublished": true,
                     "components": "12 components",

@@ -52,7 +52,7 @@
         <slot name="codebase" />
       </q-tab-panel>
       <q-tab-panel class="q-pa-none" name="preview">
-        <div class="q-pa-lg">
+        <div :class="{ 'q-pa-lg': isPadding }" class="">
           <div class="flex justify-center">
             <slot name="preview" />
           </div>
@@ -68,12 +68,14 @@ interface CardProps {
   slug: string;
   isFree?: boolean;
   isNew?: boolean;
+  isPadding: boolean
 }
 withDefaults(defineProps<CardProps>(), {
   title: '',
   slug: '',
   isFree: false, // check lock status and if it's true then also check index 
   isNew: false,
+  isPadding: true
 });
 const expanded = ref(false);
 const view = ref("preview");
