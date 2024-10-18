@@ -69,8 +69,8 @@ const faqData = [
         title: 'Licensing',
         faqs: [
             {
-                question: 'Do I have to purchase a license for each project I use these QuasarUI in?',
-                answer: 'No, you can use these snippets in as many projects as you like and unlimited amount of times.'
+                question: 'Do I have to purchase a license for each project I use these QuasarUI components in?',
+                answer: 'No, you can use QuasarUI components in as many projects as you like and unlimited amount of times.'
             },
             {
                 question: 'Can I use these QuasarUI componets in Commercial projects?',
@@ -95,24 +95,24 @@ const faqData = [
         title: 'Compatibility',
         faqs: [
             {
-                question: 'What versions of Quasar are these snippets compatible with?',
-                answer: 'These snippets are developed using the latest version of Quasar, which is currently v2.16.6.'
+                question: 'What versions of Quasar are these components compatible with?',
+                answer: 'QuasarUI components are developed using the latest version of Quasar, which is currently v2.16.6.'
             },
             // {
             //     question: 'How do I install Vuetify?',
             //     answer: 'You can install Vuetify using npm or yarn. For more detailed information, please refer to the official documentation.'
             // },
-            {
-                question: 'How do I get the dark mode QuasarUI componets?',
-                answer: 'Each example has a toggle switch in the top right corner that allows you to switch between light and dark mode. When you use these QuasarUI componets in your project, they will automatically inherit the dark mode settings from your project theme.'
-            },
+            // {
+            //     question: 'How do I get the dark mode QuasarUI componets?',
+            //     answer: 'Each example has a toggle switch in the top right corner that allows you to switch between light and dark mode. When you use these QuasarUI componets in your project, they will automatically inherit the dark mode settings from your project theme.'
+            // },
             {
                 question: 'What browsers are supported?',
                 answer: 'All evergreen browsers are supported, including Chrome, Firefox, Safari, and Edge. For more detailed information, please refer to the official documentation.'
             },
             {
                 question: 'Do any of the packages come with Figma, Sketch, or Adobe XD files?',
-                answer: 'No, the packages only include the source code for the snippets.'
+                answer: 'No, the packages only include the source code for the components.'
             }
         ]
     },
@@ -122,7 +122,7 @@ const faqData = [
         faqs: [
             // {
             //     question: 'Do you offer technical support?',
-            //     answer: 'Vuetify does offer support on its community Discord server with options for premium support available. This support is for Vuetify itself and not Vuetify Snips. If you have accounting or billing questions, please reach out to us at support@vuetifyjs.com.'
+            //     answer: 'No, I dont support that in this purchase. But you can request the components / templates, and after review I can decide weather its possible or not'
             // },
             {
                 question: 'What is your refund policy?',
