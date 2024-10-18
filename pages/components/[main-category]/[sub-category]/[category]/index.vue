@@ -4,9 +4,9 @@
         <q-bar class="bg-grey-3" style="position: sticky; top: 60px; z-index: 5; ">
             <Container>
                 <q-breadcrumbs>
-                    <q-breadcrumbs-el label="Home" to="/" />
+                    <q-breadcrumbs-el class="text-weight-bold text-subtitle2" label="Home" to="/" />
                     <template v-if="breadcrumbs">
-                        <q-breadcrumbs-el v-for="breadcrumb in breadcrumbs" :key="breadcrumb.label"
+                        <q-breadcrumbs-el class="text-weight-bold text-subtitle2"  v-for="breadcrumb in breadcrumbs" :key="breadcrumb.label"
                             :label="breadcrumb.label" :to="breadcrumb.link" />
                     </template>
                 </q-breadcrumbs>

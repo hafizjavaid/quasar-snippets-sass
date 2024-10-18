@@ -122,6 +122,7 @@ export default defineNuxtConfig({
       //   },
       // },
     },
+    cssAddon: true,
   },
   hub: {
     kv: true,

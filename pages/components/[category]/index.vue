@@ -6,7 +6,7 @@
                 <q-breadcrumbs>
                     <q-breadcrumbs-el label="Home" to="/" />
                     <template v-if="breadcrumbs">
-                        <q-breadcrumbs-el v-for="breadcrumb in breadcrumbs" :key="breadcrumb.label"
+                        <q-breadcrumbs-el class="text-weight-bold" v-for="breadcrumb in breadcrumbs" :key="breadcrumb.label"
                             :label="breadcrumb.label" :to="breadcrumb.link" />
                     </template>
                 </q-breadcrumbs>

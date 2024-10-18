@@ -75,7 +75,7 @@
                                         icon-right="chevron_right" class="q-py-xs" />
                                 </div>
                             </div>
-                            <div class="v-bg absolute-full">
+                            <div class="hero-background absolute-full">
                                 <div aria-hidden="true" class="overflow-hidden full-height full-width" />
                             </div>
                         </div>
@@ -99,7 +99,7 @@ const drawer = ref(false);
 </script>
 
 <style lang="scss" scoped>
-.v-bg {
+.hero-background {
     filter: blur(56px);
     pointer-events: none;
     opacity: 0.2;
