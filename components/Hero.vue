@@ -3,9 +3,10 @@
         <Container style="padding-block: 140px;">
             <div class="row">
                 <div class="col-12 col-sm-6">
-                    <div class="text-primary text-weight-medium ">
+                    <NuxtLink target="_blank" to="https://codewithhafizjavaid.com/"
+                        class="text-primary text-weight-medium " style="padding-left: 8px;">
                         By Hafiz Javaid Iqbal
-                    </div>
+                    </NuxtLink>
                     <div class="text-h2 text-weight-bold q-mb-md">
                         QuasarUI components, built with Qusar
                     </div>

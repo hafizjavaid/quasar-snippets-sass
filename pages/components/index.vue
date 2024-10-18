@@ -3,8 +3,7 @@
     <NuxtLayout>
 
         <!-- Hero -->
-        <Hero></Hero>
-        <!-- Navbar -->
+        <!-- <Hero></Hero> -->
         <div class="bg-white" style="padding-block: 60px; position: sticky; top: 0; z-index: 5; ">
             <q-separator></q-separator>
             <Container style="padding-block: 10px;">
