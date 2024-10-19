@@ -11,7 +11,7 @@ export const marketing = {
                 {
                     "name": "Hero Sections",
                     "url": "/components/marketing/page-sections/hero-sections",
-                    "imageUrl": "/img/category-thumbnails/marketing/heroes.png",
+                    "imageUrl": "/img/category-thumbnails/marketing/hero-sections.png",
                     "isPublished": true,
                     "components": "12 components",
                     "isNew": false,
@@ -37,9 +37,9 @@ export const marketing = {
                 },
                 {
                     "name": "Pricing Sections",
-                    "url": "/components/marketing/page-sections/pricing",
-                    "imageUrl": "/img/category-thumbnails/marketing/pricing.png",
-                    "isPublished": false,
+                    "url": "/components/marketing/page-sections/pricing-sections",
+                    "imageUrl": "/img/category-thumbnails/marketing/pricing-sections.png",
+                    "isPublished": true,
                     "components": "13 components",
                     "isNew": false,
                     "isLocked": false
