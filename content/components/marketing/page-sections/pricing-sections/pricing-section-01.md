@@ -1,5 +1,5 @@
 <!-- Pricing Section 01 -->
-::ContentCard{title="Pricing Section 01" slug="pricing-section-01" :is-padding="false" }
+::ContentCard{title="Pricing Section 01" slug="pricing-section-01" }
 
 #preview
 ::pricing-section-01
@@ -11,7 +11,7 @@
 ```html
 <template>
     <div>
-        <div style="max-width: 700px;" class="q-mx-auto text-center q-pa-md q-pa-sm-none">
+        <div style="max-width: 700px;" class="q-mx-auto text-center ">
             <h3 :class="[$q.screen.gt.sm ? 'text-h3' : 'text-h5']" class="text-weight-bold q-mb-md">
                 Gain access for One Price
             </h3>
@@ -21,7 +21,7 @@
                 minima, at placeat totam.
             </p>
         </div>
-        <div style="max-width: 1000px;" class="q-mx-auto q-pa-md q-pa-md-none">
+        <div style="max-width: 1000px;" class="q-mx-auto ">
             <q-card flat bordered style="border-radius: 20px;">
                 <q-card-section class="q-pa-sm">
                     <div class="row">
