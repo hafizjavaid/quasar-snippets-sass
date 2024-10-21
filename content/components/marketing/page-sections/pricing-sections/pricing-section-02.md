@@ -105,7 +105,17 @@ const plans = [
 ]
 </script>
 
-<style scoped></style>
+<style scoped>
+@media(min-width: 1024px) {
+    .margin-start {
+        margin-inline-start: -20px !important;
+    }
+
+    .margin-end {
+        margin-inline-end: -20px !important;
+    }
+}
+</style>
 
 ```
 

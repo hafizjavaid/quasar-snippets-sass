@@ -12,7 +12,7 @@
             </p>
         </div>
         <div style="max-width: 1000px;" class="q-mx-auto">
-            <div class="row items-end q-mt-xl q-col-gutter-md" >
+            <div class="row items-end q-mt-xl q-col-gutter-md">
                 <div v-for="(item, i) in plans" :key="i" class="col-12 col-md-4">
                     <q-card flat bordered style="border-radius: 8px; max-width: 450px;"
                         class="q-pa-md q-pa-md-lg relative-position q-mx-auto"
@@ -94,4 +94,14 @@ const plans = [
 ]
 </script>
 
-<style scoped></style>
+<style scoped>
+@media(min-width: 1024px) {
+    .margin-start {
+        margin-inline-start: -20px !important;
+    }
+
+    .margin-end {
+        margin-inline-end: -20px !important;
+    }
+}
+</style>
