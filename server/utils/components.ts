@@ -30,8 +30,8 @@ export const marketing = {
                     "name": "CTA Sections",
                     "url": "/components/marketing/page-sections/cta-sections",
                     "imageUrl": "/img/category-thumbnails/marketing/cta-sections.png",
-                    "isPublished": false,
-                    "components": "11 components",
+                    "isPublished": true,
+                    "components": "7 components",
                     "isNew": false,
                     "isLocked": false
                 },
