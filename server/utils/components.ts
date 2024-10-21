@@ -57,7 +57,7 @@ export const marketing = {
                     "name": "Newsletter Sections",
                     "url": "/components/marketing/page-sections/newsletter-sections",
                     "imageUrl": "/img/category-thumbnails/marketing/newsletter-sections.png",
-                    "isPublished": false,
+                    "isPublished": true,
                     "components": "7 components",
                     "isNew": false,
                     "isLocked": false

@@ -1,5 +1,5 @@
 <template>
-  <div style="border-radius: 12px;" class="bg-grey-10 q-pa-lg">
+  <div style="border-radius: 12px;" class="bg-grey-10 q-pa-sm">
     <slot />
   </div>
 </template>
