@@ -97,30 +97,6 @@ export default defineNuxtConfig({
       },
     },
     components: {
-      // defaults: {
-      //   QBtn: {
-      //     color: 'primary',
-      //   },
-      //   QLinearProgress: {
-      //     color: 'green',
-      //     size: '15px',
-      //     stripe: true,
-      //   },
-      //   QCircularProgress: {
-      //     color: 'blue',
-      //     indeterminate: true,
-      //   },
-      //   QSelect: {
-      //     outlined: true,
-      //     dense: true,
-      //   },
-      //   QInput: {
-      //     outlined: true,
-      //   },
-      //   QToggle: {
-      //     color: 'red',
-      //   },
-      // },
     },
     cssAddon: true,
   },

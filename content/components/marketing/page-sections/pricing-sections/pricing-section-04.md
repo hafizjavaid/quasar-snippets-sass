@@ -1,8 +1,8 @@
-<!-- Pricing Section 02 -->
-::ContentCard{title="Pricing Section 02" slug="pricing-section-02"}
+<!-- Pricing Section 04 -->
+::ContentCard{title="Pricing Section 04" slug="pricing-section-04"}
 
 #preview
-::pricing-section-02
+::pricing-section-04
 ::
 
 #codebase
@@ -22,40 +22,48 @@
                 I will explain it as snacks.
             </p>
         </div>
+        <div class="flex flex-center q-mb-lg bg-grey-2">
+             <q-btn rounded @click="handleChangePlanType('monthly')" no-caps class=""
+                :color="selectedPlanType == 'monthly' ? 'primary' : 'grey-10'" :flat="selectedPlanType !== 'monthly'"
+                label="Monthly" unelevated />
+            <q-btn rounded @click="handleChangePlanType('annually')" no-caps class=""
+                :color="selectedPlanType === 'annually' ? 'primary' : 'grey-10'" :flat="selectedPlanType !== 'annually'"
+                label="Annually" unelevated />
+
+        </div>
         <div style="max-width: 1000px;" class="q-mx-auto">
-            <div class="row items-end q-mt-xl" >
+            <div class="row items-end q-mt-xl q-col-gutter-md">
                 <div v-for="(item, i) in plans" :key="i" class="col-12 col-md-4">
-                    <q-card flat bordered style="border-radius: 8px; max-width: 450px;"
-                        class="q-pa-md q-pa-md-lg relative-position q-mx-auto"
-                        :class="{ 'margin-start': i === 2, 'margin-end': i === 0 }"
-                        :style="i === 1 ? 'height: 500px; z-index: 2;' : 'height: 450px;'">
-                        <div class="flex justify-between items-center">
-                            <q-chip class="q-mb-md" :color="i == 1 ? 'primary' : ''" :text-color="i == 1 ? 'white' : ''"
-                                :label="item.title" square />
-                            <q-chip v-if="i == 1" class="q-mb-md" size="sm" color="blue-1" text-color="primary"
-                                label="most popular" />
-                        </div>
-                        <p class="text-subtitle2 q-pb-sm">
+                    <q-card flat bordered style="max-width: 450px; height: 500px; border-radius: 20px;"
+                        class="q-pa-md q-pa-md-lg relative-position q-mx-auto">
+
+                        <p class="q-mb-md text-weight-bold"> {{ item.title }} </p>
+
+                        <p class="text-body2 text-weight-medium q-mt-md">
                             {{ item.subtitle }}
                         </p>
 
-                        <div :class="[$q.screen.gt.sm ? 'text-h4' : 'text-h6']" class=" q-mb-sm text-weight-bold">
-                            ${{ item.cost }}
+                        <div :class="[$q.screen.gt.sm ? 'text-h4' : 'text-h6']" class="q-mb-md text-weight-bold">
+                            {{ i == 2 ? 'Custom' : selectedPlanType == 'monthly' ? "$" + item.cost : "$" +
+                                item.annuallyCost }}
 
-                            <small class="text-body2">/month</small>
+                            <small v-if="i != 2" class="text-body2">
+                                /{{ selectedPlanType == 'monthly' ? 'month' : 'year' }}
+                            </small>
                         </div>
+
+
+                        <q-btn no-caps style="max-width: 256px; width: 100%;" class="q-mx-auto q-mb-md"
+                            :color="i == 2 ? 'dark' : 'primary'" :label="i == 2 ? 'Contact Sales' : 'Buy plan'"
+                            unelevated />
+
                         <q-item style="min-height: unset" v-for="(feature, _index) in item.features" :key="_index"
                             class="flex items-center q-gutter-x-sm q-px-none text-body2 text-grey-8">
-                            <q-icon size="16px" color="primary" name="mdi-check" />
+                            <q-icon size="16px" :color="i == 2 ? 'dark' : 'primary'" name="mdi-check" />
                             <q-item-section>
                                 {{ feature }}
                             </q-item-section>
                         </q-item>
-                        <div class="flex flex-center">
-                            <q-btn no-caps style="max-width: 256px; width: 100%;"
-                                class="q-mb-md absolute-bottom-left absolute-bottom-right absolute q-mx-auto"
-                                :color="i == 1 ? 'primary' : ''" label="Buy plan" unelevated :outline="i !== 1" />
-                        </div>
                     </q-card>
                 </div>
             </div>
@@ -66,11 +74,21 @@
 <script setup lang="ts">
 import { useQuasar } from 'quasar'
 const $q = useQuasar();
+
+import { shallowRef } from 'vue'
+
+const selectedPlanType = shallowRef('monthly')
+
+const handleChangePlanType = (value: string) => {
+    selectedPlanType.value = value
+}
+
 const plans = [
     {
         title: 'Freelancer',
         subtitle: 'The essentials to provide your best work for clients.',
-        cost: 24,
+        cost: 15,
+        annuallyCost: 144,
         features: [
             '5 products',
             'Up to 1,000 subscribers',
@@ -81,7 +99,8 @@ const plans = [
     {
         title: 'Startup',
         subtitle: 'A plan that scales with your rapidly growing business.',
-        cost: 32,
+        cost: 30,
+        annuallyCost: 288,
         features: [
             '25 products',
             'Up to 10,000 subscribers',
@@ -92,14 +111,14 @@ const plans = [
     },
     {
         title: 'Enterprise',
-        subtitle: 'Dedicated support and infrastructure of your company.',
-        cost: 48,
+        subtitle: 'Dedicated support and infrastructure for your company.',
         features: [
             'Unlimited products',
             'Unlimited subscribers',
             'Advanced analytics',
             '1-hour, dedicated support response time',
             'Marketing automations',
+            'Custom reporting tools',
         ],
     },
 ]
