@@ -46,10 +46,10 @@ export const marketing = {
                 },
                 {
                     "name": "Header Sections",
-                    "url": "/components/marketing/page-sections/header",
-                    "imageUrl": "/img/category-thumbnails/marketing/header.png",
-                    "isPublished": false,
-                    "components": "10 components",
+                    "url": "/components/marketing/page-sections/header-sections",
+                    "imageUrl": "/img/category-thumbnails/marketing/header-sections.png",
+                    "isPublished": true,
+                    "components": "9 components",
                     "isNew": false,
                     "isLocked": false
                 },
